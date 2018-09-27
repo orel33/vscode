@@ -22,7 +22,7 @@
 * Codé en TypeScript & JavaScript dans le framework [Electron](https://github.com/electron/electron) (Node.js + Chromium), utlisé par Atom
 * Extensible
 
-<center><img src="icon.svg" width="100" align="middle"></center>
+<center><img src="img/icon.svg" width="100" align="middle"></center>
 
 
 <https://code.visualstudio.com>
