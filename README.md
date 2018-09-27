@@ -1,31 +1,31 @@
-
-<style>
-    /* 1vh = 1% of the height of the viewport */
-    .reveal .slides { font-size: 2vh; text-align: left; }
-    .reveal h1 { font-size: 8vh; }
-    .reveal h2 { font-size: 6vh; }
-    .reveal h3 { font-size: 4vh; }
-</style>
-
 # Visual Studio Code
 
-<center><b>aurelien.esnard@u-bordeaux.fr</b></center>
+<br>
+<br>
+<center><url>https://github.com/orel33/vscode</url></center>
+<center> ~ </center>
+<center><url>https://code.visualstudio.com</url></center>
+<center> ~ </center>
+<center>aurelien.esnard@u-bordeaux.fr</center>
+<br>
+<br>
+
+<center><img src="img/icon.svg" width="100" align="middle"></center>
 
 ---
 
 ## Introduction
 
-* Survey [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 participants)
-* Développé par Microsoft sous licence libre (MIT)
-* Première release de VS Code en 2015, Emacs en 1976
-* Multi-platforme (Linux, Windows, Mac OS)
-* Codé en TypeScript & JavaScript dans le framework [Electron](https://github.com/electron/electron) (Node.js + Chromium), utlisé par Atom
-* Extensible
+* Just another IDE & source code editor
+* Survey [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
+* Provided by Microsoft under free & open-source license (MIT)
+* First release in 2015 (Vi & Emacs in 1976, Vim in 1991)
+* Cross-Platform: Linux, Windows, MacOS
+* Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework (Node.js + Chromium), the Atom shell provided by GitHub
+* Extensible: a lot of extension available on <https://marketplace.visualstudio.com>
 
 <center><img src="img/icon.svg" width="100" align="middle"></center>
 
-
-<https://code.visualstudio.com>
 
 ---
 
@@ -128,6 +128,12 @@ Les autres langages ? LaTeX. Et encore YAML, XML, HTML, CSS, Shell, ...
 
 ![](https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif)
 
+
+
+```bash
+git config credential.helper store
+```
+
 ---
 
 ## Et quoi encore
@@ -194,26 +200,23 @@ Regarder les extensions pour Docker, node.js, Android, ...
 
 ## A Propos de ce Document
 
-Ce document est écrit en markdown et transformé en slides de manière automatique grâce au package 
+This document is written in *Markdown* and converted into slides by the extension *vscode-reveal* (based on [Reval.js](https://revealjs.com)).
 
-* [Memento syntax](https://guides.github.com/features/mastering-markdown/#syntax)
-
-Il est disponible sur *github.com*:
+This presentation is available on *github.com*:
 
 ```bash
 git clone https://github.com/orel33/vscode.git
 ```
 
-Auteurs: A. Esnard et P. Ramet
+**Aknowledgement**: Pierre Ramet
 
+---
 
-## Test Reveal.js
-
-Bla bla bla.
-
-* liste 1
-* liste 2
-
-### Titre H3
-
-Bla bla bla.
+<style>
+    /* 1vh = 1% of the height of the viewport */
+    .reveal .slides { font-size: 2vh; text-align: left; }
+    .reveal h1 { font-size: 8vh; ; text-align: center; }
+    .reveal h2 { font-size: 6vh; text-align: center; }
+    .reveal h3 { font-size: 4vh; }
+    .vcenter { vertical-align: middle; }
+</style>
