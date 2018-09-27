@@ -1,3 +1,9 @@
+---
+theme: white
+transition: none
+center: false
+---
+
 # Visual Studio Code
 
 <br>
@@ -23,9 +29,6 @@
 * Cross-Platform: Linux, Windows, MacOS
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework (Node.js + Chromium), the Atom shell provided by GitHub
 * Extensible: a lot of extension available on <https://marketplace.visualstudio.com>
-
-<center><img src="img/icon.svg" width="100" align="middle"></center>
-
 
 ---
 
@@ -218,5 +221,4 @@ git clone https://github.com/orel33/vscode.git
     .reveal h1 { font-size: 8vh; ; text-align: center; }
     .reveal h2 { font-size: 6vh; text-align: center; }
     .reveal h3 { font-size: 4vh; }
-    .vcenter { vertical-align: middle; }
 </style>
