@@ -128,12 +128,6 @@ Les autres langages ? LaTeX. Et encore YAML, XML, HTML, CSS, Shell, ...
 
 ![](https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif)
 
-```bash
-git init
-git remote add origin https://github.com/orel33/vscode.git
-git push -u origin master
-```
-
 ---
 
 ## Et quoi encore
