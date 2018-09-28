@@ -1,7 +1,8 @@
 ---
-theme: white
+theme: black
 transition: none
 center: false
+slideNumber: true
 ---
 
 # Visual Studio Code
@@ -25,9 +26,10 @@ center: false
 * Just another IDE & source code editor
 * Survey [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
 * Provided by Microsoft under free & open-source license (MIT)
-* First release in 2015 (Vi & Emacs in 1976, Vim in 1991)
+* First release in 2015 (Vi & Emacs in 1976, Vim in 1991, Atom in 2014)
 * Cross-Platform: Linux, Windows, MacOS
-* Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework (Node.js + Chromium), the Atom shell provided by GitHub
+* Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
+  * (backend Node.js + frontend Chromium), the Atom shell provided by GitHub
 * Extensible: a lot of extension available on <https://marketplace.visualstudio.com>
 
 ---
@@ -215,10 +217,12 @@ git clone https://github.com/orel33/vscode.git
 
 ---
 
+
 <style>
     /* 1vh = 1% of the height of the viewport */
-    .reveal .slides { font-size: 2vh; text-align: left; }
-    .reveal h1 { font-size: 8vh; ; text-align: center; }
-    .reveal h2 { font-size: 6vh; text-align: center; }
-    .reveal h3 { font-size: 4vh; }
+    .reveal h1 { font-size: 10vh; ; text-align: center; }
+    .reveal h2 { font-size: 7vh; text-align: center; }
+    .reveal h3 { font-size: 5vh; }
+    .reveal .slides { font-size: 3vh; text-align: left; }
+    .reveal section img { background:none; border:none; box-shadow:none; }
 </style>
