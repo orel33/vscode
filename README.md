@@ -84,7 +84,8 @@ Note:
 
 ## C/C++ Building and Running
 
-* ajouter une *tâche* de build (menu )
+* configure a build task
+* 
 
 
 Note: 
@@ -115,23 +116,21 @@ Note:
 
 ## Python & JavaScript
 
-* Exemple du langage Python avec notebook Jupyter, ...
-* Extension ESLint (Linter pour JavaScript)
-
----
-
-## Code Runner
-
-Run code snippet or code file for multiple languages...
+* Python support with linting, debugging, smart completion, code formatting, refactoring, unit tests, snippets, ... (extension *Python*)
+* Run code snippet or code file for multiple languages... (extension *Code Runner*)
+* Linter pour JavaScript (extension *ESLint*)
 
 <center><img src="https://raw.githubusercontent.com/formulahendry/vscode-code-runner/master/images/usage.gif" width=80%></center>
+
+Note:
+* test notebook Jupyter for Python
 
 ---
 
 ## Writing in MarkDown
 
-* Markdown support: highlighting, outline, preview on-the-fly (Ctrl+K V), ...
-* Markdown linting and style checking (extension *mardownlint*)
+* syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
+* linting and style checking (extension *mardownlint*)
 * Show Markdown as Reveal.js presentation (extension *vscode-reveal*)
 
 <center><img src="img/snap-markdown.png" width=80%></center>
@@ -140,8 +139,8 @@ Run code snippet or code file for multiple languages...
 
 ## Writing in LaTeX
 
-* compilation, preview pdf, ... (extension *LaTeX Workshop*)
-* spellright (english)
+* highlighting, smart completion, building, view PDF, linting, ... (extension *LaTeX Workshop*)
+* multilingual spell checker (extension *Spell Right*)
 
 <center><img src="img/snap-latex.png" width=80%></center>
 
@@ -149,13 +148,13 @@ Run code snippet or code file for multiple languages...
 
 ## GIT
 
-* Extension *GitLens* enhances the Git capabilities of VS Code (blame, diff, branch, ...)
+* Amazing Git support with *GitLens* & *Git History* extensions: blame, diff, branch, log, ...
 
 <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center>
 
 Note:
 * git config credential.helper store
-* présenter éventuellement gitlab dans le context Inria pour la CI (intégration continue), valeur ajoutée de gitlens
+* Demo CI with Inria Gitlab
 
 ---
 
@@ -166,7 +165,8 @@ Note:
 | Ctrl+P          | quick open file palette                     |
 | Ctrl+Shift+P    | quick open command palette                  |
 | Ctrl+K Ctrl+T   | change theme                                |
-| Ctrl+J          | open/close panel                            |
+| Ctrl+K Z        | zen mode (Esc Esc to escape)                |
+| Ctrl+J / Ctrl+B | toggle panel / side bar visibility          |
 | Ctrl+,          | edit user & workspace settings              |
 | Ctrl+W          | close current editor                        |
 | Ctrl+N          | new file                                    |
@@ -179,6 +179,10 @@ Note:
 | Ctrl+Shift+I    | code formatting                             |
 | F12 / Ctrl+F12  | go to function definition / declaration     |
 | Ctrl+Shift+F10  | peek definition                             |
+| Ctrl+Shift+V    | Markdown preview                            |
+| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor              |
+| Ctrl+Shift+C    | open external terminal                      |
+
 
 
 [Linux Refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
@@ -193,12 +197,12 @@ Note:
 
 * [C/C++][ext-cpp], [Python][ext-python]
 * [CMake][ext-cmake], [CMake Tools][ext-cmaketools]
-* [GitLens][ext-gitlens] (Git supercharged)
+* [GitLens][ext-gitlens] (Git supercharged), [Git History][ext-githistory] (View git log, file history, compare branches or commits)
 * [Code Runner][ext-coderunner] (Run code snippet or code file for multiple language)
 * [Spell Right][ext-spellright] (Multilingual, Offline and Lightweight Spellchecker)
-* [Path Intellisense][ext-path] filename auto-completion
-* [Latex Workshop][ext-latex] LaTeX support, preview, compile, autocomplete, colorize, and more...
-* Misc: VSCode Icons, Dracula Theme, Settings Sync, VS Live Share, Todo Highlighter, Rainbow brackets, ...
+* [Path Intellisense][ext-path] (Filename auto-completion)
+* [Latex Workshop][ext-latex] (LaTeX support, preview, compile, autocomplete, colorize, and more...)
+* Misc: VSCode Icons, Dracula Theme, Settings Sync, VS Live Share, Todo Highlighter, Rainbow brackets & indent, Insert Unicode ...
 
 Note:
 * https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5
@@ -213,7 +217,7 @@ Note:
 [ext-spellright]: https://marketplace.visualstudio.com/items?itemName=ban.spellright "Spell Right extension"
 [ext-path]: https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense "Path IntelliSense extension"
 [ext-latex]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop "Latex Workshop extension"
-
+[ext-githistory]: https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory "Git history extension"
 ---
 
 ## Les Extensions
