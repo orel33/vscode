@@ -134,7 +134,16 @@ Run code snippet or code file for multiple languages...
 * Markdown linting and style checking (extension *mardownlint*)
 * Show Markdown as Reveal.js presentation (extension *vscode-reveal*)
 
-<center><img src="img/markdownlint.png" width=80%></center>
+<center><img src="img/snap-markdown.png" width=80%></center>
+
+---
+
+## Writing in LaTeX
+
+* compilation, preview pdf, ... (extension *LaTeX Workshop*)
+* spellright (english)
+
+<center><img src="img/snap-latex.png" width=80%></center>
 
 ---
 
@@ -144,41 +153,66 @@ Run code snippet or code file for multiple languages...
 
 <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center>
 
-note: git config credential.helper store
-note: présenter éventuellement gitlab dans le context Inria pour la CI (intégration continue), valeur ajoutée de gitlens
+Note:
+* git config credential.helper store
+* présenter éventuellement gitlab dans le context Inria pour la CI (intégration continue), valeur ajoutée de gitlens
 
 ---
 
-## Mes Raccourcis
+## Keyboard Shortcuts
 
-* Ctrl + P : chercher rapidement un fichier à ouvrir (file palette)
-* Ctrl + Shift + P : chercher rapidement une commande à lancer (command palette)
-* Ctrl + W : fermer l'éditeur courant
+| Shortcut        | Description                                 |
+|-----------------|---------------------------------------------|
+| Ctrl+P          | quick open file palette                     |
+| Ctrl+Shift+P    | quick open command palette                  |
+| Ctrl+K Ctrl+T   | change theme                                |
+| Ctrl+J          | open/close panel                            |
+| Ctrl+,          | edit user & workspace settings              |
+| Ctrl+W          | close current editor                        |
+| Ctrl+N          | new file                                    |
+| Ctrl+O          | open file                                   |
+| Ctrl+S          | save / save as file                         |
+| Ctrl+/          | comment / uncomment line(s)                 |
+| Alt+↑ / Alt+↓   | move line(s) up / down                      |
+| Alt+Z           | toggle line wrapping                        |
+| Ctrl+Space      | trigger suggestion for completion           |
+| Ctrl+Shift+I    | code formatting                             |
+| F12 / Ctrl+F12  | go to function definition / declaration     |
+| Ctrl+Shift+F10  | peek definition                             |
+
+
+[Linux Refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+
+Note:
 * F7 : compiler le projet (à condition qu'il soit déjà bien configuré)
-* ctrl + Shift + I : indentation selon les règles fournies par le fichier .clang-format
-* Ctrl + Shift + / : commenter/décommenter la sélection
-* Alt + Z : toggle word wrap
 * crtl + f : chercher dans le fichier courant ; F3 : next : shift + F3 : previous
-* F12 / ctrl + F12 : navigation entre la déclaration et la définition d'une fonction
-* Ctrl + J : fermer / ouvrir le panel du bas
-* Ctrl + , : édition des user & workspace settings (au format JSON)
 
 ---
 
 ## My Favorite Extensions
 
-* [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake), [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
-* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (Git supercharged)
-* [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (Run code snippet or code file for multiple language)
-* [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (Multilingual, Offline and Lightweight Spellchecker)
-* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion)
-* Misc: VSCode Icons, Dracula Official (theme), Settings Sync, VS Live Share, ...
+* [C/C++][ext-cpp], [Python][ext-python]
+* [CMake][ext-cmake], [CMake Tools][ext-cmaketools]
+* [GitLens][ext-gitlens] (Git supercharged)
+* [Code Runner][ext-coderunner] (Run code snippet or code file for multiple language)
+* [Spell Right][ext-spellright] (Multilingual, Offline and Lightweight Spellchecker)
+* [Path Intellisense][ext-path] filename auto-completion
+* [Latex Workshop][ext-latex] LaTeX support, preview, compile, autocomplete, colorize, and more...
+* Misc: VSCode Icons, Dracula Theme, Settings Sync, VS Live Share, Todo Highlighter, Rainbow brackets, ...
 
-<!-- 
-* Todo Highlighter
-* [Et encore...](https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5)
--->
+Note:
+* https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5
+* test: mardown all in one
+
+[ext-cpp]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools "C/C++ extension"
+[ext-python]: https://marketplace.visualstudio.com/items?itemName=ms-python.python "Python extension"
+[ext-cmake]: https://marketplace.visualstudio.com/items?itemName=twxs.cmake "CMake extension"
+[ext-cmaketools]: https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools "CMake Tools extension"
+[ext-gitlens]: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens "GitLens extension"
+[ext-coderunner]: https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner "Code Runner extension"
+[ext-spellright]: https://marketplace.visualstudio.com/items?itemName=ban.spellright "Spell Right extension"
+[ext-path]: https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense "Path IntelliSense extension"
+[ext-latex]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop "Latex Workshop extension"
 
 ---
 
@@ -202,6 +236,8 @@ Regarder les extensions pour Docker, node.js, Android, ...
 * demo hello.cmake
 * demo hello.py
 
+TODO: end this
+
 ---
 
 ## About this Document
@@ -216,14 +252,4 @@ git clone https://github.com/orel33/vscode.git
 
 Acknowledgment: Pierre Ramet
 
-<!-- 
-## Writing in LaTeX
-
-Les autres langages ? LaTeX. Et encore YAML, XML, HTML, CSS, Shell, ...
-
-* compilation on-the-fly, preview pdf synchronisé, navigation TOC, spellright (english)
-* Exemple du langage MD & LaTeX
-
 ---
--->
-
