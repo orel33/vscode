@@ -38,17 +38,13 @@ slideNumber: true
 
 ## Overview
 
-* Editors, Side Bar (Explorer, ...), Actvity Bar, Status Bar, Panels, File & Command Palettes
+* Editors, Side Bar (Explorer, ...), Actvity Bar, Status Bar, Panels, Palettes
 
 <center><img src="https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png" width=80%></center>
 
-note:  présentation de l'IDE (palette, task, ...)
-
-<https://code.visualstudio.com/docs/getstarted/userinterface>
----
-
-## Quelques Trucs
-
+Note:
+* https://code.visualstudio.com/docs/getstarted/userinterface
+* présentation de l'IDE (palette, task, ...)
 * notion de workspace, configuration JSON, keybinding, installation package en ligne de commande, ...
 
 ---
@@ -72,16 +68,17 @@ code .
 
 ---
 
-## C/C++ in VS Code
+## C/C++ Programming
 
 * Extension C/C++ (provided by Microsoft)
 * code navigation, smart completion / hinting ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), code formatting (clang-format), linting, debugging, refactoring
 
 <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
 
-note: Code Formatting (Ctrl + Shift + I)
-note: Go to Definition (F12), Go to Declaration (Ctrl + F12), Peek Definition (Ctrl + Shift + F10)
-note: Show Declaration (Hover) / Show Definition (Ctrl + Hover)
+Note:
+* Code Formatting (Ctrl + Shift + I)
+* Go to Definition (F12), Go to Declaration (Ctrl + F12), Peek Definition (Ctrl + Shift + F10)
+* Show Declaration (Hover) / Show Definition (Ctrl + Hover)
 
 ---
 
@@ -90,33 +87,33 @@ note: Show Declaration (Hover) / Show Definition (Ctrl + Hover)
 * ajouter une *tâche* de build (menu )
 
 
-note: https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building
+Note: 
+* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building
 
 ---
 
 ## C/C++ Debugging
 
-<center><img src="" width=80%></center>
+<center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center>
 
-
-note: https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
-note: https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
-
-
+Note:
+* https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
+* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
 
 ---
 
-## Utilisation de CMake
+## CMake Project
 
-* Extensions : CMake et CMake Tools
+* Extensions: CMake & CMake Tools
+
+
+Note: 
+* CMake / CTest (compilation out-of-source, kit de dev, sélection d'option CMake, ...)
 * [Documentation](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 
-
-note: CMake / CTest (compilation out-of-source, kit de dev, sélection d'option CMake, ...)
-
 ---
 
-## Programmer en Python / JavaScript
+## Python & JavaScript
 
 * Exemple du langage Python avec notebook Jupyter, ...
 * Extension ESLint (Linter pour JavaScript)
@@ -131,23 +128,13 @@ Run code snippet or code file for multiple languages...
 
 ---
 
-## Ecrire en MarkDown
+## Writing in MarkDown
 
-* Markdown support (highlighting, outline, ...)
-* *preview* synchronisée (Ctrl + K V)
+* Markdown support: highlighting, outline, preview on-the-fly (Ctrl+K V), ...
 * Markdown linting and style checking (extension *mardownlint*)
-* Show markdown as revealJs presentation (extension *vscode-reveal*)
+* Show Markdown as Reveal.js presentation (extension *vscode-reveal*)
 
-=> AJOUTER IMAGE
-
----
-
-## Ecrire en Latex
-
-Les autres langages ? LaTeX. Et encore YAML, XML, HTML, CSS, Shell, ...
-
-* compilation on-the-fly, preview pdf synchronisé, navigation TOC, spellright (english)
-* Exemple du langage MD & LaTeX
+<center><img src="img/markdownlint.png" width=80%></center>
 
 ---
 
@@ -158,13 +145,7 @@ Les autres langages ? LaTeX. Et encore YAML, XML, HTML, CSS, Shell, ...
 <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center>
 
 note: git config credential.helper store
-
----
-
-## Et quoi encore
-
-* GIT : éventuellement gitlab dans le context Inria pour la CI (intégration continue), valeur ajoutée de gitlens
-* Makefile (compilation à la main ?)
+note: présenter éventuellement gitlab dans le context Inria pour la CI (intégration continue), valeur ajoutée de gitlens
 
 ---
 
@@ -184,28 +165,22 @@ note: git config credential.helper store
 
 ---
 
-## Mes Extensions
+## My Favorite Extensions
 
-Déjà présenté ici :
+* [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake), [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
+* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (Git supercharged)
+* [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (Run code snippet or code file for multiple language)
+* [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (Multilingual, Offline and Lightweight Spellchecker)
+* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion)
+* Misc: VSCode Icons, Dracula Official (theme), Settings Sync, VS Live Share, ...
 
-* C/C++
-* CMake & CMake Tools
-
-Et encore :
-
-* VSCode Icons
-* Dracula Official
-
-A tester :
-
-* VS Live Share
+<!-- 
 * Todo Highlighter
-* Path Intellisense
-* Instant Markdown ?
-* Settings Sync
 * [Et encore...](https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5)
+-->
 
---- 
+---
 
 ## Les Extensions
 
@@ -213,14 +188,13 @@ A tester :
 * Distribués sur <https://marketplace.visualstudio.com>
 * [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
 
-
 ---
 
 ## Pour aller plus loin
 
 Regarder les extensions pour Docker, node.js, Android, ...
 
---- 
+---
 
 ## Demo
 
@@ -228,7 +202,7 @@ Regarder les extensions pour Docker, node.js, Android, ...
 * demo hello.cmake
 * demo hello.py
 
---- 
+---
 
 ## About this Document
 
@@ -240,4 +214,16 @@ This presentation and all demo are available on [GitHub](https://github.com/orel
 git clone https://github.com/orel33/vscode.git
 ```
 
-Aknowledgement: Pierre Ramet
+Acknowledgment: Pierre Ramet
+
+<!-- 
+## Writing in LaTeX
+
+Les autres langages ? LaTeX. Et encore YAML, XML, HTML, CSS, Shell, ...
+
+* compilation on-the-fly, preview pdf synchronisé, navigation TOC, spellright (english)
+* Exemple du langage MD & LaTeX
+
+---
+-->
+

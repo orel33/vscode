@@ -6,18 +6,20 @@ sudo apt-get install gdebi
 wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 
-
 ### Recommanded Extension (provided by Microsoft) ###
 
 # C/C++ (provided by Microsoft)
 code --install-extension ms-vscode.cpptools     
 
 # Python (provided by Microsoft)
-code --install-extension ms-python.python       
+code --install-extension ms-python.python     
 
-### Other Usefu Extensions ###
+### Other Useful Extensions ###
 
-# GitLens — Git supercharged
+# Path Intellisense
+code --install-extension christian-kohler.path-intellisense
+
+# GitLens (Git supercharged)
 code --install-extension eamodio.gitlens
 
 # markdownlint 
@@ -37,3 +39,10 @@ code --install-extension vector-of-bool.cmake-tools
 
 # ESLint (JavaScript Linter)
 code --install-extension dbaeumer.vscode-eslint
+
+### Spell Right ###
+
+ # english / french language support (spell right)
+code --install-extension ban.spellright
+sudo apt-get install hunspell-fr hunspell-en-us       # Linux
+ln -s /usr/share/hunspell ~/.config/Code/Dictionaries # Linux
