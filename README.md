@@ -130,7 +130,7 @@ Note:
 
 ## Python & JavaScript
 
-* Python support with linting, debugging, smart completion, code formatting, refactoring, unit tests, snippets, ... (extension *Python*)
+* Python support with linting, debugging, code formatting, refactoring, unit tests, ... (extension *Python*)
 * Run code snippet or code file for multiple languages... (extension *Code Runner*)
 * Linter pour JavaScript (extension *ESLint*)
 
@@ -144,10 +144,14 @@ Note:
 ## Writing in MarkDown
 
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
-* linting and style checking (extension *mardownlint*)
-* Show Markdown as Reveal.js presentation (extension *vscode-reveal*)
+* formatting, list editing and more (extenion *Markdown All in One*) + linting (extension *mardownlint*)
+* Show Markdown as *Reveal.js* presentation in browser (extension *vscode-reveal*)
 
 <center><img src="img/snap-markdown.png" width=80%></center>
+
+
+Note:
+* <https://ia.net/writer/support/general/markdown-guide>
 
 ---
 
@@ -174,36 +178,38 @@ Note:
 
 ## Keyboard Shortcuts
 
-| Shortcut        | Description                                 |
-|-----------------|---------------------------------------------|
-| Ctrl+P          | quick open file palette                     |
-| Ctrl+Shift+P    | quick open command palette                  |
-| Ctrl+K Ctrl+T   | change theme                                |
-| Ctrl+K Z        | zen mode (Esc Esc to escape)                |
-| Ctrl+J / Ctrl+B | toggle panel / side bar visibility          |
-| Ctrl+,          | edit user & workspace settings              |
-| Ctrl+W          | close current editor                        |
-| Ctrl+N          | new file                                    |
-| Ctrl+O          | open file                                   |
-| Ctrl+S          | save / save as file                         |
-| Ctrl+/          | comment / uncomment line(s)                 |
-| Alt+↑ / Alt+↓   | move line(s) up / down                      |
-| Alt+Z           | toggle line wrapping                        |
-| Ctrl+Space      | trigger suggestion for completion           |
-| Ctrl+Shift+I    | code formatting                             |
-| F12 / Ctrl+F12  | go to function definition / declaration     |
-| Ctrl+Shift+F10  | peek definition                             |
-| Ctrl+Shift+V    | Markdown preview                            |
-| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor              |
-| Ctrl+Shift+C    | open external terminal                      |
+| Shortcut        | Description                             |
+| --------------- | --------------------------------------- |
+| Ctrl+P          | quick open file palette                 |
+| Ctrl+Shift+P    | quick open command palette              |
+| Ctrl+K Ctrl+T   | change theme                            |
+| Ctrl+K Z        | zen mode (Esc Esc to escape)            |
+| Ctrl+J / Ctrl+B | toggle panel / side bar visibility      |
+| Ctrl+,          | edit user & workspace settings          |
+| Ctrl+W          | close current editor                    |
+| Ctrl+N          | new file                                |
+| Ctrl+O          | open file                               |
+| Ctrl+S          | save / save as file                     |
+| Ctrl+/          | toggle line(s) comment                  |
+| Alt+↑ / Alt+↓   | move line(s) up / down                  |
+| Alt+Z           | toggle line wrapping                    |
+| Ctrl+Space      | trigger suggestion for completion       |
+| Ctrl+Shift+I    | code formatting                         |
+| F12 / Ctrl+F12  | go to function definition / declaration |
+| Ctrl+Shift+F10  | peek definition                         |
+| Ctrl+Shift+V    | Markdown preview                        |
+| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
+
+<!-- | Ctrl+Shift+C    | open external terminal                      | -->
 
 
+* [Linux Refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
-[Linux Refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 Note:
 * F7 : compiler le projet (à condition qu'il soit déjà bien configuré)
 * crtl + f : chercher dans le fichier courant ; F3 : next : shift + F3 : previous
+* ctrl + c, ctrl + x, ctrl + v, + ctrl + z / y
 
 ---
 
@@ -211,16 +217,20 @@ Note:
 
 * [C/C++][ext-cpp], [Python][ext-python]
 * [CMake][ext-cmake], [CMake Tools][ext-cmaketools]
-* [GitLens][ext-gitlens] (Git supercharged), [Git History][ext-githistory] (View git log, file history, compare branches or commits)
-* [Code Runner][ext-coderunner] (Run code snippet or code file for multiple language)
-* [Spell Right][ext-spellright] (Multilingual, Offline and Lightweight Spellchecker)
-* [Path Intellisense][ext-path] (Filename auto-completion)
+* [GitLens][ext-gitlens] + [Git History][ext-githistory] (view git log, file history, compare branches or commits)
+* [Code Runner][ext-coderunner] (run code snippet or code file for multiple language)
+* [Spell Right][ext-spellright] (multilingual spellchecker)
+* [Path IntelliSense][ext-path] (filename auto-completion)
 * [Latex Workshop][ext-latex] (LaTeX support, preview, compile, autocomplete, colorize, and more...)
-* Misc: VSCode Icons, Dracula Theme, Settings Sync, VS Live Share, Todo Highlighter, Rainbow brackets & indent, Insert Unicode ...
+* [Markdown All In One][ext-markdown] + [Markdown Lint][ext-markdownlint] (..., linting) 
 
 Note:
 * https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5
-* test: mardown all in one
+* Settings Sync: <https://github.com/shanalikhan/code-settings-sync>
+* VSCode Icons, Dracula Theme, VS Live Share, Todo Highlighter, Rainbow brackets & indent, Insert Unicode ...
+* How about extensions for Docker, Node.js, Android?
+* Extensions written in TypeScript / JavaScript and published on [Market Place](https://marketplace.visualstudio.com)
+* [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
 
 [ext-cpp]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools "C/C++ extension"
 [ext-python]: https://marketplace.visualstudio.com/items?itemName=ms-python.python "Python extension"
@@ -232,19 +242,8 @@ Note:
 [ext-path]: https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense "Path IntelliSense extension"
 [ext-latex]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop "Latex Workshop extension"
 [ext-githistory]: https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory "Git history extension"
----
-
-## Les Extensions
-
-* Extensions codés en TypeScript & JavaScript
-* Distribués sur <https://marketplace.visualstudio.com>
-* [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
-
----
-
-## Pour aller plus loin
-
-Regarder les extensions pour Docker, node.js, Android, ...
+[ext-markdown]: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "Markdown All in One extension"
+[ext-markdownlint]: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "Markdown All in One extension"
 
 ---
 
@@ -271,3 +270,19 @@ git clone https://github.com/orel33/vscode.git
 Acknowledgment: Pierre Ramet
 
 ---
+
+<!-- ## Two Cols
+
+<div style="text-align: left; float: left;">
+<p data-markdown>| coucou | pouet |</p>
+<p data-markdown>|--------|-------|</p>
+<p data-markdown>| coucou | pouet |</p>
+<p data-markdown>| coucou | pouet |</p>
+ </div>
+
+  <div style="text-align: left; float: right;">
+    <p data-markdown>- This is my first right element</p>
+    <p data-markdown>- This is my second rightelement</p>
+  </div> -->
+
+

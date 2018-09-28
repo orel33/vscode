@@ -1,6 +1,44 @@
 /* 1vh = 1% of the height of the viewport */
-.reveal h1 { font-size: 8vh; ; text-align: center; }
-.reveal h2 { font-size: 5vh; text-align: center; }
-.reveal h3 { font-size: 3vh; }
-.reveal .slides { font-size: 3vh; text-align: left; }
-.reveal section img { background:none; border:none; box-shadow:none; }
+
+.reveal h1 {
+  font-size: 8vh;
+  ;
+  text-align: center;
+}
+
+.reveal h2 {
+  font-size: 5vh;
+  text-align: center;
+}
+
+.reveal h3 {
+  font-size: 3vh;
+}
+
+.reveal .slides {
+  font-size: 3vh;
+  text-align: left;
+}
+
+.reveal section img {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal table {
+  font-size: 2vh;
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* .reveal table th {
+  font-weight: bold;
+}
+
+.reveal table th, .reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid;
+} */
