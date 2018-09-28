@@ -1,6 +1,6 @@
 /* 1vh = 1% of the height of the viewport */
 .reveal h1 { font-size: 8vh; ; text-align: center; }
-.reveal h2 { font-size: 6vh; text-align: center; }
-.reveal h3 { font-size: 5vh; }
+.reveal h2 { font-size: 5vh; text-align: center; }
+.reveal h3 { font-size: 3vh; }
 .reveal .slides { font-size: 3vh; text-align: left; }
 .reveal section img { background:none; border:none; box-shadow:none; }

@@ -1,6 +1,7 @@
 ---
 theme: black
 customTheme : orel
+highlightTheme : zenburn # https://highlightjs.org
 transition: none
 center: false
 slideNumber: true
@@ -27,7 +28,7 @@ slideNumber: true
 * Just another IDE & source code editor
 * Provided by Microsoft under free & open-source license (MIT)
 * Cross-Platform: Linux, Windows, MacOS
-* Hundred of languages supported : <https://code.visualstudio.com/docs/languages/overview>
+* Hundred of languages supported : [overview](https://code.visualstudio.com/docs/languages/overview)
 * First release in 2015 (Vi & Emacs in 1976, Vim in 1991, Atom in 2014)
 * Survey [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
@@ -44,14 +45,12 @@ slideNumber: true
 
 Note:
 * https://code.visualstudio.com/docs/getstarted/userinterface
-* présentation de l'IDE (palette, task, ...)
-* notion de workspace, configuration JSON, keybinding, installation package en ligne de commande, ...
 
 ---
 
 ## Installation
 
-Debian Linux:
+Installation on Debian Linux: 
 
 ```bash
 URL="https://vscode-update.azurewebsites.net/1.27.2/linux-deb-x64/stable"
@@ -65,6 +64,21 @@ Then, run *code* in your working directory as follow:
 ```bash
 code .
 ```
+
+Install extensions:
+
+* integrated extension manager (side bar) vs command line
+
+```bash
+code --list-extensions
+code --install-extension <extension name>
+```
+
+Settings:
+
+* setting button in activity bar (Ctrl+,)
+* user settings (~/.vscode/\*.json) vs workspace settings (./.vscode/\*.json)
+* keyboard shortcuts (emacs & vim keymap)
 
 ---
 
@@ -123,7 +137,7 @@ Note:
 <center><img src="https://raw.githubusercontent.com/formulahendry/vscode-code-runner/master/images/usage.gif" width=80%></center>
 
 Note:
-* test notebook Jupyter for Python
+* What about the Jupyter notebook for Python?
 
 ---
 
