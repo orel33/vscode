@@ -95,7 +95,7 @@ Note:
 
 ---
 
-## C/C++ Building and Running
+## C/C++ Building 
 
 * configure a build task
 * 
@@ -103,6 +103,46 @@ Note:
 
 Note: 
 * https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building
+
+
+---
+
+## Building Tasks
+
+Ctrl+Shift+B
+
+---
+
+## Running Custom Tasks
+
+Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
+
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run hello.js",
+            "type": "shell",
+            "command": "node",
+            "args": ["hello.js", "2" ],
+            "options": { "cwd": "${workspaceRoot}/demo/js/" }
+        }
+    ]
+}
+```
+
+Run task with label "run hello.js" (menu Terminal > Run Task...)
+
+```
+> Executing task: node hello.js 2 <
+
+hello world!
+hello world!
+```
+
+
 
 ---
 
@@ -181,8 +221,8 @@ Note:
 
 ## Keyboard Shortcuts
 
-| Shortcut        | Description                             |  | Shortcut        | Description                             |
-| --------------- | --------------------------------------- |--| --------------- | --------------------------------------- |
+| Shortcut | Description |  | Shortcut | Description |
+| -------- | ----------- |--| --------------- | --------------------------------------- |
 | Ctrl+P          | quick open file palette                 |  | Ctrl+/          | toggle line(s) comment                  |
 | Ctrl+Shift+P    | quick open command palette              |  | Alt+↑ / Alt+↓   | move line(s) up / down                  |
 | Ctrl+K Ctrl+T   | change theme                            |  | Alt+Z           | toggle line wrapping                    |
