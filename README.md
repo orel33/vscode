@@ -59,26 +59,25 @@ wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 ```
 
-Then, run *code* in your working directory as follow:
+Run *code* in your working directory as follow:
 
 ```bash
 code .
 ```
 
-Install extensions:
-
-* integrated extension manager (side bar) vs command line
+Install extensions using integrated extension manager (side bar) vs command line:
 
 ```bash
 code --list-extensions
 code --install-extension <extension name>
 ```
 
-Settings:
+All settings in JSON files (button at bottom of the activity bar)
 
-* setting button in activity bar (Ctrl+,)
-* user settings (~/.vscode/\*.json) vs workspace settings (./.vscode/\*.json)
-* keyboard shortcuts (emacs & vim keymap)
+Note:
+* user settings (~/.config/Code/\*.json) 
+* workspace settings (./.vscode/\*.json)
+* keyboard shortcuts (emacs & vim keymap) 
 
 ---
 
@@ -168,7 +167,11 @@ Note:
 
 * Amazing Git support with *GitLens* & *Git History* extensions: blame, diff, branch, log, ...
 
-<center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center>
+<!-- <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center> -->
+
+<center><img src="img/snap-git.png" width=80%></center>
+
+
 
 Note:
 * git config credential.helper store
@@ -178,30 +181,23 @@ Note:
 
 ## Keyboard Shortcuts
 
-| Shortcut        | Description                             |
-| --------------- | --------------------------------------- |
-| Ctrl+P          | quick open file palette                 |
-| Ctrl+Shift+P    | quick open command palette              |
-| Ctrl+K Ctrl+T   | change theme                            |
-| Ctrl+K Z        | zen mode (Esc Esc to escape)            |
-| Ctrl+J / Ctrl+B | toggle panel / side bar visibility      |
-| Ctrl+,          | edit user & workspace settings          |
-| Ctrl+W          | close current editor                    |
-| Ctrl+N          | new file                                |
-| Ctrl+O          | open file                               |
-| Ctrl+S          | save / save as file                     |
-| Ctrl+/          | toggle line(s) comment                  |
-| Alt+↑ / Alt+↓   | move line(s) up / down                  |
-| Alt+Z           | toggle line wrapping                    |
-| Ctrl+Space      | trigger suggestion for completion       |
-| Ctrl+Shift+I    | code formatting                         |
-| F12 / Ctrl+F12  | go to function definition / declaration |
-| Ctrl+Shift+F10  | peek definition                         |
-| Ctrl+Shift+V    | Markdown preview                        |
-| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
+| Shortcut        | Description                             |  | Shortcut        | Description                             |
+| --------------- | --------------------------------------- |--| --------------- | --------------------------------------- |
+| Ctrl+P          | quick open file palette                 |  | Ctrl+/          | toggle line(s) comment                  |
+| Ctrl+Shift+P    | quick open command palette              |  | Alt+↑ / Alt+↓   | move line(s) up / down                  |
+| Ctrl+K Ctrl+T   | change theme                            |  | Alt+Z           | toggle line wrapping                    |
+| Ctrl+K Z        | zen mode (Esc Esc to escape)            |  | Ctrl+Space      | trigger suggestion for completion       |
+| Ctrl+J / Ctrl+B | toggle panel / side bar visibility      |  | Ctrl+Shift+I    | code formatting                         |
+| Ctrl+,          | edit user & workspace settings          |  | F12 / Ctrl+F12  | go to function definition / declaration |
+| Ctrl+W          | close current editor                    |  | Ctrl+Shift+F10  | peek definition                         |
+| Ctrl+N          | new file                                |  | Ctrl+Shift+V    | Markdown preview                        |
+| Ctrl+O          | open file                               |  | Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
+| Ctrl+S          | save / save as file                     |  | ???             | ???                                     |
+
 
 <!-- | Ctrl+Shift+C    | open external terminal                      | -->
 
+--
 
 * [Linux Refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
@@ -231,6 +227,7 @@ Note:
 * How about extensions for Docker, Node.js, Android?
 * Extensions written in TypeScript / JavaScript and published on [Market Place](https://marketplace.visualstudio.com)
 * [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
+* HTML / CSS format ???
 
 [ext-cpp]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools "C/C++ extension"
 [ext-python]: https://marketplace.visualstudio.com/items?itemName=ms-python.python "Python extension"

@@ -27,13 +27,15 @@
 }
 
 .reveal table {
+  /* border:  1px solid; */
   font-size: 2vh;
-  margin: auto;
+  /* margin: auto; */
   border-collapse: collapse;
-  border-spacing: 0;
+  /* border-spacing: 0; */
 }
 
-/* .reveal table th {
+/* 
+.reveal table th {
   font-weight: bold;
 }
 
@@ -41,4 +43,5 @@
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
   border-bottom: 1px solid;
-} */
+} 
+*/
