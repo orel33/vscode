@@ -17,6 +17,26 @@
             "problemMatcher": [
                 "$eslint-compact"
             ]
+        },
+        {
+            "label": "run hello.c",
+            "type": "shell",
+            "command": "${workspaceRoot}/demo/c/hello",
+            "dependsOn": [
+                "build hello.c"
+            ]
+        },
+        {
+            "label": "build hello.c",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "${workspaceRoot}/demo/c/"
+            },
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

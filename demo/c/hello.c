@@ -4,6 +4,7 @@
 
 int main(void)
 {
+    int y;
     char name[] = "orel";
     printf("hello world by %s\n", name);
     float x = 100.0f;

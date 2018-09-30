@@ -86,7 +86,14 @@ Note:
 * Extension C/C++ (provided by Microsoft)
 * code navigation, smart completion / hinting ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), code formatting (clang-format), linting, debugging, refactoring
 
-<https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
+
+* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
+* <https://code.visualstudio.com/docs/languages/cpp>
+* configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
+
+
+Menu Debug > Add Configuration... (launch.json)
+
 
 Note:
 * Code Formatting (Ctrl + Shift + I)
@@ -113,10 +120,24 @@ Ctrl+Shift+B
 
 ---
 
-## Running Custom Tasks
+## Running Custom Tasks (1/2)
+
+
+Sample [hello.js](demo/js/hello.js) (for Node.js)
+
+```js
+var N = process.argv[2];
+var i;
+for (i = 0; i < N; i++) {
+    console.log("hello world!")
+}
+```
+
+--
+
+## Running Custom Tasks (2/2)
 
 Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
-
 
 ```json
 {
@@ -142,6 +163,9 @@ hello world!
 hello world!
 ```
 
+
+Note:
+* debug: [launch.json](https://go.microsoft.com/fwlink/?linkid=830387)
 
 
 ---
