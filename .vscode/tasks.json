@@ -37,6 +37,18 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "run hello.py",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "hello.py"
+            ],
+            "options": {
+                "cwd": "${workspaceRoot}/demo/python/"
+            }
         }
+
     ]
 }

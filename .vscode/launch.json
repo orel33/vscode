@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug hello.py", /* Python: Terminal (integrated) */
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/demo/python/hello.py", /* "${file}", */
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Debug hello.c",
             "type": "cppdbg",
             "request": "launch",

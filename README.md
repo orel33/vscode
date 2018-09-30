@@ -30,7 +30,7 @@ slideNumber: true
 * Cross-Platform: Linux, Windows, MacOS
 * Hundred of languages supported : [overview](https://code.visualstudio.com/docs/languages/overview)
 * First release in 2015 (Vi & Emacs in 1976, Vim in 1991, Atom in 2014)
-* Survey [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
+* Survey by [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
   * the Atom shell provided by GitHub (backend Node.js + frontend Chromium)
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
@@ -41,7 +41,9 @@ slideNumber: true
 
 * Editors, Side Bar (Explorer, ...), Actvity Bar, Status Bar, Panels, Palettes
 
-<center><img src="https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png" width=80%></center>
+<center><img src="img/snap-overview.png" width=90%></center>
+
+<!-- <center><img src="https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png" width=80%></center> -->
 
 Note:
 * https://code.visualstudio.com/docs/getstarted/userinterface
@@ -72,12 +74,14 @@ code --list-extensions
 code --install-extension <extension name>
 ```
 
-All settings in JSON files (button at bottom of the activity bar)
+All settings in JSON files (setting button at bottom of the activity bar)
+
+* qqq
+* 
 
 Note:
 * user settings (~/.config/Code/\*.json) 
 * workspace settings (./.vscode/\*.json)
-* keyboard shortcuts (emacs & vim keymap) 
 
 ---
 
@@ -172,7 +176,9 @@ Note:
 
 ## C/C++ Debugging
 
-<center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center>
+<!-- <center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center> -->
+
+<center><img src="img/snap-debug.png" width=80%></center>
 
 Note:
 * https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
@@ -207,8 +213,8 @@ Note:
 ## Writing in MarkDown
 
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
-* formatting, list editing and more (extenion *Markdown All in One*) + linting (extension *mardownlint*)
-* Show Markdown as *Reveal.js* presentation in browser (extension *vscode-reveal*)
+* formatting, list editing and more (extension *Markdown All in One*) + linting (extension *mardownlint*)
+* show Markdown as slides (extension *vscode-reveal*)
 
 <center><img src="img/snap-markdown.png" width=80%></center>
 
@@ -235,41 +241,54 @@ Note:
 
 <center><img src="img/snap-git.png" width=80%></center>
 
-
-
 Note:
-* git config credential.helper store
-* Demo CI with Inria Gitlab
+* demo CI with Inria Gitlab (extension *???*)
 
 ---
 
-## Keyboard Shortcuts
+## Keyboard Shortcuts (1/2)
 
-| Shortcut | Description |  | Shortcut | Description |
-| -------- | ----------- |--| --------------- | --------------------------------------- |
-| Ctrl+P          | quick open file palette                 |  | Ctrl+/          | toggle line(s) comment                  |
-| Ctrl+Shift+P    | quick open command palette              |  | Alt+↑ / Alt+↓   | move line(s) up / down                  |
-| Ctrl+K Ctrl+T   | change theme                            |  | Alt+Z           | toggle line wrapping                    |
-| Ctrl+K Z        | zen mode (Esc Esc to escape)            |  | Ctrl+Space      | trigger suggestion for completion       |
-| Ctrl+J / Ctrl+B | toggle panel / side bar visibility      |  | Ctrl+Shift+I    | code formatting                         |
-| Ctrl+,          | edit user & workspace settings          |  | F12 / Ctrl+F12  | go to function definition / declaration |
-| Ctrl+W          | close current editor                    |  | Ctrl+Shift+F10  | peek definition                         |
-| Ctrl+N          | new file                                |  | Ctrl+Shift+V    | Markdown preview                        |
-| Ctrl+O          | open file                               |  | Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
-| Ctrl+S          | save / save as file                     |  | ???             | ???                                     |
+* all keyboard shortcuts (setting button at bottom of activity bar) 
 
+
+| Shortcut        | Description                             |
+| --------------- | --------------------------------------- |
+| Ctrl+P          | quick open file palette                 |
+| Ctrl+Shift+P    | quick open command palette              |
+| Ctrl+K Ctrl+T   | change theme                            |
+| Ctrl+K Z        | zen mode (Esc Esc to escape)            |
+| Ctrl+J / Ctrl+B | toggle panel / side bar visibility      |
+| Ctrl+,          | edit user & workspace settings          |
+| Ctrl+W          | close current editor                    |
+| Ctrl+N          | new file                                |
+| Ctrl+O          | open file                               |
+| Ctrl+S          | save / save as file                     |
+
+---
+
+## Keyboard Shortcuts (2/2)
+
+| Shortcut        | Description                             |
+| --------------- | --------------------------------------- |
+| Ctrl+/          | toggle line(s) comment                  |
+| Alt+↑ / Alt+↓   | move line(s) up / down                  |
+| Alt+Z           | toggle line wrapping                    |
+| Ctrl+Space      | trigger suggestion for completion       |
+| Ctrl+Shift+I    | code formatting                         |
+| F12 / Ctrl+F12  | go to function definition / declaration |
+| Ctrl+Shift+F10  | peek definition                         |
+| Ctrl+Shift+V    | Markdown preview                        |
+| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
+| ???             | ???                                     |
 
 <!-- | Ctrl+Shift+C    | open external terminal                      | -->
-
---
-
-* [Linux Refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 
 Note:
 * F7 : compiler le projet (à condition qu'il soit déjà bien configuré)
 * crtl + f : chercher dans le fichier courant ; F3 : next : shift + F3 : previous
 * ctrl + c, ctrl + x, ctrl + v, + ctrl + z / y
+* [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 ---
 
