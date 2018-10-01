@@ -37,9 +37,9 @@ slideNumber: true
 
 ---
 
-## Overview
+## Editor Overview
 
-* Editors, Side Bar (Explorer, ...), Actvity Bar, Status Bar, Panels, Palettes
+* Editors, Side Bar (Explorer, ...), Actvity Bar, Status Bar, Panels
 
 <center><img src="img/snap-overview.png" width=90%></center>
 
@@ -48,11 +48,25 @@ slideNumber: true
 Note:
 * https://code.visualstudio.com/docs/getstarted/userinterface
 
+--
+
+* File Palette (quick open file, Ctrl+P)
+
+<center><img src="img/snap-palette-file.png" width=60%></center>
+
+--
+
+* Command Palette (access all commands, Ctrl+Shift+P)
+
+<center><img src="img/snap-palette-command.png" width=60%></center>
+
+*type ?: to see all possible actions (> command, :go to line, ...)*
+
 ---
 
 ## Installation
 
-Installation on Debian Linux: 
+* Installation on Debian Linux:
 
 ```bash
 URL="https://vscode-update.azurewebsites.net/1.27.2/linux-deb-x64/stable"
@@ -61,27 +75,48 @@ wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 ```
 
-Run *code* in your working directory as follow:
+* run VS Code in your *working directory* as follow:
 
 ```bash
 code .
 ```
 
-Install extensions using integrated extension manager (side bar) vs command line:
+* install extensions using integrated extension manager (side bar) or command line:  
 
 ```bash
 code --list-extensions
 code --install-extension <extension name>
 ```
 
-All settings in JSON files (setting button at bottom of the activity bar)
+* see my [install.sh](install.sh) script 
 
-* qqq
-* 
+---
 
-Note:
-* user settings (~/.config/Code/\*.json) 
-* workspace settings (./.vscode/\*.json)
+## Settings
+
+All settings in `.vscode/*.json` files (setting button at bottom of the activity bar or Ctrl+,)
+
+* three levels: default / user / workspace settings (settings.json) 
+
+```json
+{
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": true,
+    "editor.renderIndentGuides": true,
+    "editor.formatOnType": true,
+    "git.confirmSync": false,
+    "window.zoomLevel": 0,
+    "gitlens.gitExplorer.files.layout": "tree",
+    "revealjs.center": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Dracula",
+    "explorer.confirmDelete": false
+}
+```
+
+* other files for some specific setting (extensions)
+* build / run tasks  (task.json) + debug settings (launch.json) 
 
 ---
 
@@ -167,10 +202,8 @@ hello world!
 hello world!
 ```
 
-
 Note:
 * debug: [launch.json](https://go.microsoft.com/fwlink/?linkid=830387)
-
 
 ---
 
@@ -285,55 +318,56 @@ Note:
 
 
 Note:
-* F7 : compiler le projet (à condition qu'il soit déjà bien configuré)
-* crtl + f : chercher dans le fichier courant ; F3 : next : shift + F3 : previous
-* ctrl + c, ctrl + x, ctrl + v, + ctrl + z / y
+* Start debugging / continue (F5), step over (F10), 
+* CMake build (F7)
+* find in file (Crtl+F), find in all files (Ctrl+Shift+F), next (F3), previous (Shift+F3)
+* copy (Ctrl+C), cut (Ctrl+X), paste (Ctrl+V), ca ctrl + z / y
 * [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
-
----
-
-## My Favorite Extensions
-
-* [C/C++][ext-cpp], [Python][ext-python]
-* [CMake][ext-cmake], [CMake Tools][ext-cmaketools]
-* [GitLens][ext-gitlens] + [Git History][ext-githistory] (view git log, file history, compare branches or commits)
-* [Code Runner][ext-coderunner] (run code snippet or code file for multiple language)
-* [Spell Right][ext-spellright] (multilingual spellchecker)
-* [Path IntelliSense][ext-path] (filename auto-completion)
-* [Latex Workshop][ext-latex] (LaTeX support, preview, compile, autocomplete, colorize, and more...)
-* [Markdown All In One][ext-markdown] + [Markdown Lint][ext-markdownlint] (..., linting) 
-
-Note:
-* https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5
-* Settings Sync: <https://github.com/shanalikhan/code-settings-sync>
-* VSCode Icons, Dracula Theme, VS Live Share, Todo Highlighter, Rainbow brackets & indent, Insert Unicode ...
-* How about extensions for Docker, Node.js, Android?
-* Extensions written in TypeScript / JavaScript and published on [Market Place](https://marketplace.visualstudio.com)
-* [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview)
-* HTML / CSS format ???
-
-[ext-cpp]: https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools "C/C++ extension"
-[ext-python]: https://marketplace.visualstudio.com/items?itemName=ms-python.python "Python extension"
-[ext-cmake]: https://marketplace.visualstudio.com/items?itemName=twxs.cmake "CMake extension"
-[ext-cmaketools]: https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools "CMake Tools extension"
-[ext-gitlens]: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens "GitLens extension"
-[ext-coderunner]: https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner "Code Runner extension"
-[ext-spellright]: https://marketplace.visualstudio.com/items?itemName=ban.spellright "Spell Right extension"
-[ext-path]: https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense "Path IntelliSense extension"
-[ext-latex]: https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop "Latex Workshop extension"
-[ext-githistory]: https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory "Git history extension"
-[ext-markdown]: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "Markdown All in One extension"
-[ext-markdownlint]: https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one "Markdown All in One extension"
 
 ---
 
 ## Demo
 
-* demo hello.c
-* demo hello.cmake
-* demo hello.py
+Get all demo:
 
-TODO: end this
+```bash
+git clone https://github.com/orel33/vscode.git
+```
+
+For each demo, launch explicitly *Visual Studio Code* in the right sub-directory:
+
+* ```code demo/python```
+* ```code demo/js```
+* ```code demo/c```
+* ```code demo/cmake```
+
+---
+
+## My Favorite Extensions
+
+All extensions are available on [Market Place](https://marketplace.visualstudio.com).
+
+* [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
+* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
+* [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (run code snippet or code file for multiple languages)
+* [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
+* [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (toc, preview, lists, ...) + [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (linting)
+* [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
+
+Some tips \& tricks:
+
+* [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), ...
+
+
+Note:
+* [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
+* [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
+* Other: VSCode Icons, Dracula Theme, VS Live Share, ...
+* Useful? [CMake Tools Helper](https://marketplace.visualstudio.com/items?itemName=maddouri.cmake-tools-helper) 
+
+<!-- How about extensions for Docker, Node.js, Android? HTML / CSS format? -->
+<!-- https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5 -->
 
 ---
 
@@ -347,7 +381,8 @@ This presentation and all demo are available on [GitHub](https://github.com/orel
 git clone https://github.com/orel33/vscode.git
 ```
 
-Acknowledgment: Pierre Ramet
+* ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
+* ___Acknowledgment___: Pierre Ramet 
 
 ---
 
