@@ -6,6 +6,7 @@ def fib(n):
     else:
         return fib(n - 1) + fib(n - 2)
 
+
 n = 10
 if len(sys.argv) == 2:
     n = int(sys.argv[1])

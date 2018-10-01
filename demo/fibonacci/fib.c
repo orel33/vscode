@@ -12,7 +12,7 @@ int fib(int n)
 
 int main(int argc, char const *argv[])
 {
-    int n = 10;
+    int n = 10, y;
     if (argc == 2)
         n = atoi(argv[1]);
     assert(n > 0);

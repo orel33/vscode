@@ -34,7 +34,7 @@ slideNumber: true
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
   * the Atom shell provided by GitHub (backend Node.js + frontend Chromium)
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
-
+* Rich editor feautres: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense))
 ---
 
 ## Editor Overview
@@ -48,19 +48,24 @@ slideNumber: true
 Note:
 * https://code.visualstudio.com/docs/getstarted/userinterface
 
---
+---
+
+## Editor Overview
 
 * File Palette (quick open file, Ctrl+P)
 
 <center><img src="img/snap-palette-file.png" width=60%></center>
 
---
+---
+
+## Editor Overview
 
 * Command Palette (access all commands, Ctrl+Shift+P)
 
 <center><img src="img/snap-palette-command.png" width=60%></center>
 
-*type ?: to see all possible actions (> command, :go to line, ...)*
+Note:
+* type ?: to see all possible actions (> command, : go to line, ...)
 
 ---
 
@@ -75,20 +80,20 @@ wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 ```
 
-* run VS Code in your *working directory* as follow:
+* Run Visual Studio Code in your *working directory* as follow:
 
 ```bash
 code .
 ```
 
-* install extensions using integrated extension manager (side bar) or command line:  
+* install extensions using integrated extension manager (side bar) or command line:
 
 ```bash
 code --list-extensions
 code --install-extension <extension name>
 ```
 
-* see my [install.sh](install.sh) script 
+* See my [install.sh](install.sh) script
 
 ---
 
@@ -96,7 +101,7 @@ code --install-extension <extension name>
 
 All settings in `.vscode/*.json` files (setting button at bottom of the activity bar or Ctrl+,)
 
-* three levels: default / user / workspace settings (settings.json) 
+* Three levels: default / user / workspace settings (settings.json) 
 
 ```json
 {
@@ -115,46 +120,63 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 }
 ```
 
-* other files for some specific setting (extensions)
+* Other files for some specific settings (e.g. extensions)
 * build / run tasks  (tasks.json) + debug settings (launch.json) 
 
 ---
 
-## C/C++ Programming
+## Python Programming (1/2)
 
-* Extension C/C++ (provided by Microsoft)
-* code navigation, smart completion / hinting ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), code formatting (clang-format), linting, debugging, refactoring
+Sample [fib.py](demo/fibonacci/fib.py) based on [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
 
-* Configure a build task... and run it (Ctrl+Shift+B)
-* Run Task
-* Menu Debug > Add Configuration... (launch.json)
+```python
+import sys
 
-Note:
-* Code Formatting (Ctrl + Shift + I)
-* Go to Definition (F12), Go to Declaration (Ctrl + F12), Peek Definition (Ctrl + Shift + F10)
-* Show Declaration (Hover) / Show Definition (Ctrl + Hover)
-* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
-* <https://code.visualstudio.com/docs/languages/cpp>
-* configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building
+def fib(n):
+    if n <= 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
 
----
+n = 10
+if len(sys.argv) == 2:
+    n = int(sys.argv[1])
+assert(n > 0)
+sum = fib(n)
+print(sum)
+```
 
-## C/C++ Debugging
-
-<!-- <center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center> -->
-
-<center><img src="img/snap-debug.png" width=80%></center>
-
-Note:
-* https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
-* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
+* *Python* extension (provided by Microsoft): code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
+* Quick run (Ctrl+Alt+N) using *Code Runner* extension...
+* Add breakpoints (F9), start debugging (F5), next (F10), ...
 
 ---
 
-## Demo Fibonnaci
+## Python Programming (2/2)
 
-<https://en.wikipedia.org/wiki/Fibonacci_number>
+* In menu *Terminal > Configure Tasks...* to run `python3 fib.py 20` (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run fib.py",
+            "type": "shell",
+            "command": "python3 ",
+            "args": [ "fib.py", "20" ]
+        }
+    ]
+}
+```
+
+* Then run it: menu *Terminal > Run Task...*
+
+---
+
+## C/C++ Programming (1/2)
+
+Sample [fib.c](demo/fibonacci/fib.c)
 
 ```c
 /* fib.c */
@@ -179,11 +201,52 @@ int main(int argc, char const *argv[])
 }
 ```
 
+* Extension *C/C++* (provided by Microsoft): code navigation (F12), smart completion (Ctrl+Space), clang code formatting (Ctrl+Shift+I), clang linting, ...
+
+Note:
+* <https://code.visualstudio.com/docs/languages/cpp>
+* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
+* Keyboard shortcuts: Go to Definition (F12), Go to Declaration (Ctrl+F12), Peek Definition (Ctrl+Shift+F10), Show Declaration (Hover) / Show Definition (Ctrl+Hover)
+
+## C/C++ Programming (2/2)
+
+* Building \& Running: configure two new tasks ([.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
+
+```json
+{
+    "label": "build fib.c",
+    "type": "shell",
+    "command": "gcc -Wall -std=c99 -g fib.c -o fib",
+    "group": { "kind": "build", "isDefault": true },  // default build task
+    "problemMatcher": [ "$gcc" ]                      // useful to get problem output in panel
+},
+{
+    "label": "run fib.c",
+    "type": "shell",
+    "command": "./fib",
+    "dependsOn": [ "build fib.c" ],
+    "problemMatcher": [ ]
+}
+```
+
+* Then run it: menu *Terminal > Run Task...* or Ctrl+Shift+B to run default build task...
+
+Note:
+* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building>
+
 ---
 
-## Demo hello.c (2/2)
+## C/C++ Debugging
 
+<!-- <center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center> -->
 
+<center><img src="img/snap-debug.png" width=80%></center>
+
+Note:
+* https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
+* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
+* configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
+* debugging (F5)
 
 ---
 
@@ -239,7 +302,7 @@ Note:
 * Extensions: CMake & CMake Tools
 
 
-Note: 
+Note:
 * CMake / CTest (compilation out-of-source, kit de dev, sélection d'option CMake, ...)
 * [Documentation](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 
@@ -252,9 +315,6 @@ Note:
 * Linter pour JavaScript (extension *ESLint*)
 
 <center><img src="https://raw.githubusercontent.com/formulahendry/vscode-code-runner/master/images/usage.gif" width=80%></center>
-
-Note:
-* What about the Jupyter notebook for Python?
 
 ---
 
@@ -338,26 +398,6 @@ Note:
 * copy (Ctrl+C), cut (Ctrl+X), paste (Ctrl+V), ca ctrl + z / y
 * [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
-
----
-
-## Demo
-
-Get all demo:
-
-```bash
-git clone https://github.com/orel33/vscode.git
-```
-
-<!--
-For each demo, launch explicitly *Visual Studio Code* in the right sub-directory:
-
-* ```code demo/python```
-* ```code demo/js```
-* ```code demo/c```
-* ```code demo/cmake```
--->
-
 ---
 
 ## My Favorite Extensions
@@ -382,7 +422,8 @@ Note:
 * [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
 * [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
 * Other: VSCode Icons, Dracula Theme, VS Live Share, ...
-* Useful? [CMake Tools Helper](https://marketplace.visualstudio.com/items?itemName=maddouri.cmake-tools-helper) 
+* Useful? [CMake Tools Helper](https://marketplace.visualstudio.com/items?itemName=maddouri.cmake-tools-helper)
+* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
 
 <!-- How about extensions for Docker, Node.js, Android? HTML / CSS format? -->
 <!-- https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5 -->
@@ -402,3 +443,20 @@ git clone https://github.com/orel33/vscode.git
 * ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
 * ___Acknowledgment___: Pierre Ramet
 
+<!--
+## Demo
+
+Get all demo:
+
+```bash
+git clone https://github.com/orel33/vscode.git
+```
+For each demo, launch explicitly *Visual Studio Code* in the right sub-directory:
+
+* ```code demo/python```
+* ```code demo/js```
+* ```code demo/c```
+* ```code demo/cmake```
+-->
+
+---
