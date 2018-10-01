@@ -34,7 +34,8 @@ slideNumber: true
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
   * the Atom shell provided by GitHub (backend Node.js + frontend Chromium)
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
-* Rich editor feautres: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense))
+* Rich editor features: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), linting, ...
+
 ---
 
 ## Editor Overview
@@ -93,7 +94,7 @@ code --list-extensions
 code --install-extension <extension name>
 ```
 
-* See my [install.sh](install.sh) script
+* See my [install.sh](install.sh) script <!-- TODO: update it -->
 
 ---
 
@@ -146,9 +147,9 @@ sum = fib(n)
 print(sum)
 ```
 
-* *Python* extension (provided by Microsoft): code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
+* *Python* extension (provided by Microsoft): 
+  * code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
 * Quick run (Ctrl+Alt+N) using *Code Runner* extension...
-* Add breakpoints (F9), start debugging (F5), next (F10), ...
 
 ---
 
@@ -171,6 +172,8 @@ print(sum)
 ```
 
 * Then run it: menu *Terminal > Run Task...*
+* Easy debugging (menu Debug):
+  * start debugging (F5), add breakpoints (F9), next (F10), ...
 
 ---
 
@@ -201,7 +204,8 @@ int main(int argc, char const *argv[])
 }
 ```
 
-* Extension *C/C++* (provided by Microsoft): code navigation (F12), smart completion (Ctrl+Space), clang code formatting (Ctrl+Shift+I), clang linting, ...
+* Extension *C/C++* (provided by Microsoft):
+  * code navigation (F12), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), *clang* linting, ...
 
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
@@ -238,21 +242,19 @@ Note:
 
 ## C/C++ Debugging
 
-<!-- <center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center> -->
-
 <center><img src="img/snap-debug.png" width=80%></center>
 
 Note:
-* https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
-* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
+* <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
+* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging>
 * configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-* debugging (F5)
+* start debugging (F5)
 
 ---
 
 ## Demo hello.js (1/2)
 
-Sample [hello.js](demo/js/hello.js) for Node.js
+Sample [hello.js](demo/hello.js) for Node.js
 
 ```js
 var N = process.argv[2];
@@ -261,7 +263,6 @@ for (i = 0; i < N; i++) {
     console.log("hello world!")
 }
 ```
-
 ---
 
 ## Demo hello.js (2/2)
