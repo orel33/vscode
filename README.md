@@ -122,11 +122,60 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 ```
 
 * Other files for some specific settings (e.g. extensions)
-* build / run tasks  (tasks.json) + debug settings (launch.json) 
+* Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)) 
+* Debug configuration (settings in [launch.json](https://go.microsoft.com/fwlink/?linkid=830387))
 
 ---
 
 ## JavaScript Programming (1/2)
+
+Sample [demo/fibonacci/fib.js](demo/fibonacci/fib.js)
+
+```js
+var fib = function (n)
+{
+  if (n <= 1)
+    return 1;
+  else
+    return fib(n - 1) + fib(n - 2);
+};
+
+ console.log(fib(10));
+```
+
+* Native support of JavaScript
+
+---
+
+## JavaScript Programming (2/2)
+
+* Configure a running task (menu Terminal > Configure Tasks) or edit file tasks.json
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run fib.js",
+            "type": "shell",
+            "command": "node",
+            "args": ["fib.js"]
+        }
+    ]
+}
+```
+
+* Run task with label "run hello.js" (menu Terminal > Run Task...)
+  
+```text
+> Executing task: node fib.js <
+
+89
+```
+
+---
+
+## JavaScript Advanced Programming
 
 Sample [express.js](demo/express/express.js) for [Node.js](https://nodejs.org)
 
@@ -143,50 +192,19 @@ app.listen(3000, function () {
 })
 ```
 
-* Native support of JavaScript... 
-  * add extensions for package manager (*NPM*) and linting (*ESLint*)
+* Install extensions for package manager (*NPM*) and linting (*ESLint*)
+* Requires to generate *package.json* (npm init) for NPM and *.eslintrc.json* for ESLint (eslint --init)
 
 Note:
 * <http://expressjs.com/fr/starter/hello-world.html>
+* More details on JavaScript programming: NPM, ESLint, ... <!-- reference -->
 
----
-
-## JavaScript Programming (2/2)
-
-Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
-
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "run hello.js",
-            "type": "shell",
-            "command": "node",
-            "args": ["hello.js", "2" ],
-            "options": { "cwd": "${workspaceRoot}/demo/js/" }
-        }
-    ]
-}
-```
-
-Run task with label "run hello.js" (menu Terminal > Run Task...)
-
-```text
-> Executing task: node hello.js 2 <
-
-hello world!
-hello world!
-```
-
-Note:
-* debug: [launch.json](https://go.microsoft.com/fwlink/?linkid=830387)
 
 ---
 
 ## Python Programming (1/2)
 
-Sample [fib.py](demo/fibonacci/fib.py) based on [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+Sample [demo/fibonacci/fib.py](demo/fibonacci/fib.py)
 
 ```python
 import sys
@@ -197,17 +215,15 @@ def fib(n):
     else:
         return fib(n - 1) + fib(n - 2)
 
-n = 10
-if len(sys.argv) == 2:
-    n = int(sys.argv[1])
-assert(n > 0)
-sum = fib(n)
-print(sum)
+print(fib(10))
 ```
 
 * *Python* extension (provided by Microsoft): 
   * code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
 * Quick run (Ctrl+Alt+N) using *Code Runner* extension...
+
+Note:
+* [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
 
 ---
 
@@ -238,7 +254,7 @@ print(sum)
 
 ## C/C++ Programming (1/2)
 
-Sample [fib.c](demo/fibonacci/fib.c)
+Sample [demo/fibonacci/fib.c](demo/fibonacci/fib.c)
 
 ```c
 /* fib.c */
@@ -264,16 +280,18 @@ int main(int argc, char const *argv[])
 ```
 
 * Extension *C/C++* (provided by Microsoft):
-  * code navigation (F12), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), *clang* linting, ...
+  * code navigation (F12), peek definition (Ctrl+Shift+F10), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), linting, ...
 
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
 * <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
-* Keyboard shortcuts: Go to Definition (F12), Go to Declaration (Ctrl+F12), Peek Definition (Ctrl+Shift+F10), Show Declaration (Hover) / Show Definition (Ctrl+Hover)
+* code formatting based on *clang-format* (add file `.clang-format` in workspace directory)
+
+---
 
 ## C/C++ Programming (2/2)
 
-* Building \& Running: configure two new tasks ([.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
+* Building & Running: configure two new tasks ([.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
 
 ```json
 {
@@ -281,7 +299,7 @@ Note:
     "type": "shell",
     "command": "gcc -Wall -std=c99 -g fib.c -o fib",
     "group": { "kind": "build", "isDefault": true },  // default build task
-    "problemMatcher": [ "$gcc" ]                      // useful to get problem output in panel
+    "problemMatcher": [ "$gcc" ]                      // output in panel
 },
 {
     "label": "run fib.c",
@@ -292,7 +310,9 @@ Note:
 }
 ```
 
-* Then run it: menu *Terminal > Run Task...* or Ctrl+Shift+B to run default build task...
+* Then run it...
+  * menu *Terminal > Run Task...* or Ctrl+Shift+B to run default build task...
+  * on demand, associate GCC as *problemMatcher* to scan output problem...
 
 Note:
 * <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building>

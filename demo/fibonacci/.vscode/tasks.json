@@ -4,6 +4,17 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "run fib.js",
+            "type": "shell",
+            "command": "node",
+            "args": [
+                "fib.js"
+            ],
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        },
+        {
             "label": "run fib.py",
             "type": "shell",
             "command": "python3",
