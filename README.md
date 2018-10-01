@@ -396,6 +396,20 @@ Note:
 
 ---
 
+## GIT
+
+* Amazing Git support with *GitLens* & *Git History* extensions: blame, diff, branch, log, ...
+
+<!-- <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center> -->
+
+<center><img src="img/snap-git.png" width=80%></center>
+
+Note:
+* extension [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
+* demo CI with Inria GitLab
+
+---
+
 ## Writing in MarkDown
 
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
@@ -419,23 +433,7 @@ Note:
 
 ---
 
-## GIT
-
-* Amazing Git support with *GitLens* & *Git History* extensions: blame, diff, branch, log, ...
-
-<!-- <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center> -->
-
-<center><img src="img/snap-git.png" width=80%></center>
-
-Note:
-* extension [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
-* demo CI with Inria GitLab
-
----
-
 ## Keyboard Shortcuts (1/2)
-
-* all keyboard shortcuts (setting button at bottom of activity bar) 
 
 | Shortcut        | Description                        |
 | --------------- | ---------------------------------- |
@@ -471,6 +469,7 @@ Note:
 
 
 Note:
+* all keyboard shortcuts (setting button at bottom of activity bar)
 * Start debugging / continue (F5), step over (F10), 
 * CMake build (F7)
 * find in file (Crtl+F), find in all files (Ctrl+Shift+F), next (F3), previous (Shift+F3)
