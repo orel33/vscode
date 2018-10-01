@@ -1,3 +1,5 @@
-bak
+bak/
 node_modules/
+build/
 package-lock.json
+fib

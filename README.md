@@ -44,10 +44,8 @@ slideNumber: true
 
 <center><img src="img/snap-overview.png" width=90%></center>
 
-<!-- <center><img src="https://code.visualstudio.com/assets/docs/getstarted/userinterface/hero.png" width=80%></center> -->
-
 Note:
-* https://code.visualstudio.com/docs/getstarted/userinterface
+* <https://code.visualstudio.com/docs/getstarted/userinterface>
 
 ---
 
@@ -386,13 +384,68 @@ Note:
 
 ## CMake Project
 
-* Extensions: CMake & CMake Tools
+* Project files: ```main.c``` + library ```fib.c fib.h```
+* Add a CMake project file: [CMakeLists.txt](demo/cmake/CMakeLists.txt)
 
-TODO:
+```cmake
+cmake_minimum_required(VERSION 2.6)
+project(Fibonacci C)
+
+### build ###
+
+set(CMAKE_C_FLAGS "-std=c99 -Wall")
+add_library(fib fib.c fib.h)
+add_executable(main  main.c)
+target_link_libraries(main fib)
+
+### tests ###
+
+include(CTest)
+enable_testing()
+set(args "1" "5" "10" "20")
+set(sols "1" "8" "89" "10946")
+foreach(i RANGE ${len})
+  list(GET args ${i} arg)
+  list(GET sols ${i} sol)
+  add_test(fib-${arg} ./main ${arg})
+  set_tests_properties(fib-${arg} PROPERTIES PASS_REGULAR_EXPRESSION "${sol}" TIMEOUT 3)
+endforeach()
+```
+
+---
+
+## CMake Project
+
+* Extensions: *CMake* & *CMake Tools*
+  * Default CMake build directory in settings: ```${workspaceRoot}/build```
+* All CMake commands available from palette (Ctrl+Shift+P, type "cmake"...)
+  * Build (F7), Build target (Shift+F7), Clean, Run tests, ...
+* In Status Bar, configure your project:
+  * *Build Variant*: Debug, Release, MinSizeRel, ...
+  * *Kit*: Clang, GCC, or unspecified (Let CMake guess your compiler...)
+  * *Active Target* : all, main (executable), fib (library), ExperimentalTest, ExperimentalMemCheck (valgrind), ...
+  * *Target to Launch*: main
+* Then click in status bar on:
+  * *CMake* to generate Makefiles 
+  * *Build* to compile project
+  * *Debug* to debug the target to launch
+  * *Tests* to re-run tests... (use Palette for the first time)
+
+<center><img src="img/snap-cmake-status-bar.png" width=80%></center>
+
 
 Note:
-* CMake / CTest (compilation out-of-source, kit de dev, sélection d'option CMake, ...)
-* [Documentation](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
+* [Getting Started with CMake in VS Code](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
+
+<!-- 
+
+---
+
+## CMake Project (Advanced)
+
+TODO: select CMake options... 
+
+-->
 
 ---
 
