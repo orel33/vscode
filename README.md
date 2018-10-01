@@ -127,7 +127,19 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 
 ---
 
-## JavaScript Programming (1/2)
+## Code Runner
+
+* Quick run (Ctrl+Alt+N) using *Code Runner* extension...
+
+<center><img src="https://raw.githubusercontent.com/formulahendry/vscode-code-runner/master/images/usage.gif" width=70%></center>
+
+<small>
+C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Objective-C, Rust, Racket, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D, ...
+</small>
+
+---
+
+## JavaScript Programming
 
 Sample [demo/fibonacci/fib.js](demo/fibonacci/fib.js)
 
@@ -143,11 +155,16 @@ var fib = function (n)
  console.log(fib(10));
 ```
 
-* Native support of JavaScript
+* Native support of JavaScript...
+* Launch demo using *terminal* in panel: ```node fib.js``` or simply using *Code Runner* extension
 
----
+```text
+> Executing task: node fib.js <
 
-## JavaScript Programming (2/2)
+89
+```
+
+<!-- 
 
 * Configure a running task (menu Terminal > Configure Tasks) or edit file tasks.json
 
@@ -165,19 +182,13 @@ var fib = function (n)
 }
 ```
 
-* Run task with label "run hello.js" (menu Terminal > Run Task...)
-  
-```text
-> Executing task: node fib.js <
-
-89
-```
+-->
 
 ---
 
 ## JavaScript Advanced Programming
 
-Sample [express.js](demo/express/express.js) for [Node.js](https://nodejs.org)
+Sample [demo/express/express.js](demo/express/express.js) for [Node.js](https://nodejs.org)
 
 ```js
 const express = require('express')
@@ -193,12 +204,17 @@ app.listen(3000, function () {
 ```
 
 * Install extensions for package manager (*NPM*) and linting (*ESLint*)
-* Requires to generate *package.json* (npm init) for NPM and *.eslintrc.json* for ESLint (eslint --init)
+  * generate *package.json* for NPM and *.eslintrc.json* for ESLint
+
+```bash
+npm init
+npm install express --save
+eslint --init
+```
 
 Note:
 * <http://expressjs.com/fr/starter/hello-world.html>
 * More details on JavaScript programming: NPM, ESLint, ... <!-- reference -->
-
 
 ---
 
@@ -220,7 +236,6 @@ print(fib(10))
 
 * *Python* extension (provided by Microsoft): 
   * code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
-* Quick run (Ctrl+Alt+N) using *Code Runner* extension...
 
 Note:
 * [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
@@ -344,20 +359,6 @@ Note:
 
 ---
 
-<!-- 
-
-## Python & JavaScript
-
-* Python support with linting, debugging, code formatting, refactoring, unit tests, ... (extension *Python*)
-* Run code snippet or code file for multiple languages... (extension *Code Runner*)
-* Linter pour JavaScript (extension *ESLint*)
-
-<center><img src="https://raw.githubusercontent.com/formulahendry/vscode-code-runner/master/images/usage.gif" width=80%></center>
-
---- 
-
--->
-
 ## Writing in MarkDown
 
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
@@ -453,6 +454,7 @@ All extensions are available on [Market Place](https://marketplace.visualstudio.
 * [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
 * [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (toc, preview, lists, ...) + [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (linting)
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
+* NPM + ESLint...
 
 Some tips \& tricks:
 
@@ -462,9 +464,10 @@ Some tips \& tricks:
 Note:
 * [Extending Visual Studio Code](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
 * [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
+* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
 * Other: VSCode Icons, Dracula Theme, VS Live Share, ...
 * Useful? [CMake Tools Helper](https://marketplace.visualstudio.com/items?itemName=maddouri.cmake-tools-helper)
-* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
+
 
 <!-- How about extensions for Docker, Node.js, Android? HTML / CSS format? -->
 <!-- https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5 -->
@@ -483,21 +486,3 @@ git clone https://github.com/orel33/vscode.git
 
 * ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
 * ___Acknowledgment___: Pierre Ramet
-
-<!--
-## Demo
-
-Get all demo:
-
-```bash
-git clone https://github.com/orel33/vscode.git
-```
-For each demo, launch explicitly *Visual Studio Code* in the right sub-directory:
-
-* ```code demo/python```
-* ```code demo/js```
-* ```code demo/c```
-* ```code demo/cmake```
--->
-
----
