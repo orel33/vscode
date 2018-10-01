@@ -152,40 +152,32 @@ Note:
 
 ---
 
-## Demo fibonnaci.c
+## Demo Fibonnaci
+
+<https://en.wikipedia.org/wiki/Fibonacci_number>
 
 ```c
+/* fib.c */
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
 
-/**
- * @brief compute Fibonacci sequence
- *
- * @param n sequence length
- * @details https://en.wikipedia.org/wiki/Fibonacci_number
- * @return the n'th term of Fibonacci sequence
- */
 int fib(int n)
 {
-    if (n <= 1)
-        return 1;
-    else
-        return fib(n - 1) + fib(n - 2);
+    if (n <= 1) return 1;
+    else return fib(n - 1) + fib(n - 2);
 }
 
 int main(int argc, char const *argv[])
 {
     int n = 10;
-    if (argc == 2)
-        n = atoi(argv[1]);
+    if (argc == 2) n = atoi(argv[1]);
     assert(n > 0);
     int sum = fib(n);
     printf("%d\n", sum);
     return 0;
 }
 ```
-
 
 ---
 
@@ -346,6 +338,7 @@ Note:
 * copy (Ctrl+C), cut (Ctrl+X), paste (Ctrl+V), ca ctrl + z / y
 * [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
+
 ---
 
 ## Demo
@@ -356,12 +349,14 @@ Get all demo:
 git clone https://github.com/orel33/vscode.git
 ```
 
+<!--
 For each demo, launch explicitly *Visual Studio Code* in the right sub-directory:
 
 * ```code demo/python```
 * ```code demo/js```
 * ```code demo/c```
 * ```code demo/cmake```
+-->
 
 ---
 
