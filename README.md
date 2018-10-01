@@ -234,7 +234,7 @@ def fib(n):
 print(fib(10))
 ```
 
-* *Python* extension (provided by Microsoft): 
+* *Python* extension (provided by Microsoft):
   * code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
 
 Note:
@@ -244,8 +244,7 @@ Note:
 
 ## Python Programming (2/2)
 
-* In menu *Terminal > Configure Tasks...* to run `python3 fib.py 20` (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
-  * [syntax](https://go.microsoft.com/fwlink/?LinkId=733558)
+* In menu *Terminal > Configure Tasks...* (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
 
 ```json
 {
@@ -262,8 +261,11 @@ Note:
 ```
 
 * Then run it: menu *Terminal > Run Task...*
-* Easy debugging (menu Debug):
-  * start debugging (F5), add breakpoints (F9), next (F10), ...
+* Easy debugging (menu Debug): start debugging (F5), add breakpoints (F9), next (F10), ...
+
+Note:
+* [syntax of tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
+
 
 ---
 
@@ -306,7 +308,7 @@ Note:
 
 ## C/C++ Programming (2/2)
 
-* Building & Running: configure two new tasks ([.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
+* Building & Running: add two tasks in [tasks.json](demo/fibonacci/.vscode/tasks.json)
 
 ```json
 {
@@ -334,16 +336,51 @@ Note:
 
 ---
 
-## C/C++ Debugging
+## C/C++ Debugging (1/2)
 
-<center><img src="img/snap-debug.png" width=80%></center>
+* In menu *Debug > Add Configration...* (or edit [launch.json](demo/fibonacci/.vscode/launch.json))
+  * select environment C++ (GDB) to get a template configuration
+  * edit the attributes: *name*, *program*, *args*, ...
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch fib.c",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/fib",
+            "args": [ "20" ],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [ /* ... */ ]
+        }
+    ]
+}
+```
+
+ Note:
+* Use smart completion to learn about possible attributes.
+* Hover to view descriptions of existing attributes.
+* For more information, visit: <https://go.microsoft.com/fwlink/?linkid=830387>
+
+---
+
+## C/C++ Debugging (2/2)
+
+<center><img src="img/snap-debug.png" width=90%></center>
+
+<small>Shortcuts: start debugging (F5), start debugging (F5), add breakpoints (F9), next (F10), ... </small>
 
 Note:
 * <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
 * <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging>
 * configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-* start debugging (F5)
-
+* [launch.json syntax](https://go.microsoft.com/fwlink/?linkid=830387) 
 
 ---
 
@@ -456,7 +493,7 @@ All extensions are available on [Market Place](https://marketplace.visualstudio.
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
 * NPM + ESLint...
 
-Some tips \& tricks:
+Some tips & tricks:
 
 * [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), ...
 
