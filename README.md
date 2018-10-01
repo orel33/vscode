@@ -116,7 +116,7 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 ```
 
 * other files for some specific setting (extensions)
-* build / run tasks  (task.json) + debug settings (launch.json) 
+* build / run tasks  (tasks.json) + debug settings (launch.json) 
 
 ---
 
@@ -125,44 +125,79 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 * Extension C/C++ (provided by Microsoft)
 * code navigation, smart completion / hinting ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), code formatting (clang-format), linting, debugging, refactoring
 
-
-* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
-* <https://code.visualstudio.com/docs/languages/cpp>
-* configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-
-
-Menu Debug > Add Configuration... (launch.json)
-
+* Configure a build task... and run it (Ctrl+Shift+B)
+* Run Task
+* Menu Debug > Add Configuration... (launch.json)
 
 Note:
 * Code Formatting (Ctrl + Shift + I)
 * Go to Definition (F12), Go to Declaration (Ctrl + F12), Peek Definition (Ctrl + Shift + F10)
 * Show Declaration (Hover) / Show Definition (Ctrl + Hover)
-
----
-
-## C/C++ Building 
-
-* configure a build task
-* 
-
-
-Note: 
+* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
+* <https://code.visualstudio.com/docs/languages/cpp>
+* configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
 * https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building
 
+---
+
+## C/C++ Debugging
+
+<!-- <center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center> -->
+
+<center><img src="img/snap-debug.png" width=80%></center>
+
+Note:
+* https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
+* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
 
 ---
 
-## Building Tasks
+## Demo fibonnaci.c
 
-Ctrl+Shift+B
+```c
+#include <stdio.h>
+#include <assert.h>
+#include <stdlib.h>
+
+/**
+ * @brief compute Fibonacci sequence
+ *
+ * @param n sequence length
+ * @details https://en.wikipedia.org/wiki/Fibonacci_number
+ * @return the n'th term of Fibonacci sequence
+ */
+int fib(int n)
+{
+    if (n <= 1)
+        return 1;
+    else
+        return fib(n - 1) + fib(n - 2);
+}
+
+int main(int argc, char const *argv[])
+{
+    int n = 10;
+    if (argc == 2)
+        n = atoi(argv[1]);
+    assert(n > 0);
+    int sum = fib(n);
+    printf("%d\n", sum);
+    return 0;
+}
+```
+
 
 ---
 
-## Running Custom Tasks (1/2)
+## Demo hello.c (2/2)
 
 
-Sample [hello.js](demo/js/hello.js) (for Node.js)
+
+---
+
+## Demo hello.js (1/2)
+
+Sample [hello.js](demo/js/hello.js) for Node.js
 
 ```js
 var N = process.argv[2];
@@ -172,9 +207,9 @@ for (i = 0; i < N; i++) {
 }
 ```
 
---
+---
 
-## Running Custom Tasks (2/2)
+## Demo hello.js (2/2)
 
 Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
 
@@ -195,7 +230,7 @@ Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.j
 
 Run task with label "run hello.js" (menu Terminal > Run Task...)
 
-```
+```text
 > Executing task: node hello.js 2 <
 
 hello world!
@@ -204,18 +239,6 @@ hello world!
 
 Note:
 * debug: [launch.json](https://go.microsoft.com/fwlink/?linkid=830387)
-
----
-
-## C/C++ Debugging
-
-<!-- <center><img src="https://msdnshared.blob.core.windows.net/media/2016/03/debugging-all-up.png" width=80%></center> -->
-
-<center><img src="img/snap-debug.png" width=80%></center>
-
-Note:
-* https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
-* https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging
 
 ---
 
@@ -349,6 +372,7 @@ All extensions are available on [Market Place](https://marketplace.visualstudio.
 * [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
+* [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (run code snippet or code file for multiple languages)
 * [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
 * [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (toc, preview, lists, ...) + [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (linting)
