@@ -436,16 +436,8 @@ endforeach()
 
 Note:
 * [Getting Started with CMake in VS Code](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
+* TODO: explain more advanced CMake (select options, ...) 
 
-<!-- 
-
----
-
-## CMake Project (Advanced)
-
-TODO: select CMake options... 
-
--->
 
 ---
 
@@ -516,17 +508,16 @@ Note:
 | Ctrl+Shift+F10  | peek definition                         |
 | Ctrl+Shift+V    | Markdown preview                        |
 | Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
-| ???             | ???                                     |
 
 <!-- | Ctrl+Shift+C    | open external terminal                      | -->
 
 
 Note:
-* all keyboard shortcuts (setting button at bottom of activity bar)
-* Start debugging / continue (F5), step over (F10), 
+* See all keyboard shortcuts (setting button at bottom of activity bar)
+* Debug shortcuts:  start debugging / continue (F5), step over (F10), ...
 * CMake build (F7)
-* find in file (Crtl+F), find in all files (Ctrl+Shift+F), next (F3), previous (Shift+F3)
-* copy (Ctrl+C), cut (Ctrl+X), paste (Ctrl+V), ca ctrl + z / y
+* Find in file (Crtl+F), find in all files (Ctrl+Shift+F), next (F3), previous (Shift+F3)
+* Edit: copy (Ctrl+C), cut (Ctrl+X), paste (Ctrl+V), ca ctrl + z / y
 * [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 ---
