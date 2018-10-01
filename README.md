@@ -126,6 +126,64 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 
 ---
 
+## JavaScript Programming (1/2)
+
+Sample [express.js](demo/express/express.js) for [Node.js](https://nodejs.org)
+
+```js
+const express = require('express')
+const app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
+```
+
+* Native support of JavaScript... 
+  * add extensions for package manager (*NPM*) and linting (*ESLint*)
+
+Note:
+* <http://expressjs.com/fr/starter/hello-world.html>
+
+---
+
+## JavaScript Programming (2/2)
+
+Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run hello.js",
+            "type": "shell",
+            "command": "node",
+            "args": ["hello.js", "2" ],
+            "options": { "cwd": "${workspaceRoot}/demo/js/" }
+        }
+    ]
+}
+```
+
+Run task with label "run hello.js" (menu Terminal > Run Task...)
+
+```text
+> Executing task: node hello.js 2 <
+
+hello world!
+hello world!
+```
+
+Note:
+* debug: [launch.json](https://go.microsoft.com/fwlink/?linkid=830387)
+
+---
+
 ## Python Programming (1/2)
 
 Sample [fib.py](demo/fibonacci/fib.py) based on [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
@@ -156,6 +214,7 @@ print(sum)
 ## Python Programming (2/2)
 
 * In menu *Terminal > Configure Tasks...* to run `python3 fib.py 20` (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
+  * [syntax](https://go.microsoft.com/fwlink/?LinkId=733558)
 
 ```json
 {
@@ -250,51 +309,6 @@ Note:
 * configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
 * start debugging (F5)
 
----
-
-## Demo hello.js (1/2)
-
-Sample [hello.js](demo/hello.js) for Node.js
-
-```js
-var N = process.argv[2];
-var i;
-for (i = 0; i < N; i++) {
-    console.log("hello world!")
-}
-```
----
-
-## Demo hello.js (2/2)
-
-Configure a running task (menu Terminal > Configure Tasks) or edit file [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
-
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "run hello.js",
-            "type": "shell",
-            "command": "node",
-            "args": ["hello.js", "2" ],
-            "options": { "cwd": "${workspaceRoot}/demo/js/" }
-        }
-    ]
-}
-```
-
-Run task with label "run hello.js" (menu Terminal > Run Task...)
-
-```text
-> Executing task: node hello.js 2 <
-
-hello world!
-hello world!
-```
-
-Note:
-* debug: [launch.json](https://go.microsoft.com/fwlink/?linkid=830387)
 
 ---
 
@@ -302,12 +316,15 @@ Note:
 
 * Extensions: CMake & CMake Tools
 
+TODO:
 
 Note:
 * CMake / CTest (compilation out-of-source, kit de dev, sélection d'option CMake, ...)
 * [Documentation](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 
 ---
+
+<!-- 
 
 ## Python & JavaScript
 
@@ -317,7 +334,9 @@ Note:
 
 <center><img src="https://raw.githubusercontent.com/formulahendry/vscode-code-runner/master/images/usage.gif" width=80%></center>
 
----
+--- 
+
+-->
 
 ## Writing in MarkDown
 
@@ -351,7 +370,8 @@ Note:
 <center><img src="img/snap-git.png" width=80%></center>
 
 Note:
-* demo CI with Inria Gitlab (extension *???*)
+* extension [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
+* demo CI with Inria GitLab
 
 ---
 
