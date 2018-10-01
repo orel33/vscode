@@ -283,19 +283,18 @@ Note:
 
 * all keyboard shortcuts (setting button at bottom of activity bar) 
 
-
-| Shortcut        | Description                             |
-| --------------- | --------------------------------------- |
-| Ctrl+P          | quick open file palette                 |
-| Ctrl+Shift+P    | quick open command palette              |
-| Ctrl+K Ctrl+T   | change theme                            |
-| Ctrl+K Z        | zen mode (Esc Esc to escape)            |
-| Ctrl+J / Ctrl+B | toggle panel / side bar visibility      |
-| Ctrl+,          | edit user & workspace settings          |
-| Ctrl+W          | close current editor                    |
-| Ctrl+N          | new file                                |
-| Ctrl+O          | open file                               |
-| Ctrl+S          | save / save as file                     |
+| Shortcut        | Description                        |
+| --------------- | ---------------------------------- |
+| Ctrl+P          | quick open file palette            |
+| Ctrl+Shift+P    | quick open command palette         |
+| Ctrl+K Ctrl+T   | change theme                       |
+| Ctrl+K Z        | zen mode (Esc Esc to escape)       |
+| Ctrl+J / Ctrl+B | toggle panel / side bar visibility |
+| Ctrl+,          | edit user & workspace settings     |
+| Ctrl+W          | close current editor               |
+| Ctrl+N          | new file                           |
+| Ctrl+O          | open file                          |
+| Ctrl+S          | save / save as file                |
 
 ---
 
@@ -345,7 +344,7 @@ For each demo, launch explicitly *Visual Studio Code* in the right sub-directory
 
 ## My Favorite Extensions
 
-All extensions are available on [Market Place](https://marketplace.visualstudio.com).
+All extensions are available on [Market Place](https://marketplace.visualstudio.com)
 
 * [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
@@ -382,22 +381,5 @@ git clone https://github.com/orel33/vscode.git
 ```
 
 * ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
-* ___Acknowledgment___: Pierre Ramet 
-
----
-
-<!-- ## Two Cols
-
-<div style="text-align: left; float: left;">
-<p data-markdown>| coucou | pouet |</p>
-<p data-markdown>|--------|-------|</p>
-<p data-markdown>| coucou | pouet |</p>
-<p data-markdown>| coucou | pouet |</p>
- </div>
-
-  <div style="text-align: left; float: right;">
-    <p data-markdown>- This is my first right element</p>
-    <p data-markdown>- This is my second rightelement</p>
-  </div> -->
-
+* ___Acknowledgment___: Pierre Ramet
 
