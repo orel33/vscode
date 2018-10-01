@@ -2,13 +2,6 @@
 #include <assert.h>
 #include <stdlib.h>
 
-/**
- * @brief compute Fibonacci sequence
- *
- * @param n sequence length
- * @details https://en.wikipedia.org/wiki/Fibonacci_number
- * @return the n'th term of Fibonacci sequence
- */
 int fib(int n)
 {
     if (n <= 1)
