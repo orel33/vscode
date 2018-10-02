@@ -39,6 +39,9 @@
             "label": "run fib.c",
             "type": "shell",
             "command": "./fib",
+            "args": [
+                "20"
+            ],
             "dependsOn": [
                 "build fib.c"
             ],

@@ -494,18 +494,16 @@ endforeach()
   * *Active Target* : all, main (executable), fib (library), ExperimentalTest, ExperimentalMemCheck (valgrind), ...
   * *Target to Launch*: main
 * Then click in status bar on:
-  * *CMake* to generate Makefiles 
+  * *CMake* to generate Makefiles
   * *Build* to compile project
   * *Debug* to debug the target to launch
   * *Tests* to re-run tests... (use Palette for the first time)
 
 <center><img src="img/snap-cmake-status-bar.png" width=80%></center>
 
-
 Note:
 * [Getting Started with CMake in VS Code](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
-* TODO: explain more advanced CMake (select options, ...) 
-
+* TODO: explain more advanced CMake (select options, ...)
 
 ---
 
