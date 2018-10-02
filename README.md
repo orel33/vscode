@@ -105,9 +105,7 @@ See my [install.sh](install.sh) script <!-- TODO: update it -->
 
 All extensions are available on [Market Place](https://marketplace.visualstudio.com)... or directly from the *Integrated Extension Manager* (on side bar)
 
-
 <center><img src="img/snap-extension.png" width=70%></center>
-
 
 My recommandation:
 * install extension *provided* by Microsoft or *recommanded* by VS Code
@@ -175,7 +173,26 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 
 ---
 
-## Code Runner
+## Demo
+
+All demo are available on [GitHub](https://github.com/orel33/vscode):
+
+* Code Runner (directory `demo/hello/`)
+* JavaScript & Python Programming (directory `demo/fibonacci/`)
+* C/C++ Programming (directory `demo/fibonacci`)
+* CMake Project (directory `demo/cmake`)
+* GIT
+* Writing in Markdown & LaTeX (directory `demo/latex`)
+
+For each demo, launch code in the right directory:
+
+```bash
+code demo/fibonacci/
+```
+
+---
+
+## <a name="coderunner"></a> Code Runner
 
 * Quick run (Ctrl+Alt+N) using *Code Runner* extension...
 
@@ -509,7 +526,7 @@ Note:
 
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
 * formatting, list editing and more (extension *Markdown All in One*) + linting (extension *mardownlint*)
-* show Markdown as slides (extension *vscode-reveal*)
+* show Markdown as slides (extension [vscode-reveal](https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal))
 
 <center><img src="img/snap-markdown.png" width=80%></center>
 
@@ -584,3 +601,10 @@ git clone https://github.com/orel33/vscode.git
 
 * ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
 * ___Acknowledgment___: Pierre Ramet
+
+<script>
+// Slide every five seconds
+Reveal.configure({
+  autoSlide: 1000
+});
+</script>
