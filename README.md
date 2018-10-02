@@ -37,6 +37,9 @@ Just another IDE & source code editor...
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
 * Rich editor features: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), linting, ...
 
+Note:
+* <https://electronjs.org/docs/tutorial/first-app>
+
 ---
 
 ## Editor Overview
@@ -123,7 +126,7 @@ My recommandation:
 * [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (toc, preview, lists, ...) + [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (linting)
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
 * [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (Beautify JavaScript, JSON, CSS, HTML, ...).
-* NPM + ESLint...
+* [NPM](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) (JavaScript package manager) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (JavaScript linting, code formatting and more)
 
 Some tips & tricks:
 
