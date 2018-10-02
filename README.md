@@ -175,16 +175,17 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 
 ## Demo
 
-All demo are available on [GitHub](https://github.com/orel33/vscode):
+All demo are available on <https://github.com/orel33/vscode>:
 
-* Code Runner (directory `demo/hello/`)
-* JavaScript & Python Programming (directory `demo/fibonacci/`)
-* C/C++ Programming (directory `demo/fibonacci`)
-* CMake Project (directory `demo/cmake`)
-* GIT
-* Writing in Markdown & LaTeX (directory `demo/latex`)
+* [Code Runner](#/10) (directory `demo/hello/`)
+* [JavaScript Programming](#/11) (directory `demo/fibonacci/`)
+* [Python Programming](#/13) (directory `demo/fibonacci/`)
+* [C/C++ Programming](#/15) (directory `demo/fibonacci/`)
+* [CMake Project](#/19) (directory `demo/cmake`)
+* [GIT Support](#/21)
+* [Writing in Markdown & LaTeX](#/22) (directory `demo/writing/`)
 
-For each demo, launch code in the right directory:
+For each demo, launch VS Code in the right directory:
 
 ```bash
 code demo/fibonacci/
@@ -192,7 +193,7 @@ code demo/fibonacci/
 
 ---
 
-## <a name="coderunner"></a> Code Runner
+## Code Runner
 
 * Quick run (Ctrl+Alt+N) using *Code Runner* extension...
 
@@ -593,7 +594,7 @@ Note:
 
 This document is written in *Markdown* and converted into slides by the extension *vscode-reveal* (based on [Reval.js](https://revealjs.com)).
 
-This presentation and all demo are available on [GitHub](https://github.com/orel33/vscode):
+This presentation and all demo are available on <https://github.com/orel33/vscode>:
 
 ```bash
 git clone https://github.com/orel33/vscode.git
