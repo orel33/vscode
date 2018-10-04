@@ -33,7 +33,7 @@ Just another IDE & source code editor...
 * First release in 2015 (Vi & Emacs in 1976, Vim in 1991, Atom in 2014)
 * Survey by [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
-  * the Atom shell provided by GitHub (backend Node.js + frontend Chromium)
+* the Atom shell provided by GitHub (backend Node.js + frontend Chromium)
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
 * Rich editor features: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), linting, ...
 
@@ -59,6 +59,8 @@ Note:
 
 <center><img src="img/snap-palette-file.png" width=60%></center>
 
+<small>select a file, then Enter to open it (or Ctrl+Enter to open it to the side)</small>
+
 ---
 
 ## Editor Overview
@@ -67,8 +69,13 @@ Note:
 
 <center><img src="img/snap-palette-command.png" width=60%></center>
 
-Note:
-* type ?: to see all possible actions (> command, : go to line, ...)
+<small> type ?: to see all possible actions (> command, : go to line, ...)</small>
+
+---
+
+## Editing Code
+
+TODO: explain all shortcuts... how split the active editor in two, multi-selection (Ctrl+Shift+Arrows), ...
 
 ---
 
@@ -163,7 +170,8 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
     "explorer.confirmDragAndDrop": false,
     "editor.wordWrap": "on",
     "workbench.colorTheme": "Dracula",
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
+    "cmake.buildDirectory": "${workspaceRoot}/build"
 }
 ```
 
@@ -177,13 +185,13 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 
 All demo are available on <https://github.com/orel33/vscode>:
 
-* [Code Runner](#/10) (directory `demo/hello/`)
-* [JavaScript Programming](#/11) (directory `demo/fibonacci/`)
-* [Python Programming](#/13) (directory `demo/fibonacci/`)
-* [C/C++ Programming](#/15) (directory `demo/fibonacci/`)
-* [CMake Project](#/19) (directory `demo/cmake`)
-* [GIT Support](#/21)
-* [Writing in Markdown & LaTeX](#/22) (directory `demo/writing/`)
+* [Code Runner](#code-runner) (directory `demo/hello/`)
+* [JavaScript Programming](#javascript-programming) (directory `demo/fibonacci/`)
+* [Python Programming](#python-programming-12) (directory `demo/fibonacci/`)
+* [C/C++ Programming](#cc-programming-12) (directory `demo/fibonacci/`)
+* [CMake Project](#cmake-project) (directory `demo/cmake`)
+* [GIT Support](#git)
+* [Writing in Markdown & LaTeX](#writing-in-markdown) (directory `demo/writing/`)
 
 For each demo, launch VS Code in the right directory:
 
@@ -577,7 +585,6 @@ Note:
 
 <!-- | Ctrl+Shift+C    | open external terminal                      | -->
 
-
 Note:
 * See all keyboard shortcuts (setting button at bottom of activity bar)
 * Debug shortcuts:  start debugging / continue (F5), step over (F10), ...
@@ -600,10 +607,3 @@ git clone https://github.com/orel33/vscode.git
 
 * ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
 * ___Acknowledgment___: Pierre Ramet
-
-<script>
-// Slide every five seconds
-Reveal.configure({
-  autoSlide: 1000
-});
-</script>

@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.6)
 project(Fibonacci C)
 
 ### build ###
+
 set(CMAKE_C_FLAGS "-std=c99 -Wall")
 add_library(fib fib.c fib.h)
 add_executable(main  main.c)
