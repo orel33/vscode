@@ -491,10 +491,10 @@ Note:
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch fib.c",
+            "name": "(gdb) Launch a.out",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/fib",
+            "program": "${workspaceFolder}/a.out",
             "args": [ "20" ],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
