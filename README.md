@@ -25,15 +25,39 @@ slideNumber: true
 
 ## Introduction
 
+How to improve the *edit-compile-run* cycle? 
+
+→ Use a good IDE (Integrated Development Environment)...
+
+What should be the *perfect* IDE?
+
+* source code editor
+* build automation tools (Makefile, CMake)
+* runner, debugger (gdb, valgrind)
+* code formatting (clang-format)
+* syntax highlighting
+* code navigation
+* intelligent code completion
+* advanced search/replace, refactoring
+* version control (SVN, GIT)
+* linting, static code analysis (Clang)
+
+*A poor workman blames his tools ;-)*
+
+---
+
+## Visual Studio Code
+
 Just another IDE & source code editor...
 
+* Survey by [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
 * Provided by Microsoft under free & open-source license (MIT)
 * Cross-Platform: Linux, Windows, MacOS
 * Hundred of languages supported : [overview](https://code.visualstudio.com/docs/languages/overview)
-* First release in 2015 (Vi & Emacs in 1976, Vim in 1991, Atom in 2014)
-* Survey by [Stack Overflow](https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools) : rank #13 en 2016, rank #1 en 2018 (75 000 users)
+* First release in 2015 and [latest release](https://code.visualstudio.com/updates)
+  * Vi & Emacs in 1976, Vim in 1991, Atom in 2014
 * Written in TypeScript & JavaScript and based on [Electron](https://github.com/electron/electron) framework
-* the Atom shell provided by GitHub (backend Node.js + frontend Chromium)
+  * the *Atom* shell provided by GitHub (backend Node.js + frontend Chromium)
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
 * Rich editor features: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), linting, ...
 
@@ -84,7 +108,7 @@ TODO: explain all shortcuts... how split the active editor in two, multi-selecti
 Installation on Debian Linux:
 
 ```bash
-URL="https://vscode-update.azurewebsites.net/1.27.2/linux-deb-x64/stable"
+URL="https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable"
 sudo apt-get install gdebi
 wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
@@ -104,7 +128,6 @@ code --install-extension <extension name>
 ```
 
 See my [install.sh](install.sh) script <!-- TODO: update it -->
-
 
 ---
 
@@ -132,6 +155,7 @@ My recommandation:
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
 * [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (Beautify JavaScript, JSON, CSS, HTML, ...).
 * [NPM](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) (JavaScript package manager) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (JavaScript linting, code formatting and more)
+* Bash Beautify
 
 Some tips & tricks:
 
