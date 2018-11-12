@@ -25,7 +25,7 @@ slideNumber: true
 
 ## Introduction
 
-How to improve the *edit-compile-run* cycle? 
+How to improve the *edit-compile-run* cycle?
 
 → Use a good IDE (Integrated Development Environment)...
 
