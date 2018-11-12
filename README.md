@@ -142,7 +142,7 @@ Note:
 <small>See all keyboard shortcuts (setting button at bottom of activity bar) and add your own shortcuts...</small>
 
 Note:
-* Debug shortcuts:  start debugging / continue (F5), step over (F10), ...
+* Debug shortcuts:  start debugging (F5), add breakpoints (F9), next (F10), ...
 * CMake build (F7)
 * [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
@@ -406,7 +406,7 @@ Note:
 ```
 
 * Then run it: menu *Terminal > Run Task...*
-* Easy debugging (menu Debug): start debugging (F5), add breakpoints (F9), next (F10), ...
+* [Python Debugging](https://code.visualstudio.com/docs/python/debugging) : open Debug Mode (Ctrl+Shift+D) and select configuration "Python: Current File (integrated Terminal)", add breakpoint and run...
 
 Note:
 * [syntax of tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
