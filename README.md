@@ -406,7 +406,7 @@ Note:
 ```
 
 * Then run it: menu *Terminal > Run Task...*
-* [Python Debugging](https://code.visualstudio.com/docs/python/debugging) : open Debug Mode (Ctrl+Shift+D) and select configuration "Python: Current File (integrated Terminal)", add breakpoint and run...
+* [Python Debugging](https://code.visualstudio.com/docs/python/debugging) : select your python file in editor, open Debug Mode (Ctrl+Shift+D) and select configuration "Python: Current File (integrated Terminal)", add breakpoint and run debug sesion...
 
 Note:
 * [syntax of tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
