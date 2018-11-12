@@ -37,7 +37,7 @@ What should be the *perfect* IDE?
 * code formatting (clang-format)
 * syntax highlighting
 * code navigation
-* intelligent code completion
+* intelligent code completion, code snippet
 * advanced search/replace, refactoring
 * version control (SVN, GIT)
 * linting, static code analysis (Clang)
@@ -68,7 +68,7 @@ Note:
 
 ## Editor Overview
 
-* Editors, Side Bar (Explorer, ...), Actvity Bar, Status Bar, Panels
+* Editors, Side Bar / Explorer (Ctrl+B), Actvity Bar, Status Bar, Panels (Ctrl+J)
 
 <center><img src="img/snap-overview.png" width=90%></center>
 
@@ -97,9 +97,54 @@ Note:
 
 ---
 
-## Editing Code
+## Keyboard Shortcuts
 
-TODO: explain all shortcuts... how split the active editor in two, multi-selection (Ctrl+Shift+Arrows), ...
+| | Shortcut        | Description                        |
+|-| --------------- | ---------------------------------- |
+|D| Ctrl+C / X / V  | copy / cut / paste                 |
+|D| Ctrl+Z / Y      | undo / redo                        |
+|D| Ctrl+Shift+↑/↓  | undo / redo                        |
+|D| Ctrl+P          | quick open file palette            |
+|D| Ctrl+Shift+P    | quick open command palette         |
+|D| Ctrl+K Ctrl+T   | change theme                       |
+|D| Ctrl+K Z        | zen mode (Esc Esc to escape)       |
+|D| Ctrl+J / Ctrl+B | toggle panel / side bar visibility |
+|D| Ctrl+,          | edit user & workspace settings     |
+|D| Ctrl+W          | close current editor               |
+|D| Ctrl+N          | new file                           |
+|D| Ctrl+O          | open file                          |
+|D| Ctrl+S          | save / save as file                |
+|U| Ctrl+!          | split editor to right              |
+
+<small>D: default shortcut on Linux; U: my user-defined shortcut.</small>
+
+---
+
+## Keyboard Shortcuts
+
+| | Shortcut        | Description                             |
+|-| --------------- | --------------------------------------- |
+|D| Ctrl+/          | toggle line(s) comment                  |
+|D| Alt+↑/↓         | move line(s) up / down                  |
+|D| Alt+Z           | toggle line wrapping                    |
+|D| Ctrl+Space      | trigger suggestion for completion       |
+|D| Ctrl+Shift+I    | code formatting                         |
+|D| F12 / Ctrl+F12  | go to function definition / declaration |
+|D| Ctrl+Shift+F10  | peek definition                         |
+|D| Ctrl+Shift+V    | Markdown preview                        |
+|D| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
+|D| Ctrl+Shift+B    | run build task                          |
+|U| Ctrl+Shift+R    | run task...                             |
+|D| Ctrl+F          | find in file                            |
+|D| Ctrl+Shift+F    | find in all files                       |
+|D| F3 / Shift+F3   | next / previous match (find)            |
+
+<small>See all keyboard shortcuts (setting button at bottom of activity bar) and add your own shortcuts...</small>
+
+Note:
+* Debug shortcuts:  start debugging / continue (F5), step over (F10), ...
+* CMake build (F7)
+* [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 ---
 
@@ -148,6 +193,7 @@ My recommandation:
 * [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
+* [C/C++ Advanced Lint](https://marketplace.visualstudio.com/items?itemName=jbenden.c-cpp-flylint) (clang, cppcheck, ...)
 * [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (run code snippet or code file for multiple languages)
 * [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
@@ -155,7 +201,8 @@ My recommandation:
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
 * [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (Beautify JavaScript, JSON, CSS, HTML, ...).
 * [NPM](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) (JavaScript package manager) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (JavaScript linting, code formatting and more)
-* Bash Beautify
+* [Bash Beautify](https://marketplace.visualstudio.com/items?itemName=shakram02.bash-beautify)
+
 
 Some tips & tricks:
 
@@ -199,7 +246,7 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 }
 ```
 
-* Other files for some specific settings (e.g. extensions)
+* Other *json* files for some specific settings (e.g. extensions)
 * Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)) 
 * Debug configuration (settings in [launch.json](https://go.microsoft.com/fwlink/?linkid=830387))
 
@@ -220,7 +267,7 @@ All demo are available on <https://github.com/orel33/vscode>:
 For each demo, launch VS Code in the right directory:
 
 ```bash
-code demo/fibonacci/
+cd demo/hello && code .
 ```
 
 ---
@@ -364,7 +411,6 @@ Note:
 Note:
 * [syntax of tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
 
-
 ---
 
 ## C/C++ Programming (1/2)
@@ -410,18 +456,18 @@ Note:
 
 ```json
 {
-    "label": "build fib.c",
+    "label": "build fib C",
     "type": "shell",
     "command": "gcc -Wall -std=c99 -g fib.c -o fib",
     "group": { "kind": "build", "isDefault": true },  // default build task
     "problemMatcher": [ "$gcc" ]                      // output in panel
 },
 {
-    "label": "run fib.c",
+    "label": "run fib C",
     "type": "shell",
     "command": "./fib",
     "dependsOn": [ "build fib.c" ],
-    "problemMatcher": [ ]
+    "problemMatcher": [ "$gcc" ]
 }
 ```
 
@@ -573,49 +619,6 @@ Note:
 * multilingual spell checker (extension *Spell Right*)
 
 <center><img src="img/snap-latex.png" width=80%></center>
-
----
-
-## Keyboard Shortcuts (1/2)
-
-| Shortcut        | Description                        |
-| --------------- | ---------------------------------- |
-| Ctrl+P          | quick open file palette            |
-| Ctrl+Shift+P    | quick open command palette         |
-| Ctrl+K Ctrl+T   | change theme                       |
-| Ctrl+K Z        | zen mode (Esc Esc to escape)       |
-| Ctrl+J / Ctrl+B | toggle panel / side bar visibility |
-| Ctrl+,          | edit user & workspace settings     |
-| Ctrl+W          | close current editor               |
-| Ctrl+N          | new file                           |
-| Ctrl+O          | open file                          |
-| Ctrl+S          | save / save as file                |
-
----
-
-## Keyboard Shortcuts (2/2)
-
-| Shortcut        | Description                             |
-| --------------- | --------------------------------------- |
-| Ctrl+/          | toggle line(s) comment                  |
-| Alt+↑ / Alt+↓   | move line(s) up / down                  |
-| Alt+Z           | toggle line wrapping                    |
-| Ctrl+Space      | trigger suggestion for completion       |
-| Ctrl+Shift+I    | code formatting                         |
-| F12 / Ctrl+F12  | go to function definition / declaration |
-| Ctrl+Shift+F10  | peek definition                         |
-| Ctrl+Shift+V    | Markdown preview                        |
-| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
-
-<!-- | Ctrl+Shift+C    | open external terminal                      | -->
-
-Note:
-* See all keyboard shortcuts (setting button at bottom of activity bar)
-* Debug shortcuts:  start debugging / continue (F5), step over (F10), ...
-* CMake build (F7)
-* Find in file (Crtl+F), find in all files (Ctrl+Shift+F), next (F3), previous (Shift+F3)
-* Edit: copy (Ctrl+C), cut (Ctrl+X), paste (Ctrl+V), ca ctrl + z / y
-* [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 ---
 
