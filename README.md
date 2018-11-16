@@ -150,7 +150,7 @@ Note:
 
 ## Installation
 
-Installation on Debian Linux:
+* Install or update VS Code on Debian Linux: [install.sh](install.sh)
 
 ```bash
 URL="https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable"
@@ -172,7 +172,7 @@ code --list-extensions
 code --install-extension <extension name>
 ```
 
-See my [install.sh](install.sh) script <!-- TODO: update it -->
+See my [extensions.sh](extensions.sh) script to install (almost) all my favorite extensions...
 
 ---
 
@@ -528,7 +528,7 @@ Note:
 
 ---
 
-## CMake Project
+## CMake Project (1/2)
 
 * Project files: ```main.c``` + library ```fib.c fib.h```
 * Add a CMake project file: [CMakeLists.txt](demo/cmake/CMakeLists.txt)
@@ -560,7 +560,7 @@ endforeach()
 
 ---
 
-## CMake Project
+## CMake Project (2/2)
 
 * Extensions: *CMake* & *CMake Tools*
   * Default CMake build directory in settings: ```${workspaceRoot}/build```
@@ -582,12 +582,13 @@ endforeach()
 Note:
 * [Getting Started with CMake in VS Code](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 * TODO: explain more advanced CMake (select options, ...)
+* TODO: explain debugging...
 
 ---
 
-## GIT
+## GIT (1/2)
 
-* Amazing Git support with *GitLens* & *Git History* extensions: blame, diff, branch, log, ...
+* Amazing built-in support, enhanced with *GitLens* & *Git History* extensions: blame, diff, branch, log, ...
 
 <!-- <center><img src="https://raw.githubusercontent.com/eamodio/vscode-gitlens/master/images/gitlens-preview.gif" width=80%></center> -->
 
@@ -596,6 +597,14 @@ Note:
 Note:
 * extension [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
 * demo CI with Inria GitLab
+
+---
+
+## GIT (2/2)
+
+* Command Palette (Ctrl+Shift+P): *Git View History* or *Git View File History*... and performs advanced Git command (cherry-pick, revert, merge, rebase...)
+
+<center><img src="img/snap-git-history.png" width=80%></center>
 
 ---
 
