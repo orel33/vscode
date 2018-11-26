@@ -83,19 +83,18 @@ uint32_t rgb(unsigned char r, unsigned char g, unsigned char b) {
 uint32_t iter2color(unsigned iter, unsigned maxiter) {
   assert(iter > 0);
 
-  float scale = 3.0 * log(iter) / log(maxiter);  // scale in range [0,3]
-  assert(scale >= 0.0f && scale <= 3.0f);
+  float scale = log(iter) / log(maxiter);  // scale in range [0,1]
+  assert(scale >= 0.0f && scale <= 1.0f);
+  scale *= 3.0;
 
   int r, g, b;
 
   if (scale < 1.0f)
-    r = 255 * scale, g = 0, b = 0; /* scale red channel */
+    r = 255 * scale, g = 0, b = 0; /* black -> red */
   else if (scale < 2.0f)
-    r = 255, g = 255 * (scale - 1.0), b = 0; /* scale green channel */
-  else if (scale < 3.0f)
-    r = 255, g = 255, b = 255 * (scale - 2.0f); /* scale blue channel */
-  else
-    r = 0, g = 0, b = 255;  // blue
+     r = 255, g = 0, b = 255 * (scale - 1.0); /* red -> magenta */
+  else if (scale <= 3.0f)
+     r = 255 * (3.0 - scale), g = 0, b = 255; /* magenta -> blue */
 
   assert(r >= 0 && r <= 255);
   assert(g >= 0 && g <= 255);
