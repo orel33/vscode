@@ -13,16 +13,24 @@
 #include <stdlib.h>
 #include <sys/time.h>
 
+#define min_f(a, b, c) (fminf(a, fminf(b, c)))
+#define max_f(a, b, c) (fmaxf(a, fmaxf(b, c)))
+
 #define APP_NAME "Mandelbrot"
 #define DELAY 100
 #define SCREEN_DIM 500
-
 #define DIM 500
+#define MAXITER 4096
+
 #define XMIN -2.0
 #define XMAX 1.0
 #define YMIN -1.0
 #define YMAX 1.0
-#define MAXITER 1024
+
+// #define XMIN -0.2395
+// #define XMAX -0.2275
+// #define YMIN 0.648
+// #define YMAX 0.660
 
 // Returns duration in ms
 #define TIME_DIFF(t1, t2) \
@@ -43,12 +51,17 @@ typedef struct Env_t Env;
 
 /* **************************************************************** */
 
+/* row i and col j */
 uint32_t mandelbrot(float xMin, float xMax, float yMin, float yMax, int xPixels,
                     int yPixels, int maxIter, int i, int j) {
+  assert(xPixels > 0 && yPixels > 0);
+  assert(i >= 0 && i < xPixels && j >= 0 && j < yPixels);
   float dx = (xMax - xMin) / (float)xPixels;
+  assert(dx > 0.0f);
   float dy = (yMax - yMin) / (float)yPixels;
+  assert(dy > 0.0f);
   float xc = xMin + dx * j;
-  float yc = xMax - dy * i;
+  float yc = yMin + dy * i;
   float x = 0.0, y = 0.0; /* Z = X+I*Y */
   uint32_t iter;
   for (iter = 0; iter < maxIter; iter++) {
@@ -57,18 +70,23 @@ uint32_t mandelbrot(float xMin, float xMax, float yMin, float yMax, int xPixels,
     /* Stop iterations when |Z| > 2 */
     if (x2 + y2 > 4.0) break;
     /* Z = Z^2 + C */
+    float twoxy = 2.0f * x * y;
     x = x2 - y2 + xc;
-    y = (2.0 * x * y) + yc;
+    y = twoxy + yc;
   }
   return iter;
 }
 
 /* **************************************************************** */
 
-/* SDL interprets each pixel as a 32-bit number, so our masks must depend
+/* SDL interprets each pixel as a 32-bit number in RGBA format, that depends
    on the endianness (byte order) of the machine */
 
-uint32_t rgb(unsigned char r, unsigned char g, unsigned char b) {
+uint32_t rgb(uint32_t r, uint32_t g, uint32_t b) {
+  assert(r >= 0 && r <= 255);
+  assert(g >= 0 && g <= 255);
+  assert(b >= 0 && b <= 255);
+
   unsigned char a = 255; /* alpha */
 #if SDL_BYTEORDER == SDL_BIG_ENDIAN
   uint32_t color = (r << 24) | (g << 16) | (b << 8) | alpha /* big endian */;
@@ -80,26 +98,36 @@ uint32_t rgb(unsigned char r, unsigned char g, unsigned char b) {
 
 /* **************************************************************** */
 
-uint32_t iter2color(unsigned iter, unsigned maxiter) {
+uint32_t iter2rgb(uint32_t iter, uint32_t maxiter) {
   assert(iter > 0);
 
   float scale = log(iter) / log(maxiter);  // scale in range [0,1]
   assert(scale >= 0.0f && scale <= 1.0f);
   scale *= 3.0;
 
-  int r, g, b;
+  uint32_t r, g, b;
 
   if (scale < 1.0f)
     r = 255 * scale, g = 0, b = 0; /* black -> red */
   else if (scale < 2.0f)
-     r = 255, g = 0, b = 255 * (scale - 1.0); /* red -> magenta */
+    r = 255, g = 0, b = 255 * (scale - 1.0); /* red -> magenta */
   else if (scale <= 3.0f)
-     r = 255 * (3.0 - scale), g = 0, b = 255; /* magenta -> blue */
+    r = 255 * (3.0 - scale), g = 0, b = 255; /* magenta -> blue */
+  else
+    r = 0, g = 0, b = 255; /* blue */
 
-  assert(r >= 0 && r <= 255);
-  assert(g >= 0 && g <= 255);
-  assert(b >= 0 && b <= 255);
   return rgb(r, g, b);
+}
+
+/* **************************************************************** */
+
+uint32_t iter2grey(uint32_t iter, uint32_t maxiter) {
+  assert(iter > 0);
+  float scale = log(iter) / log(maxiter);  // log scale in range [0,1]
+  // float scale = iter * 1.0f / maxiter;  // linear scale in range [0,1]
+  assert(scale >= 0.0f && scale <= 1.0f);
+  uint32_t grey = scale * 255;
+  return rgb(grey, grey, grey);
 }
 
 /* **************************************************************** */
@@ -107,22 +135,15 @@ uint32_t iter2color(unsigned iter, unsigned maxiter) {
 Env* init(SDL_Window* win, SDL_Renderer* ren, int argc, char* argv[]) {
   Env* env = malloc(sizeof(struct Env_t));
 
-  uint32_t maxiter = 0;
   struct timeval t1, t2;
   gettimeofday(&t1, NULL);
   for (int i = 0; i < DIM; i++)   /* row */
     for (int j = 0; j < DIM; j++) /* col */
     {
-      int iter = mandelbrot(XMIN, XMAX, YMIN, YMAX, DIM, DIM, MAXITER, i, j);
-      env->data[i][j] = iter;
-      if (iter > maxiter) maxiter = iter;
-    }
-
-  for (int i = 0; i < DIM; i++)   /* row */
-    for (int j = 0; j < DIM; j++) /* col */
-    {
-      uint32_t iter = env->data[i][j];
-      uint32_t color = iter2color(iter, maxiter);
+      uint32_t iter =
+          mandelbrot(XMIN, XMAX, YMIN, YMAX, DIM, DIM, MAXITER, i, j);
+      uint32_t color = iter2rgb(iter, MAXITER);
+      // uint32_t color = iter2grey(iter, MAXITER);
       env->data[i][j] = color;
     }
   gettimeofday(&t2, NULL);
@@ -136,7 +157,7 @@ Env* init(SDL_Window* win, SDL_Renderer* ren, int argc, char* argv[]) {
 
   float timecomp = TIME_DIFF(t1, t2);
   printf("=> mandelbrot set of dim %dx%d computed in %.2f ms (maxiter=%d)\n",
-         DIM, DIM, timecomp, maxiter);
+         DIM, DIM, timecomp, MAXITER);
 
   return env;
 }
