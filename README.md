@@ -7,7 +7,7 @@ center: false
 slideNumber: true
 ---
 
-# Visual Studio Code
+# Visual Studio Code (VSC)
 
 <br>
 <br>
@@ -46,7 +46,7 @@ What should be the *perfect* IDE?
 
 ---
 
-## Visual Studio Code
+## Visual Studio Code (VSC)
 
 Just another IDE & source code editor...
 
@@ -150,7 +150,7 @@ Note:
 
 ## Installation
 
-* Install or update VS Code on Debian Linux: [install.sh](install.sh)
+* Install or update VSC on Debian Linux: [install.sh](install.sh)
 
 ```bash
 URL="https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable"
@@ -159,7 +159,7 @@ wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 ```
 
-Run VS Code in your *working directory* as follow:
+Run VSC in your *working directory* as follow:
 
 ```bash
 code .
@@ -183,7 +183,7 @@ All extensions are available on [Market Place](https://marketplace.visualstudio.
 <center><img src="img/snap-extension.png" width=70%></center>
 
 My recommandation:
-* install extension *provided* by Microsoft or *recommanded* by VS Code
+* install extension *provided* by Microsoft or *recommanded* by VSC
 * install *very popular* extensions (> 1M downloads)
 
 ---
@@ -208,17 +208,13 @@ Some tips & tricks:
 
 * [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), ...
 
-
 Note:
-* [Extending VS Code](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
+* [Extending VSC](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
+* [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
 * [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
 * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
 * Other: VSCode Icons, Dracula Theme, VS Live Share, ...
-* Useful? [CMake Tools Helper](https://marketplace.visualstudio.com/items?itemName=maddouri.cmake-tools-helper)
-
-
-<!-- How about extensions for Docker, Node.js, Android? HTML / CSS format? -->
-<!-- https://codeburst.io/top-javascript-vscode-extensions-for-faster-development-c687c39596f5 -->
+* TODO: Android support, Docker, ...
 
 ---
 
@@ -242,13 +238,18 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
     "editor.wordWrap": "on",
     "workbench.colorTheme": "Dracula",
     "explorer.confirmDelete": false,
-    "cmake.buildDirectory": "${workspaceRoot}/build"
+    "cmake.buildDirectory": "${workspaceRoot}/build",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio"
 }
 ```
 
 * Other *json* files for some specific settings (e.g. extensions)
 * Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)) 
 * Debug configuration (settings in [launch.json](https://go.microsoft.com/fwlink/?linkid=830387))
+
+Note:
+* Set Clang fallback style to "Visual Studio", "Google", "LLVM", ... or add a file *.clang-fotmat* in your workspace.
 
 ---
 
@@ -257,14 +258,14 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
 All demo are available on <https://github.com/orel33/vscode>:
 
 * [Code Runner](#code-runner) (directory `demo/hello/`)
-* [JavaScript Programming](#javascript-programming) (directory `demo/fibonacci/`)
-* [Python Programming](#python-programming-12) (directory `demo/fibonacci/`)
 * [C/C++ Programming](#cc-programming-12) (directory `demo/fibonacci/`)
 * [CMake Project](#cmake-project) (directory `demo/cmake`)
+* [Python Programming](#python-programming-12) (directory `demo/fibonacci/`)
+* [JavaScript Programming](#javascript-programming) (directory `demo/fibonacci/`)
 * [GIT Support](#git)
 * [Writing in Markdown & LaTeX](#writing-in-markdown) (directory `demo/writing/`)
 
-For each demo, launch VS Code in the right directory:
+For each demo, launch VSC in the right directory:
 
 ```bash
 cd demo/hello && code .
@@ -281,135 +282,6 @@ cd demo/hello && code .
 <small>
 C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BASH, F#, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, Julia, Crystal, OCaml, R, AppleScript, Elixir, VB.NET, Clojure, Haxe, Objective-C, Rust, Racket, AutoHotkey, AutoIt, Kotlin, Dart, Pascal, Haskell, Nim, D, ...
 </small>
-
----
-
-## JavaScript Programming
-
-Sample [demo/fibonacci/fib.js](demo/fibonacci/fib.js)
-
-```js
-var fib = function (n)
-{
-  if (n <= 1)
-    return 1;
-  else
-    return fib(n - 1) + fib(n - 2);
-};
-
- console.log(fib(10));
-```
-
-* Native support of JavaScript...
-* Launch demo using *terminal* in panel: ```node fib.js``` or simply using *Code Runner* extension
-
-```text
-> Executing task: node fib.js <
-
-89
-```
-
-<!-- 
-
-* Configure a running task (menu Terminal > Configure Tasks) or edit file tasks.json
-
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "run fib.js",
-            "type": "shell",
-            "command": "node",
-            "args": ["fib.js"]
-        }
-    ]
-}
-```
-
--->
-
----
-
-## JavaScript Advanced Programming
-
-Sample [demo/express/express.js](demo/express/express.js) for [Node.js](https://nodejs.org)
-
-```js
-const express = require('express')
-const app = express()
-
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
-
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
-})
-```
-
-* Install extensions for package manager (*NPM*) and linting (*ESLint*)
-  * generate *package.json* for NPM and *.eslintrc.json* for ESLint
-
-```bash
-npm init
-npm install express --save
-eslint --init
-```
-
-Note:
-* <http://expressjs.com/fr/starter/hello-world.html>
-* More details on JavaScript programming: NPM, ESLint, ... <!-- reference -->
-
----
-
-## Python Programming (1/2)
-
-Sample [demo/fibonacci/fib.py](demo/fibonacci/fib.py)
-
-```python
-import sys
-
-def fib(n):
-    if n <= 1:
-        return 1
-    else:
-        return fib(n - 1) + fib(n - 2)
-
-print(fib(10))
-```
-
-* *Python* extension (provided by Microsoft):
-  * code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
-
-Note:
-* [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
-
----
-
-## Python Programming (2/2)
-
-* In menu *Terminal > Configure Tasks...* (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
-
-```json
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "run fib.py",
-            "type": "shell",
-            "command": "python3 ",
-            "args": [ "fib.py", "20" ]
-        }
-    ]
-}
-```
-
-* Then run it: menu *Terminal > Run Task...*
-* [Python Debugging](https://code.visualstudio.com/docs/python/debugging) : select your python file in editor, open Debug Mode (Ctrl+Shift+D) and select configuration "Python: Current File (integrated Terminal)", add breakpoint and run debug sesion...
-
-Note:
-* [syntax of tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
 
 ---
 
@@ -442,6 +314,7 @@ int main(int argc, char const *argv[])
 
 * Extension *C/C++* (provided by Microsoft):
   * code navigation (F12), peek definition (Ctrl+Shift+F10), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), linting, ...
+  * Advanced settings in file [.vscode/c_ccp_properties.json]()
 
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
@@ -452,31 +325,52 @@ Note:
 
 ## C/C++ Programming (2/2)
 
-* Building & Running: add two tasks in [tasks.json](demo/fibonacci/.vscode/tasks.json)
+* In menu *Terminal > Configure Tasks...* and add a *build* task and a *run* task ([tasks.json](demo/fibonacci/.vscode/tasks.json))
 
 ```json
 {
     "label": "build fib C",
     "type": "shell",
     "command": "gcc -Wall -std=c99 -g fib.c -o fib",
-    "group": { "kind": "build", "isDefault": true },  // default build task
-    "problemMatcher": [ "$gcc" ]                      // output in panel
+    "group": { "kind": "build", "isDefault": true },
+    "problemMatcher": [ "$gcc" ]
 },
 {
     "label": "run fib C",
     "type": "shell",
     "command": "./fib",
     "dependsOn": [ "build fib.c" ],
-    "problemMatcher": [ "$gcc" ]
 }
 ```
 
-* Then run it...
-  * menu *Terminal > Run Task...* or Ctrl+Shift+B to run default build task...
-  * on demand, associate GCC as *problemMatcher* to scan output problem...
+* Then build, menu *Terminal > Run Build Task...* (or Ctrl+Shift+B)
+* And run, menu *Terminal > Run Task...* (or Ctrl+Shift+R) and select the *run* task
 
 Note:
 * <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building>
+* on demand, associate GCC as *problemMatcher* to scan output problem...
+
+---
+
+## C/C++ Code Formatting
+
+* Code formatting based on *clang-format* external command (Ctrl+Shift+I)
+* Available styles in VSC: "LLVM", "Google", "Chromium", "Mozilla", "WebKit" and  "Visual Studio" (default)
+* Set the following user settings (Ctrl+,) and use your own file format (if it exists) or otherwise a fallback style
+
+```json
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "Google"
+```
+
+* Generate your own *clang* format file (*.clang-format*) based on a default style and tune it... Then share it in your workspace on top of your GIT repository...
+
+```bash
+clang-format -style=Google -dump-config > .clang-format
+```
+
+Note:
+* [Clang Style file format](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
 
 ---
 
@@ -580,9 +474,118 @@ endforeach()
 <center><img src="img/snap-cmake-status-bar.png" width=80%></center>
 
 Note:
-* [Getting Started with CMake in VS Code](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
+* [Getting Started with CMake in VSC](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 * TODO: explain more advanced CMake (select options, ...)
 * TODO: explain debugging...
+
+---
+
+## Python Programming (1/2)
+
+Sample [demo/fibonacci/fib.py](demo/fibonacci/fib.py)
+
+```python
+import sys
+
+def fib(n):
+    if n <= 1:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+
+print(fib(10))
+```
+
+* *Python* extension (provided by Microsoft):
+  * code navigation (F12), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting, debugging (F5), refactoring (F2), ...
+
+Note:
+* [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+
+---
+
+## Python Programming (2/2)
+
+* In menu *Terminal > Configure Tasks...* (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
+
+```json
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run fib.py",
+            "type": "shell",
+            "command": "python3 ",
+            "args": [ "fib.py", "20" ]
+        }
+    ]
+}
+```
+
+* Then run it: menu *Terminal > Run Task...*
+* [Python Debugging](https://code.visualstudio.com/docs/python/debugging) : select your python file in editor, open Debug Mode (Ctrl+Shift+D) and select configuration "Python: Current File (integrated Terminal)", add breakpoint and run debug sesion...
+
+Note:
+* [syntax of tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)
+
+---
+
+## JavaScript Programming
+
+Sample [demo/fibonacci/fib.js](demo/fibonacci/fib.js)
+
+```js
+var fib = function (n)
+{
+  if (n <= 1)
+    return 1;
+  else
+    return fib(n - 1) + fib(n - 2);
+};
+
+ console.log(fib(10));
+```
+
+* Native support of JavaScript...
+* Launch demo using *terminal* in panel: ```node fib.js``` or simply using *Code Runner* extension
+
+```text
+> Executing task: node fib.js <
+
+89
+```
+
+---
+
+## JavaScript Advanced Programming
+
+Sample [demo/express/express.js](demo/express/express.js) for [Node.js](https://nodejs.org)
+
+```js
+const express = require('express')
+const app = express()
+
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})
+```
+
+* Install extensions for package manager (*NPM*) and linting (*ESLint*)
+  * generate *package.json* for NPM and *.eslintrc.json* for ESLint
+
+```bash
+npm init
+npm install express --save
+eslint --init
+```
+
+Note:
+* <http://expressjs.com/fr/starter/hello-world.html>
+* More details on JavaScript programming: NPM, ESLint, ... <!-- reference -->
 
 ---
 
