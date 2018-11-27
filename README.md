@@ -319,7 +319,6 @@ int main(int argc, char const *argv[])
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
 * <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
-* code formatting based on *clang-format* (add file `.clang-format` in workspace directory)
 
 ---
 
@@ -343,6 +342,7 @@ Note:
 }
 ```
 
+* Use smart completion to learn about possible attributes (Ctrl+Space) and hover to view attribute descriptions...
 * Then build, menu *Terminal > Run Build Task...* (or Ctrl+Shift+B)
 * And run, menu *Terminal > Run Task...* (or Ctrl+Shift+R) and select the *run* task
 
@@ -379,6 +379,7 @@ Note:
 * In menu *Debug > Add Configration...* (or edit [launch.json](demo/fibonacci/.vscode/launch.json))
   * select environment C++ (GDB) to get a template configuration
   * edit the attributes: *name*, *program*, *args*, ...
+  * use smart completion to learn about possible attributes (Ctrl+Space) and hover to view attribute descriptions...
 
 ```json
 {
@@ -402,8 +403,6 @@ Note:
 ```
 
  Note:
-* Use smart completion to learn about possible attributes (Ctrl+Space).
-* Hover to view descriptions of existing attributes.
 * For more information, visit: <https://go.microsoft.com/fwlink/?linkid=830387>
 
 ---
