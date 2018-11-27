@@ -159,6 +159,7 @@ wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 ```
 
+<center><img src="img/snap-overview.png" width=90%></center>
 Run VSC in your *working directory* as follow:
 
 ```bash
@@ -285,7 +286,10 @@ C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BAS
 
 ---
 
-## C/C++ Programming (1/2)
+## C/C++ Programming: Basic Example
+
+* Extension *C/C++* (provided by Microsoft):
+  * code navigation (F12), peek definition (Ctrl+Shift+F10), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), linting, ...
 
 Sample [demo/fibonacci/fib.c](demo/fibonacci/fib.c)
 
@@ -312,9 +316,6 @@ int main(int argc, char const *argv[])
 }
 ```
 
-* Extension *C/C++* (provided by Microsoft):
-  * code navigation (F12), peek definition (Ctrl+Shift+F10), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), linting, ...
-  * Advanced settings in file [.vscode/c_ccp_properties.json]()
 
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
@@ -322,7 +323,7 @@ Note:
 
 ---
 
-## C/C++ Programming (2/2)
+## C/C++ Programming: Building & Running
 
 * In menu *Terminal > Configure Tasks...* and add a *build* task and a *run* task ([tasks.json](demo/fibonacci/.vscode/tasks.json))
 
@@ -352,7 +353,20 @@ Note:
 
 ---
 
-## C/C++ Code Formatting
+## C/C++ Programming: Advanced Example
+
+Example [demo/mandelbrot](demo/mandelbrot/): a simple Makefile project using [SDL2](https://www.libsdl.org/index.php) graphics library as external dependency...
+
+<center><img src="demo/mandelbrot/snap.png" width=60%></center>
+
+TODO: explain how to configure code navigation with Intellisense and linting and ...
+
+Note:
+  * Advanced settings in file [.vscode/c_ccp_properties.json]()
+
+---
+
+## C/C++ Programming: Code Formatting
 
 * Code formatting based on *clang-format* external command (Ctrl+Shift+I)
 * Available styles in VSC: "LLVM", "Google", "Chromium", "Mozilla", "WebKit" and  "Visual Studio" (default)
