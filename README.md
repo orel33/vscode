@@ -395,7 +395,7 @@ Note:
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "setupCommands": [ /* ... */ ]
+            "setupCommands": [ ... ]
         }
     ]
 }
