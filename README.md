@@ -402,7 +402,7 @@ Note:
 ```
 
  Note:
-* Use smart completion to learn about possible attributes.
+* Use smart completion to learn about possible attributes (Ctrl+Space).
 * Hover to view descriptions of existing attributes.
 * For more information, visit: <https://go.microsoft.com/fwlink/?linkid=830387>
 
