@@ -14,12 +14,15 @@
                 "kind": "build",
                 "isDefault": true
             }
-        }, {
+        },
+        {
             "label": "run",
             "type": "shell",
             "command": "./mandel",
-            "problemMatcher": [],
-            "dependsOn": [ "build"]
+            "dependsOn": [
+                "build"
+            ],
+            "problemMatcher": []
         }
     ]
 }

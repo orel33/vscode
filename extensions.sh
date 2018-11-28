@@ -2,7 +2,7 @@
 
 # C/C++
 code --install-extension ms-vscode.cpptools # provided by microsoft
-code --install-extension jbenden.c-cpp-flylint # linting based on clang & cppcheck
+# code --install-extension jbenden.c-cpp-flylint # linting based on clang & cppcheck
 
 # Python (provided by Microsoft)
 code --install-extension ms-python.python
@@ -57,7 +57,7 @@ code --install-extension HookyQR.beautify
 code --install-extension shakram02.bash-beautify # formatting
 
 # misc
-code --install-extension shardulm94.trailing-spaces # show ugly trailing spaces    
+code --install-extension shardulm94.trailing-spaces # show ugly trailing spaces
 code --install-extension wayou.vscode-todo-highlight # highlight TODO:
 code --install-extension brunnerh.insert-unicode # insert utf8 special characters
 code --install-extension adammaras.overtype # enable insert mode

@@ -21,6 +21,39 @@ slideNumber: true
 
 <center><img src="img/icon.svg" width="100" align="middle"></center>
 
+- [Visual Studio Code (VSC)](#visual-studio-code-vsc)
+    - [Introduction](#introduction)
+    - [Visual Studio Code (VSC)](#visual-studio-code-vsc-1)
+    - [Editor Overview](#editor-overview)
+    - [Editor Overview](#editor-overview-1)
+    - [Editor Overview](#editor-overview-2)
+    - [Keyboard Shortcuts](#keyboard-shortcuts)
+    - [Keyboard Shortcuts](#keyboard-shortcuts-1)
+    - [Installation](#installation)
+    - [Extensions](#extensions)
+    - [My Favorite Extensions](#my-favorite-extensions)
+    - [Settings](#settings)
+    - [Demo](#demo)
+    - [Code Runner](#code-runner)
+    - [C/C++ Programming](#cc-programming)
+    - [C/C++ Programming: Building & Running](#cc-programming-building--running)
+    - [C/C++ Programming: Advanced Example](#cc-programming-advanced-example)
+    - [C/C++ Programming: Code Formatting](#cc-programming-code-formatting)
+    - [C/C++ Debugging](#cc-debugging)
+    - [C/C++ Debugging](#cc-debugging-1)
+    - [CMake Project](#cmake-project)
+    - [CMake Project](#cmake-project-1)
+    - [Python Programming](#python-programming)
+    - [Python Programming](#python-programming-1)
+    - [JavaScript Programming](#javascript-programming)
+    - [JavaScript Advanced Programming](#javascript-advanced-programming)
+    - [GIT (1/2)](#git-12)
+    - [GIT (2/2)](#git-22)
+    - [Writing in MarkDown](#writing-in-markdown)
+    - [Writing in LaTeX](#writing-in-latex)
+    - [About this Document](#about-this-document)
+
+
 ---
 
 ## Introduction
@@ -194,7 +227,6 @@ My recommandation:
 * [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
-* [C/C++ Advanced Lint](https://marketplace.visualstudio.com/items?itemName=jbenden.c-cpp-flylint) (clang, cppcheck, ...)
 * [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (run code snippet or code file for multiple languages)
 * [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
@@ -214,6 +246,7 @@ Note:
 * [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
 * [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
 * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
+* [C/C++ Advanced Lint](https://marketplace.visualstudio.com/items?itemName=jbenden.c-cpp-flylint) (clang, cppcheck, ...)
 * Other: VSCode Icons, Dracula Theme, VS Live Share, ...
 * TODO: Android support, Docker, ...
 
@@ -221,16 +254,20 @@ Note:
 
 ## Settings
 
-All settings in `.vscode/*.json` files (setting button at bottom of the activity bar or Ctrl+,)
+All settings are stored in *json* file format (setting button at bottom of the activity bar or Ctrl+,)
 
-* Three levels: default / user / workspace settings (settings.json) 
+Three levels:
+* workspace settings (`./.vscode/settings.json`)
+* user settings (`~/config/Code/User/settings.json`)
+* default settings
+
+For instance, my user settings:
 
 ```json
 {
     "editor.renderWhitespace": "all",
     "editor.minimap.enabled": true,
     "editor.renderIndentGuides": true,
-    "editor.formatOnType": true,
     "git.confirmSync": false,
     "window.zoomLevel": 0,
     "gitlens.gitExplorer.files.layout": "tree",
@@ -240,17 +277,16 @@ All settings in `.vscode/*.json` files (setting button at bottom of the activity
     "workbench.colorTheme": "Dracula",
     "explorer.confirmDelete": false,
     "cmake.buildDirectory": "${workspaceRoot}/build",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
     "C_Cpp.clang_format_style": "file",
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio"
 }
 ```
 
 * Other *json* files for some specific settings (e.g. extensions)
-* Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558)) 
+* Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558))
 * Debug configuration (settings in [launch.json](https://go.microsoft.com/fwlink/?linkid=830387))
-
-Note:
-* Set Clang fallback style to "Visual Studio", "Google", "LLVM", ... or add a file *.clang-fotmat* in your workspace.
 
 ---
 
@@ -259,9 +295,11 @@ Note:
 All demo are available on <https://github.com/orel33/vscode>:
 
 * [Code Runner](#code-runner) (directory `demo/hello/`)
-* [C/C++ Programming](#cc-programming-12) (directory `demo/fibonacci/`)
-* [CMake Project](#cmake-project) (directory `demo/cmake`)
-* [Python Programming](#python-programming-12) (directory `demo/fibonacci/`)
+* [C/C++ Programming](#cc-programming)
+  - [Basic Example](#cc-programming) (directory `demo/fibonacci/`)
+  - [Advanced Example](#cc-programming-advanced-example) (directory `demo/mandelbrot/`)
+  - [CMake Project](#cmake-project) (directory `demo/cmake`)
+* [Python Programming](#python-programming) (directory `demo/fibonacci/`)
 * [JavaScript Programming](#javascript-programming) (directory `demo/fibonacci/`)
 * [GIT Support](#git)
 * [Writing in Markdown & LaTeX](#writing-in-markdown) (directory `demo/writing/`)
@@ -286,12 +324,13 @@ C, C++, Java, JS, PHP, Python, Perl, Ruby, Go, Lua, Groovy, PowerShell, CMD, BAS
 
 ---
 
-## C/C++ Programming: Basic Example
+## C/C++ Programming
 
-* Extension *C/C++* (provided by Microsoft):
-  * code navigation (F12), peek definition (Ctrl+Shift+F10), smart completion (Ctrl+Space), *clang* code formatting (Ctrl+Shift+I), linting, ...
+Just install the Extension *C/C++* (provided by Microsoft)
 
-Sample [demo/fibonacci/fib.c](demo/fibonacci/fib.c)
+* code navigation (F12), peek definition (Ctrl+Shift+F10), smart completion (Ctrl+Space), code formatting (Ctrl+Shift+I), linting and more...
+
+Basic Example [demo/fibonacci/fib.c](demo/fibonacci/fib.c)
 
 ```c
 /* fib.c */
@@ -315,7 +354,6 @@ int main(int argc, char const *argv[])
     return 0;
 }
 ```
-
 
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
@@ -362,7 +400,7 @@ Example [demo/mandelbrot](demo/mandelbrot/): a simple Makefile project using [SD
 TODO: explain how to configure code navigation with Intellisense and linting and ...
 
 Note:
-  * Advanced settings in file [.vscode/c_ccp_properties.json]()
+  * Advanced settings in file [.vscode/c_ccp_properties.json](demo/mandelbrot/.vscode/c_ccp_properties.json)
 
 ---
 
@@ -388,7 +426,7 @@ Note:
 
 ---
 
-## C/C++ Debugging (1/2)
+## C/C++ Debugging
 
 * In menu *Debug > Add Configration...* (or edit [launch.json](demo/fibonacci/.vscode/launch.json))
   * select environment C++ (GDB) to get a template configuration
@@ -421,7 +459,7 @@ Note:
 
 ---
 
-## C/C++ Debugging (2/2)
+## C/C++ Debugging
 
 <center><img src="img/snap-debug.png" width=90%></center>
 
@@ -435,7 +473,7 @@ Note:
 
 ---
 
-## CMake Project (1/2)
+## CMake Project
 
 * Project files: ```main.c``` + library ```fib.c fib.h```
 * Add a CMake project file: [CMakeLists.txt](demo/cmake/CMakeLists.txt)
@@ -467,7 +505,7 @@ endforeach()
 
 ---
 
-## CMake Project (2/2)
+## CMake Project
 
 * Extensions: *CMake* & *CMake Tools*
   * Default CMake build directory in settings: ```${workspaceRoot}/build```
@@ -493,7 +531,7 @@ Note:
 
 ---
 
-## Python Programming (1/2)
+## Python Programming
 
 Sample [demo/fibonacci/fib.py](demo/fibonacci/fib.py)
 
@@ -517,7 +555,7 @@ Note:
 
 ---
 
-## Python Programming (2/2)
+## Python Programming
 
 * In menu *Terminal > Configure Tasks...* (or edit [.vscode/tasks.json](demo/fibonacci/.vscode/tasks.json))
 
