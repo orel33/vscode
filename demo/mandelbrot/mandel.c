@@ -2,8 +2,6 @@
 // https://rosettacode.org/wiki/Mandelbrot_set
 
 #include <SDL.h>
-#include <SDL_image.h>  // required to load transparent texture from PNG
-#include <SDL_ttf.h>    // required to use TTF fonts
 
 #include <assert.h>
 #include <math.h>
@@ -198,9 +196,6 @@ int main(int argc, char* argv[]) {
   /* initialize SDL2 and some extensions */
   if (SDL_Init(SDL_INIT_VIDEO) != 0)
     ERROR("Error: SDL_Init VIDEO (%s)", SDL_GetError());
-  if (IMG_Init(IMG_INIT_PNG & IMG_INIT_PNG) != IMG_INIT_PNG)
-    ERROR("Error: IMG_Init PNG (%s)", SDL_GetError());
-  if (TTF_Init() != 0) ERROR("Error: TTF_Init (%s)", SDL_GetError());
 
   /* create window and renderer */
   SDL_Window* win = SDL_CreateWindow(
@@ -236,8 +231,6 @@ int main(int argc, char* argv[]) {
 
   SDL_DestroyRenderer(ren);
   SDL_DestroyWindow(win);
-  IMG_Quit();
-  TTF_Quit();
   SDL_Quit();
 
   return EXIT_SUCCESS;
