@@ -21,39 +21,6 @@ slideNumber: true
 
 <center><img src="img/icon.svg" width="100" align="middle"></center>
 
-- [Visual Studio Code (VSC)](#visual-studio-code-vsc)
-    - [Introduction](#introduction)
-    - [Visual Studio Code (VSC)](#visual-studio-code-vsc-1)
-    - [Editor Overview](#editor-overview)
-    - [Editor Overview](#editor-overview-1)
-    - [Editor Overview](#editor-overview-2)
-    - [Keyboard Shortcuts](#keyboard-shortcuts)
-    - [Keyboard Shortcuts](#keyboard-shortcuts-1)
-    - [Installation](#installation)
-    - [Extensions](#extensions)
-    - [My Favorite Extensions](#my-favorite-extensions)
-    - [Settings](#settings)
-    - [Demo](#demo)
-    - [Code Runner](#code-runner)
-    - [C/C++ Programming](#cc-programming)
-    - [C/C++ Programming: Building & Running](#cc-programming-building--running)
-    - [C/C++ Programming: Advanced Example](#cc-programming-advanced-example)
-    - [C/C++ Programming: Code Formatting](#cc-programming-code-formatting)
-    - [C/C++ Debugging](#cc-debugging)
-    - [C/C++ Debugging](#cc-debugging-1)
-    - [CMake Project](#cmake-project)
-    - [CMake Project](#cmake-project-1)
-    - [Python Programming](#python-programming)
-    - [Python Programming](#python-programming-1)
-    - [JavaScript Programming](#javascript-programming)
-    - [JavaScript Advanced Programming](#javascript-advanced-programming)
-    - [GIT (1/2)](#git-12)
-    - [GIT (2/2)](#git-22)
-    - [Writing in MarkDown](#writing-in-markdown)
-    - [Writing in LaTeX](#writing-in-latex)
-    - [About this Document](#about-this-document)
-
-
 ---
 
 ## Introduction
