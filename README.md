@@ -159,7 +159,6 @@ wget $URL -O /tmp/vscode.deb
 sudo gdebi /tmp/vscode.deb
 ```
 
-<center><img src="img/snap-overview.png" width=90%></center>
 Run VSC in your *working directory* as follow:
 
 ```bash
@@ -223,10 +222,14 @@ Note:
 
 All settings are stored in *json* file format (setting button at bottom of the activity bar or Ctrl+,)
 
-Three levels:
-* workspace settings (`./.vscode/settings.json`)
-* user settings (`~/config/Code/User/settings.json`)
-* default settings
+* Three levels: workspace settings (*./.vscode/settings.json*) > user settings (*~/config/Code/User/settings.json*) > default settings
+* Other *json* files for some specific settings (e.g. extensions)
+* Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558))
+* Debug configuration (settings in [launch.json](https://go.microsoft.com/fwlink/?linkid=830387))
+
+---
+
+## My User Settings
 
 For instance, my user settings:
 
@@ -250,10 +253,6 @@ For instance, my user settings:
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio"
 }
 ```
-
-* Other *json* files for some specific settings (e.g. extensions)
-* Custom tasks for build & run (settings in [tasks.json](https://go.microsoft.com/fwlink/?LinkId=733558))
-* Debug configuration (settings in [launch.json](https://go.microsoft.com/fwlink/?linkid=830387))
 
 ---
 
