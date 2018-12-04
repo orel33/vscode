@@ -22,5 +22,5 @@
         ]
     },
     "gtest-adapter.debugConfig": "(lldb) Launch",
-    "gtest-adapter.supportLocation": false
+    "gtest-adapter.supportLocation": true
 }
