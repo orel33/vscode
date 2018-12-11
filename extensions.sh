@@ -32,6 +32,9 @@ code --install-extension vector-of-bool.cmake-tools
 code --install-extension cheshirekow.cmake-format
 # code --install-extension maddouri.cmake-tools-helper # useful or not?
 
+# Google Tests
+code --install-extension DavidSchuldenfrei.gtest-adapter
+
 # y86
 code --install-extension abhinavk99.y86-vscode # formatting
 

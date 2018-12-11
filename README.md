@@ -193,6 +193,7 @@ My recommandation:
 * [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 * [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
+* [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
 * [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (run code snippet or code file for multiple languages)
 * [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
@@ -200,16 +201,10 @@ My recommandation:
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
 * [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (Beautify JavaScript, JSON, CSS, HTML, ...).
 * [NPM](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) (JavaScript package manager) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (JavaScript linting, code formatting and more)
-* [Bash Beautify](https://marketplace.visualstudio.com/items?itemName=shakram02.bash-beautify)
-
-
-Some tips & tricks:
-
-* [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), ...
+* [Bash Beautify](https://marketplace.visualstudio.com/items?itemName=shakram02.bash-beautify), [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), ...
 
 Note:
 * [Extending VSC](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
-* [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
 * [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
 * [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
 * [C/C++ Advanced Lint](https://marketplace.visualstudio.com/items?itemName=jbenden.c-cpp-flylint) (clang, cppcheck, ...)
@@ -264,7 +259,8 @@ All demo are available on <https://github.com/orel33/vscode>:
 * [C/C++ Programming](#cc-programming)
   - [Basic Example](#cc-programming) (directory `demo/fibonacci/`)
   - [Advanced Example](#cc-programming-advanced-example) (directory `demo/mandelbrot/`)
-  - [CMake Project](#cmake-project) (directory `demo/cmake`)
+  - [CMake Project](#cmake-project) (directory `demo/cmake/`)
+  - [Google Tests](#google-tests) (directory `demo/gtest/`)
 * [Python Programming](#python-programming) (directory `demo/fibonacci/`)
 * [JavaScript Programming](#javascript-programming) (directory `demo/fibonacci/`)
 * [GIT Support](#git)
@@ -363,7 +359,7 @@ Example [demo/mandelbrot](demo/mandelbrot/): a simple Makefile project using [SD
 
 <center><img src="demo/mandelbrot/snap.png" width=60%></center>
 
-TODO: explain how to configure code navigation with Intellisense and linting and ...
+TODO: explain how to configure Intellisense (code navigation, linting, ...)
 
 Note:
   * Advanced settings in file [.vscode/c_ccp_properties.json](demo/mandelbrot/.vscode/c_ccp_properties.json)
@@ -494,6 +490,21 @@ Note:
 * [Getting Started with CMake in VSC](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 * TODO: explain more advanced CMake (select options, ...)
 * TODO: explain debugging...
+
+---
+
+## Google Tests
+
+* Extension [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
+  * run all tests, run & debug each test (just in one click), ...
+  * [demo](demo/gtest): launch the build task (Ctrl+Shift+B) and click the **Test** button in activity bar...
+
+<center><img src="img/snap-gtest.png" width=80%></center>
+
+Note:
+* GoogleTest framework: <https://github.com/abseil/googletest>
+* Google Tests can also be integrated as CMake Tests...
+* Drawback: C++ framework (not pure C)
 
 ---
 
