@@ -662,6 +662,20 @@ Note:
 
 ---
 
+## GitHub Pull Requests
+
+This extension allows you to review and manage GitHub pull requests in Visual Studio Code.
+
+* Authenticating and connecting VS Code to GitHub.
+* Listing and browsing PRs from within VS Code.
+* Reviewing PRs from within VS Code with in-editor commenting.
+* Validating PRs from within VS Code with easy checkouts.
+* Terminal integration that enables UI and CLIs to co-exist.
+
+<center><img src="img/demo.gif" width=80%></center>
+
+---
+
 ## About this Document
 
 This document is written in *Markdown* and converted into slides by the extension *vscode-reveal* (based on [Reval.js](https://revealjs.com)).
