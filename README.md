@@ -639,6 +639,19 @@ Note:
 
 ---
 
+## GitHub Pull Requests
+
+This [extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github) allows you to review and manage GitHub pull requests in Visual Studio Code.
+
+* Authenticating and connecting VS Code to GitHub.
+* Listing and browsing PRs from within VS Code.
+* Reviewing PRs from within VS Code with in-editor commenting.
+* Validating PRs from within VS Code with easy checkouts.
+
+<center><img src="img/snap-github-pull-request.gif" width=80%></center>
+
+---
+
 ## Writing in MarkDown
 
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
@@ -659,20 +672,6 @@ Note:
 * multilingual spell checker (extension *Spell Right*)
 
 <center><img src="img/snap-latex.png" width=80%></center>
-
----
-
-## GitHub Pull Requests
-
-This extension allows you to review and manage GitHub pull requests in Visual Studio Code.
-
-* Authenticating and connecting VS Code to GitHub.
-* Listing and browsing PRs from within VS Code.
-* Reviewing PRs from within VS Code with in-editor commenting.
-* Validating PRs from within VS Code with easy checkouts.
-* Terminal integration that enables UI and CLIs to co-exist.
-
-<center><img src="img/demo.gif" width=80%></center>
 
 ---
 
