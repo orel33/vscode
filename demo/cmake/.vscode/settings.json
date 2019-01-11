@@ -1,0 +1,5 @@
+{
+    "cmake.configureSettings": { 
+        "CMAKE_C_FLAGS_DEBUG": "-g -fsanitize=address -fsanitize=leak -fsanitize=undefined", 
+        "CMAKE_VERBOSE_MAKEFILE": "ON" }
+}

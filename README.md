@@ -437,6 +437,7 @@ Note:
 
 ## CMake Project
 
+* Extensions: *CMake* & *CMake Tools*
 * Project files: ```main.c``` + library ```fib.c fib.h```
 * Add a CMake project file: [CMakeLists.txt](demo/cmake/CMakeLists.txt)
 
@@ -465,31 +466,46 @@ foreach(i RANGE ${len})
 endforeach()
 ```
 
+And just open VSC... Easy!
+
 ---
 
 ## CMake Project
 
 * Extensions: *CMake* & *CMake Tools*
-  * Default CMake build directory in settings: ```${workspaceRoot}/build```
+  * set default CMake build directory in user settings:  
+
+```json
+  "cmake.buildDirectory": "${workspaceRoot}/build"
+```
+
+* Optionnaly, you can set some CMake options in your workspace settings:
+ 
+ ```json
+"cmake.configureSettings": { 
+  "CMAKE_C_FLAGS_DEBUG": "-g -fsanitize=address -fsanitize=leak -fsanitize=undefined",
+  "CMAKE_VERBOSE_MAKEFILE": "ON"  
+}
+```
+
 * All CMake commands available from palette (Ctrl+Shift+P, type "cmake"...)
-  * Build (F7), Build target (Shift+F7), Clean, Run tests, ...
+  * Build All (F7), Clean, Run CTest, ...
+  * Build target (Shift+F7), Launch target (Shift+F5) or Debug target (Ctrl+F5)
 * In Status Bar, configure your project:
-  * *Build Variant*: Debug, Release, MinSizeRel, ...
-  * *Kit*: Clang, GCC, or unspecified (Let CMake guess your compiler...)
-  * *Active Target* : all, main (executable), fib (library), ExperimentalTest, ExperimentalMemCheck (valgrind), ...
-  * *Target to Launch*: main
-* Then click in status bar on:
+  * *Select Build Variant*: Debug, Release, MinSizeRel, ...
+  * *Select Kit*: Clang, GCC, or unspecified (Let CMake guess your compiler...)
+  * *Select Targets* : select both target to build (default *[all]*) and target to launch (or debug)
+* Then just click in status bar on:
   * *CMake* to generate Makefiles
   * *Build* to compile project
   * *Debug* to debug the target to launch
   * *Tests* to re-run tests... (use Palette for the first time)
 
-<center><img src="img/snap-cmake-status-bar.png" width=80%></center>
+<center><img src="img/snap-cmake-status-bar-2.png" width=80%></center>
 
 Note:
 * [Getting Started with CMake in VSC](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
-* TODO: explain more advanced CMake (select options, ...)
-* TODO: explain debugging...
+
 
 ---
 
