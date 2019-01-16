@@ -245,7 +245,7 @@ For instance, my user settings:
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "C_Cpp.clang_format_style": "file",
-    "C_Cpp.clang_format_fallbackStyle": "Visual Studio"
+    "C_Cpp.clang_format_fallbackStyle": "Google"
 }
 ```
 
@@ -377,10 +377,11 @@ Note:
     "C_Cpp.clang_format_fallbackStyle": "Google"
 ```
 
-* Generate your own *clang* format file (*.clang-format*) based on a default style and tune it... Then share it in your workspace on top of your GIT repository...
+* Generate your own *clang* format file (*.clang-format*) based on a default style and tune it... Then share it in your workspace on top of your GIT repository... To start, apply the command it by hand on your whole projet.
 
 ```bash
 clang-format -style=Google -dump-config > .clang-format
+clang-format -i *.c *.h
 ```
 
 Note:
@@ -470,23 +471,9 @@ And just open VSC... Easy!
 
 ---
 
-## CMake Project
+## CMake Project: Basics
 
 * Extensions: *CMake* & *CMake Tools*
-  * set default CMake build directory in user settings:  
-
-```json
-  "cmake.buildDirectory": "${workspaceRoot}/build"
-```
-
-* Optionnaly, you can set some CMake options in your workspace settings:
- 
- ```json
-"cmake.configureSettings": { 
-  "CMAKE_C_FLAGS_DEBUG": "-g -fsanitize=address -fsanitize=leak -fsanitize=undefined",
-  "CMAKE_VERBOSE_MAKEFILE": "ON"  
-}
-```
 
 * All CMake commands available from palette (Ctrl+Shift+P, type "cmake"...)
   * Build All (F7), Clean, Run CTest, ...
@@ -506,6 +493,24 @@ And just open VSC... Easy!
 Note:
 * [Getting Started with CMake in VSC](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
 
+---
+
+## CMake Project (Advanced)
+
+* Set default CMake build directory in user settings:  
+
+```json
+"cmake.buildDirectory": "${workspaceRoot}/build"
+```
+
+* Optionnaly, you can set some CMake options in your workspace settings:
+ 
+ ```json
+"cmake.configureSettings": { 
+  "CMAKE_C_FLAGS_DEBUG": "-g -fsanitize=address -fsanitize=leak -fsanitize=undefined",
+  "CMAKE_VERBOSE_MAKEFILE": "ON"  
+}
+```
 
 ---
 
