@@ -471,7 +471,7 @@ And just open VSC... Easy!
 
 ---
 
-## CMake Project: Basics
+## CMake Project (Basics)
 
 * Extensions: *CMake* & *CMake Tools*
 
