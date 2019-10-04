@@ -46,7 +46,8 @@ try:
     store1 = json.load(f1)
     f1.close()
 except:
-    print("Fail to open file: {}! Create an empty one...".format(filename1))
+    print("Fail to open file: {}".format(filename1))
+    print("Create an empty one...")
     store1 = {}  # create an empty settings
     # sys.exit(1)
 
