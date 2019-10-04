@@ -46,11 +46,11 @@ try:
     store1 = json.load(f1)
     f1.close()
 except:
-    print(f"Fail to open file: {filename1}")
+    print("Fail to open file: {}".format(filename1))    
     sys.exit(1)
 
 # Merge two setting files
-print(f"Updating your settings file: {filename1}")
+print("Updating your settings file: {}".format(filename1))
 store1.update(store0)
 # json_string = json.dumps(store1, indent=4)
 try:
@@ -59,7 +59,7 @@ try:
     f2.close()
     # print(json_string)
 except:
-    print(f"Fail to open file: {filename1}")
+    print("Fail to open file: {}".format(filename1))
     sys.exit(1)
 
 print("Done!")
