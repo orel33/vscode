@@ -13,6 +13,7 @@ code --install-extension formulahendry.code-runner
 # Git
 code --install-extension eamodio.gitlens
 code --install-extension donjayamanne.githistory
+code --install-extension mhutchie.git-graph         # git graph
 
 # markdown support
 code --install-extension yzhang.markdown-all-in-one

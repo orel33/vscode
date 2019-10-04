@@ -438,6 +438,8 @@ Note:
 
 ## CMake Project
 
+$$\frac{x}{y}$$
+
 * Extensions: *CMake* & *CMake Tools*
 * Project files: ```main.c``` + library ```fib.c fib.h```
 * Add a CMake project file: [CMakeLists.txt](demo/cmake/CMakeLists.txt)
@@ -468,6 +470,7 @@ endforeach()
 ```
 
 And just open VSC... Easy!
+
 
 ---
 
