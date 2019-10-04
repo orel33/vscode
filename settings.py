@@ -32,8 +32,7 @@ json_string0 = """{
     "C_Cpp.clang_format_style": "file",
     "C_Cpp.clang_format_fallbackStyle": "Google",
     "C_Cpp.intelliSenseCacheSize": 0
-}
-"""
+}"""
 print("=> Load default settings...")
 print(json_string0)
 store0 = json.loads(json_string0)
@@ -41,16 +40,18 @@ store0 = json.loads(json_string0)
 # Load user settings
 home = os.getenv("HOME")
 filename1 = home + "/.config/Code/User/settings.json"  # default on linux
+print("=> Load your settings file: {}".format(filename1))
 try:
     f1 = open(filename1, 'r')
     store1 = json.load(f1)
     f1.close()
 except:
-    print("Fail to open file: {}".format(filename1))    
-    sys.exit(1)
+    print("Fail to open file: {}! Create an empty one...".format(filename1))
+    store1 = {}  # create an empty settings
+    # sys.exit(1)
 
 # Merge two setting files
-print("Updating your settings file: {}".format(filename1))
+print("=> Updating your settings file: {}".format(filename1))
 store1.update(store0)
 # json_string = json.dumps(store1, indent=4)
 try:
