@@ -41,23 +41,25 @@ store0 = json.loads(json_string0)
 # Load user settings
 home = os.getenv("HOME")
 filename1 = home + "/.config/Code/User/settings.json"  # default on linux
-f1 = open(filename1, 'r')
-if not f1:
+try:
+    f1 = open(filename1, 'r')
+    store1 = json.load(f1)
+    f1.close()
+except:
     print(f"Fail to open file: {filename1}")
     sys.exit(1)
-store1 = json.load(f1)
-f1.close()
 
 # Merge two setting files
 print(f"Updating your settings file: {filename1}")
 store1.update(store0)
 # json_string = json.dumps(store1, indent=4)
-f2 = open(filename1, 'w')
-if not f2:
+try:
+    f2 = open(filename1, 'w')
+    # json.dump(store1, f2, indent=4)
+    f2.close()
+    # print(json_string)
+except:
     print(f"Fail to open file: {filename1}")
     sys.exit(1)
-json.dump(store1, f2, indent=4)
-f2.close()
-# print(json_string)
 
 print("Done!")
