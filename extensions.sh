@@ -64,7 +64,7 @@ code --install-extension shakram02.bash-beautify # formatting
 code --install-extension shardulm94.trailing-spaces # show ugly trailing spaces
 code --install-extension wayou.vscode-todo-highlight # highlight TODO:
 code --install-extension brunnerh.insert-unicode # insert utf8 special characters
-code --install-extension adammaras.overtype # enable insert mode
+# code --install-extension adammaras.overtype # enable insert mode
 code --install-extension christian-kohler.path-intellisense # path auto-completion
 
 # Fun
