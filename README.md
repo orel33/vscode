@@ -236,16 +236,13 @@ For instance, my user settings:
     "git.confirmSync": false,
     "window.zoomLevel": 0,
     "gitlens.gitExplorer.files.layout": "tree",
-    "revealjs.center": false,
-    "explorer.confirmDragAndDrop": false,
     "editor.wordWrap": "on",
-    "workbench.colorTheme": "Dracula",
-    "explorer.confirmDelete": false,
     "cmake.buildDirectory": "${workspaceRoot}/build",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "C_Cpp.clang_format_style": "file",
-    "C_Cpp.clang_format_fallbackStyle": "Google"
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.intelliSenseCacheSize": 0
 }
 ```
 
