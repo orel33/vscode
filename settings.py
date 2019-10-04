@@ -55,7 +55,7 @@ store1.update(store0)
 # json_string = json.dumps(store1, indent=4)
 try:
     f2 = open(filename1, 'w')
-    # json.dump(store1, f2, indent=4)
+    json.dump(store1, f2, indent=4)
     f2.close()
     # print(json_string)
 except:
