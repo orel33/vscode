@@ -99,22 +99,22 @@ Note:
 
 ## Keyboard Shortcuts
 
-| | Shortcut        | Description                        |
-|-| --------------- | ---------------------------------- |
-|D| Ctrl+C / X / V  | copy / cut / paste                 |
-|D| Ctrl+Z / Y      | undo / redo                        |
-|D| Ctrl+Shift+↑/↓  | undo / redo                        |
-|D| Ctrl+P          | quick open file palette            |
-|D| Ctrl+Shift+P    | quick open command palette         |
-|D| Ctrl+K Ctrl+T   | change theme                       |
-|D| Ctrl+K Z        | zen mode (Esc Esc to escape)       |
-|D| Ctrl+J / Ctrl+B | toggle panel / side bar visibility |
-|D| Ctrl+,          | edit user & workspace settings     |
-|D| Ctrl+W          | close current editor               |
-|D| Ctrl+N          | new file                           |
-|D| Ctrl+O          | open file                          |
-|D| Ctrl+S          | save / save as file                |
-|U| Ctrl+!          | split editor to right              |
+|     | Shortcut        | Description                        |
+| --- | --------------- | ---------------------------------- |
+| D   | Ctrl+C / X / V  | copy / cut / paste                 |
+| D   | Ctrl+Z / Y      | undo / redo                        |
+| D   | Ctrl+Shift+↑/↓  | undo / redo                        |
+| D   | Ctrl+P          | quick open file palette            |
+| D   | Ctrl+Shift+P    | quick open command palette         |
+| D   | Ctrl+K Ctrl+T   | change theme                       |
+| D   | Ctrl+K Z        | zen mode (Esc Esc to escape)       |
+| D   | Ctrl+J / Ctrl+B | toggle panel / side bar visibility |
+| D   | Ctrl+,          | edit user & workspace settings     |
+| D   | Ctrl+W          | close current editor               |
+| D   | Ctrl+N          | new file                           |
+| D   | Ctrl+O          | open file                          |
+| D   | Ctrl+S          | save / save as file                |
+| U   | Ctrl+!          | split editor to right              |
 
 <small>D: default shortcut on Linux; U: my user-defined shortcut.</small>
 
@@ -122,22 +122,22 @@ Note:
 
 ## Keyboard Shortcuts
 
-| | Shortcut        | Description                             |
-|-| --------------- | --------------------------------------- |
-|D| Ctrl+/          | toggle line(s) comment                  |
-|D| Alt+↑/↓         | move line(s) up / down                  |
-|D| Alt+Z           | toggle line wrapping                    |
-|D| Ctrl+Space      | trigger suggestion for completion       |
-|D| Ctrl+Shift+I    | code formatting                         |
-|D| F12 / Ctrl+F12  | go to function definition / declaration |
-|D| Ctrl+Shift+F10  | peek definition                         |
-|D| Ctrl+Shift+V    | Markdown preview                        |
-|D| Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
-|D| Ctrl+Shift+B    | run build task                          |
-|U| Ctrl+Shift+R    | run task...                             |
-|D| Ctrl+F          | find in file                            |
-|D| Ctrl+Shift+F    | find in all files                       |
-|D| F3 / Shift+F3   | next / previous match (find)            |
+|     | Shortcut        | Description                             |
+| --- | --------------- | --------------------------------------- |
+| D   | Ctrl+/          | toggle line(s) comment                  |
+| D   | Alt+↑/↓         | move line(s) up / down                  |
+| D   | Alt+Z           | toggle line wrapping                    |
+| D   | Ctrl+Space      | trigger suggestion for completion       |
+| D   | Ctrl+Shift+I    | code formatting                         |
+| D   | F12 / Ctrl+F12  | go to function definition / declaration |
+| D   | Ctrl+Shift+F10  | peek definition                         |
+| D   | Ctrl+Shift+V    | Markdown preview                        |
+| D   | Ctrl+⇟ / Ctrl+⇞ | move to next / previous editor          |
+| D   | Ctrl+Shift+B    | run build task                          |
+| U   | Ctrl+Shift+R    | run task...                             |
+| D   | Ctrl+F          | find in file                            |
+| D   | Ctrl+Shift+F    | find in all files                       |
+| D   | F3 / Shift+F3   | next / previous match (find)            |
 
 <small>See all keyboard shortcuts (setting button at bottom of activity bar) and add your own shortcuts...</small>
 
@@ -435,8 +435,6 @@ Note:
 
 ## CMake Project
 
-$$\frac{x}{y}$$
-
 * Extensions: *CMake* & *CMake Tools*
 * Project files: ```main.c``` + library ```fib.c fib.h```
 * Add a CMake project file: [CMakeLists.txt](demo/cmake/CMakeLists.txt)
@@ -477,7 +475,7 @@ And just open VSC... Easy!
 
 * All CMake commands available from palette (Ctrl+Shift+P, type "cmake"...)
   * Build All (F7), Clean, Run CTest, ...
-  * Build target (Shift+F7), Launch target (Shift+F5) or Debug target (Ctrl+F5)
+  * Build target (Shift+F7), Launch target (Shift+F5) or Quick Debug target (Ctrl+F5)
 * In Status Bar, configure your project:
   * *Select Build Variant*: Debug, Release, MinSizeRel, ...
   * *Select Kit*: Clang, GCC, or unspecified (Let CMake guess your compiler...)
@@ -492,6 +490,53 @@ And just open VSC... Easy!
 
 Note:
 * [Getting Started with CMake in VSC](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
+
+---
+
+## CMake Debug
+
+**Quick Debugging**: start it using the *CMake: Debug Target* command from the command palette (or Ctrl+F5). Change the *Debug Target* in the status bar, add a breakpoint and enjoy 😎
+
+**Classic Debugging**: to get more flexibility (program arguments, working directory, ...), you need to define a debug configuration in the file ```.vscode/launch.json```... Just press F5, and select ```C++ (GDB/LLDB)``` and edit the default configuration file with the following options:
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) CMake Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/a.out", // <-- update this
+            "args": [ "some", "args" ],                  // <-- update this
+            "stopAtEntry": true,                         // <-- update this
+            "cwd": "${workspaceFolder}",                 // <-- update this
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```
+
+👉 Then, start debugging the program (F5) or start the program without debugging (Shift+F5)... See Debug menu.
+
+To use the current CMake Debug/Launch Target (visible on status bar), you can change this key:
+
+```json
+"program": "${command:cmake.launchTargetPath}"
+```
+
+
+Note:
+* https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html
 
 ---
 
