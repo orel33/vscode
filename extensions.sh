@@ -66,6 +66,7 @@ code --install-extension wayou.vscode-todo-highlight # highlight TODO:
 code --install-extension brunnerh.insert-unicode # insert utf8 special characters
 # code --install-extension adammaras.overtype # enable insert mode
 code --install-extension christian-kohler.path-intellisense # path auto-completion
+code --install-extension stkb.rewrap # rewrap (hard line wrapping alt+q)
 
 # Fun
 code --install-extension dracula-theme.theme-dracula

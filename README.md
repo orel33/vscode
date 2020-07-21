@@ -127,6 +127,7 @@ Note:
 | D   | Ctrl+/          | toggle line(s) comment                  |
 | D   | Alt+↑/↓         | move line(s) up / down                  |
 | D   | Alt+Z           | toggle line wrapping                    |
+| D   | Alt+Q           | hard line wrapping (rewrap extension)   |
 | D   | Ctrl+Space      | trigger suggestion for completion       |
 | D   | Ctrl+Shift+I    | code formatting                         |
 | D   | F12 / Ctrl+F12  | go to function definition / declaration |
@@ -465,7 +466,6 @@ endforeach()
 ```
 
 And just open VSC... Easy!
-
 
 ---
 
