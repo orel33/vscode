@@ -128,8 +128,9 @@ Note:
 | D   | Alt+↑/↓         | move line(s) up / down                  |
 | D   | Alt+Z           | toggle line wrapping                    |
 | D   | Alt+Q           | hard line wrapping (rewrap extension)   |
-| D   | Ctrl+Space      | trigger suggestion for completion       |
 | D   | Ctrl+Shift+I    | code formatting                         |
+| D   | Ctrl+K Ctrl+X   | Trim all trailing spaces in file        |
+| D   | Ctrl+Space      | trigger suggestion for completion       |
 | D   | F12 / Ctrl+F12  | go to function definition / declaration |
 | D   | Ctrl+Shift+F10  | peek definition                         |
 | D   | Ctrl+Shift+V    | Markdown preview                        |
@@ -430,7 +431,7 @@ Note:
 * <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
 * <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging>
 * configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-* [launch.json syntax](https://go.microsoft.com/fwlink/?linkid=830387) 
+* [launch.json syntax](https://go.microsoft.com/fwlink/?linkid=830387)
 
 ---
 
@@ -542,18 +543,18 @@ Note:
 
 ## CMake Project (Advanced)
 
-* Set default CMake build directory in user settings:  
+* Set default CMake build directory in user settings:
 
 ```json
 "cmake.buildDirectory": "${workspaceRoot}/build"
 ```
 
 * Optionnaly, you can set some CMake options in your workspace settings:
- 
+
  ```json
-"cmake.configureSettings": { 
+"cmake.configureSettings": {
   "CMAKE_C_FLAGS_DEBUG": "-g -fsanitize=address -fsanitize=leak -fsanitize=undefined",
-  "CMAKE_VERBOSE_MAKEFILE": "ON"  
+  "CMAKE_VERBOSE_MAKEFILE": "ON"
 }
 ```
 

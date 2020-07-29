@@ -28,9 +28,10 @@ code --install-extension cschlosser.doxdocgen
 code --install-extension bbenoist.Doxygen
 
 # CMake & CMake Tools
+code --install-extension ms-vscode.cmake-tools
 code --install-extension twxs.cmake
-code --install-extension vector-of-bool.cmake-tools
 code --install-extension cheshirekow.cmake-format
+# code --install-extension vector-of-bool.cmake-tools
 # code --install-extension maddouri.cmake-tools-helper # useful or not?
 
 # Google Tests
