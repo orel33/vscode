@@ -1,47 +1,47 @@
 #!/bin/bash
 
 # C/C++
-code --install-extension ms-vscode.cpptools # provided by microsoft
+code --force --install-extension ms-vscode.cpptools # provided by microsoft
 # code --install-extension jbenden.c-cpp-flylint # linting based on clang & cppcheck
 
 # Python (provided by Microsoft)
-code --install-extension ms-python.python
+code --force --install-extension ms-python.python
 
 # code runner
-code --install-extension formulahendry.code-runner
+code --force --install-extension formulahendry.code-runner
 
 # Git
-code --install-extension eamodio.gitlens
-code --install-extension donjayamanne.githistory
-code --install-extension mhutchie.git-graph         # git graph
+code --force --install-extension eamodio.gitlens
+code --force --install-extension donjayamanne.githistory
+code --force --install-extension mhutchie.git-graph         # git graph
 
 # markdown support
-code --install-extension yzhang.markdown-all-in-one
-code --install-extension DavidAnson.vscode-markdownlint # linting
-code --install-extension evilz.vscode-reveal # show markdown as revealJs presentation
+code --force --install-extension yzhang.markdown-all-in-one
+code --force --install-extension DavidAnson.vscode-markdownlint # linting
+code --force --install-extension evilz.vscode-reveal # show markdown as revealJs presentation
 
 # latex
-code --install-extension James-Yu.latex-workshop
+code --force --install-extension James-Yu.latex-workshop
 
 # Doxygen Documentation Generator
-code --install-extension cschlosser.doxdocgen
-code --install-extension bbenoist.Doxygen
+code --force --install-extension cschlosser.doxdocgen
+code --force --install-extension bbenoist.Doxygen
 
 # CMake & CMake Tools
-code --install-extension ms-vscode.cmake-tools
-code --install-extension twxs.cmake
-code --install-extension cheshirekow.cmake-format
+code --force --install-extension ms-vscode.cmake-tools
+code --force --install-extension twxs.cmake
+code --force --install-extension cheshirekow.cmake-format
 # code --install-extension vector-of-bool.cmake-tools
 # code --install-extension maddouri.cmake-tools-helper # useful or not?
 
 # Google Tests
-code --install-extension DavidSchuldenfrei.gtest-adapter
+code --force --install-extension DavidSchuldenfrei.gtest-adapter
 
 # y86
-code --install-extension abhinavk99.y86-vscode # formatting
+code --force --install-extension abhinavk99.y86-vscode # formatting
 
 # beautify JavaScript / JSON / CSS / HTML
-code --install-extension HookyQR.beautify
+code --force --install-extension HookyQR.beautify
 
 # Node.js (Javascript, NPM, ...)
 # code --install-extension dbaeumer.vscode-eslint
@@ -59,18 +59,18 @@ code --install-extension HookyQR.beautify
 # ln -s /usr/share/hunspell ~/.config/Code/Dictionaries # Linux
 
 # bash
-code --install-extension shakram02.bash-beautify # formatting
+code --force --install-extension shakram02.bash-beautify # formatting
 
 # misc
-code --install-extension shardulm94.trailing-spaces # show ugly trailing spaces
-code --install-extension wayou.vscode-todo-highlight # highlight TODO:
-code --install-extension brunnerh.insert-unicode # insert utf8 special characters
+code --force --install-extension shardulm94.trailing-spaces # show ugly trailing spaces
+code --force --install-extension wayou.vscode-todo-highlight # highlight TODO:
+code --force --install-extension brunnerh.insert-unicode # insert utf8 special characters
 # code --install-extension adammaras.overtype # enable insert mode
-code --install-extension christian-kohler.path-intellisense # path auto-completion
-code --install-extension stkb.rewrap # rewrap (hard line wrapping alt+q)
+code --force --install-extension christian-kohler.path-intellisense # path auto-completion
+code --force --install-extension stkb.rewrap # rewrap (hard line wrapping alt+q)
 
 # Fun
-code --install-extension dracula-theme.theme-dracula
+code --force --install-extension dracula-theme.theme-dracula
 # code --install-extension CoenraadS.bracket-pair-colorizer
 # code --install-extension ms-vsliveshare.vsliveshare
 
