@@ -761,6 +761,8 @@ Tutorial: https://code.visualstudio.com/docs/cpp/config-wsl
 
   <center><img src="img/wsl-status-bar.png" width=40%></center>
 
+  My demo: https://www.youtube.com/watch?v=voJlmtoU7Lc
+
 ---
 
 ## About this Document
