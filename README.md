@@ -751,7 +751,7 @@ Tutorial: https://code.visualstudio.com/docs/cpp/config-wsl
 * Install Linux inside Windows using WSL (Windows Subsystem for Linux)
   * https://docs.microsoft.com/fr-fr/windows/wsl/install-win10
   * Install WSL (version 2, recommanded) on Windows 10 (64 bits)
-  * Install Ubuntu (or Debian) from Microdoft Store
+  * Install Ubuntu (or Debian) from Microsoft Store: https://aka.ms/wslstore
   * Install GCC on Ubuntu: `sudo apt-get update ; sudo apt-get install build-essential gdb`
 * Launch VS Code on Windows and connect your Ubuntu using the Remote-WSL extension...
 * Another solution consists to launch the command `code .` directly from the WSL/Ubuntu...
