@@ -750,12 +750,15 @@ Tutorial: https://code.visualstudio.com/docs/cpp/config-wsl
 * Install extension `Remote WSL` in VS Code
 * Install Linux inside Windows using WSL (Windows Subsystem for Linux)
   * https://docs.microsoft.com/fr-fr/windows/wsl/install-win10
-  * Install WSL (version 2, recommanded) on Windows 10 (64 bits)
+  * Install WSL (version 2 recommanded) on Windows 10 (64 bits)
   * Install Ubuntu (or Debian) from Microsoft Store: https://aka.ms/wslstore
   * Install GCC on Ubuntu: `sudo apt-get update ; sudo apt-get install build-essential gdb`
-* Launch VS Code on Windows and connect your Ubuntu using the Remote-WSL extension...
-* Another solution consists to launch the command `code .` directly from the WSL/Ubuntu...
-  
+* Launch VS Code on Windows and connect your Ubuntu using the *Remote WSL* extension... Green Button
+* Another solution consists to launch directly the command `code .` from the WSL/Ubuntu...
+  * It will automatically connect your *VS Code @ Windows*... (using VS Code server mechanism)
+* From Windows, you can access the Linux file system at `\\wsl$`, and
+  reciprocally you can access the Windows file system from Linux at `/mnt/c`
+
   <center><img src="img/wsl-status-bar.png" width=40%></center>
 
 ---
