@@ -7,9 +7,9 @@ function moveit() {
     local DST="$2"
     local DIR=$(basename $SRC)
     local TARGET="$DST/$DIR"
+    [ !-d $SRC] && mkdir -p $SRC
     [ -L $SRC ] && echo "Warning: link \"$SRC\" already exists! Skip..." && return 1
     [ -d $TARGET ] && echo "Warning: directory \"$TARGET\" already exists! Skip..." && return 1
-    mkdir -p $SRC
     echo "Moving \"$SRC\" to \"$DST/\"... Please, be patient!"
     cp -rf $SRC $DST && rm -rf $SRC
     [ $? -ne 0 ] && echo "Error: move failure!" && return 1
