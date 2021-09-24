@@ -21,5 +21,10 @@ function moveit() {
 }
 
 moveit $HOME/.vscode $WORK
-mkdir -p $WORK/.config/
+CHECK=$(readlink $HOME/.vscode)
+echo "Link $HOME/.vscode -> $CHECK"
+
 moveit $HOME/.config/Code $WORK/.config/
+CHECK=$(readlink $HOME/.config/Code)
+echo "Link $HOME/.config/Code -> $CHECK"
+
