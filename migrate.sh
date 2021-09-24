@@ -15,7 +15,8 @@ function moveit() {
         [ $? -eq 0 ] && echo "Error: move failure!" && return 1
     fi
     echo "Make link \"$SRC\" to \"$DST/\" ..."
-    ln -s $DST -t $XHOME/
+    local BASEDIRSRC=$(dirname $SRC)
+    ln -sf -t $BASEDIRSRC $DST
     [ $? -eq 0 ] && echo "Error: link failure!" && return 1
     return 0
 }
