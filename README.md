@@ -139,6 +139,7 @@ Note:
 | U   | Ctrl+Shift+R    | run task...                             |
 | D   | Ctrl+F          | find in file                            |
 | D   | Ctrl+Shift+F    | find in all files                       |
+| D   | Ctrl+T          | go to program symbol in workspace       |
 | D   | F3 / Shift+F3   | next / previous match (find)            |
 
 <small>See all keyboard shortcuts (setting button at bottom of activity bar) and add your own shortcuts...</small>
