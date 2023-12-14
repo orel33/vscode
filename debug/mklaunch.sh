@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TEMPLATE_DIR=/net/ens/vscode/debug/
+TEMPLATE_DIR="$(realpath $(dirname $0))"
 
 # check if the number of arguments is correct
 if [ $# -ne 1 ]; then
