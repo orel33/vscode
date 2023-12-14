@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Debug TEST_NAME",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/EXECUTABLE",       // <-- update this
+            "args": [ ARGUMENTS ],                  // <-- update this
+            "cwd": "${workspaceFolder}",                 // <-- update this
+            "stopAtEntry": true,                         
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
