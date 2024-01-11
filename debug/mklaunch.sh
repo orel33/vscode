@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 TEMPLATE_DIR="$(realpath $(dirname $0))"
 
@@ -22,12 +22,12 @@ if [ ! -f CMakeLists.txt ]; then
     fi
 fi
 # check if the TEST_NAME is in the CMakeLists.txt in the add_test() function
-if [ $(grep -c $TEST_NAME CMakeLists.txt) -eq 0 ]; then
+if [ $(grep -cw $TEST_NAME CMakeLists.txt) -eq 0 ]; then
     echo "Test $TEST_NAME not found in CMakeLists.txt!"
     exit 1
 fi
 
-TEST_LINE=$(grep -n $TEST_NAME CMakeLists.txt | grep add_test | cut -d: -f1)
+TEST_LINE=$(grep -nw $TEST_NAME CMakeLists.txt | grep add_test | cut -d: -f1)
 # check if the TEST_LINE contains one line
 if [ $(echo $TEST_LINE | wc -l) -ne 1 ]; then
     echo "Test $TEST_NAME not found in CMakeLists.txt!"
