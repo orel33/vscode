@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 TEMPLATE_DIR="$(realpath $(dirname $0))"
 
