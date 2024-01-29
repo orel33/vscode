@@ -11,11 +11,12 @@ slideNumber: true
 
 <br>
 <br>
-<center><url>https://github.com/orel33/vscode</url></center>
+<center><url>https://github.com/ramet/vscode</url></center>
 <center> ~ </center>
 <center><url>https://code.visualstudio.com</url></center>
 <center> ~ </center>
 <center>aurelien.esnard@u-bordeaux.fr</center>
+<center>pierre.ramet@u-bordeaux.fr (hack for MDB)</center>
 <br>
 <br>
 
@@ -61,8 +62,9 @@ Just another IDE & source code editor...
 * Extensible: many extensions available on <https://marketplace.visualstudio.com>
 * Rich editor features: smart completion ([IntelliSense](https://code.visualstudio.com/docs/editor/intellisense)), linting, ...
 
-Note:
-* <https://electronjs.org/docs/tutorial/first-app>
+Online-IDE: [Visual Studio Online](https://visualstudio.microsoft.com/fr/services/visual-studio-online/)
+* <https://vscode.dev/>
+* <https://github.dev/>
 
 ---
 
@@ -193,26 +195,34 @@ My recommandation:
 
 ## My Favorite Extensions
 
-* [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=vector-of-bool.cmake-tools)
-* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
+* [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 * [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
 * [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
+* [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
+* [Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack), [Fortran](https://marketplace.visualstudio.com/items?itemName=fortran-lang.linter-gfortran), [Rust](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 * [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (run code snippet or code file for multiple languages)
 * [Latex Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) (LaTeX support, compile, preview, autocomplete, ...)
 * [Markdown All In One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) (toc, preview, lists, ...) + [Markdown Lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) (linting)
 * [Spell Right](https://marketplace.visualstudio.com/items?itemName=ban.spellright) (multilingual spellchecker)
 * [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) (Beautify JavaScript, JSON, CSS, HTML, ...).
 * [NPM](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) (JavaScript package manager) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (JavaScript linting, code formatting and more)
-* [Bash Beautify](https://marketplace.visualstudio.com/items?itemName=shakram02.bash-beautify), [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense) (filename auto-completion), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), ...
+* [Bash Beautify](https://marketplace.visualstudio.com/items?itemName=shakram02.bash-beautify), [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), [VSC icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) ...
 
-Note:
-* [Extending VSC](https://code.visualstudio.com/docs/extensions/overview) (extension written in TypeScript / JavaScript)
-* [Settings Sync](https://github.com/shanalikhan/code-settings-sync)
-* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
-* [C/C++ Advanced Lint](https://marketplace.visualstudio.com/items?itemName=jbenden.c-cpp-flylint) (clang, cppcheck, ...)
-* Other: VSCode Icons, Dracula Theme, VS Live Share, ...
-* TODO: Android support, Docker, ...
+## Additional Extensions
+
+* [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
+* [Binding Emacs](https://marketplace.visualstudio.com/items?itemName=hiro-sun.vscode-emacs), [Org-Mode](https://marketplace.visualstudio.com/items?itemName=vscode-org-mode.org-mode)
+* [Mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow), [GitHub Workflow](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+* [Typst](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) + [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview)
+* [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) (collaborative editing)
+* [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) (Remote SSH, WSL, Docker)
+
+Note : see my [extensions.txt](extensions.text) list obtained using
+```sh
+code --list-extensions > extensions.txt
+```
 
 ---
 
@@ -777,4 +787,4 @@ git clone https://github.com/orel33/vscode.git
 ```
 
 * ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
-* ___Acknowledgment___: Pierre Ramet
+* ___Acknowledgment___: Pierre Ramet (pierre.ramet@u-bordeaux.fr)
