@@ -6,7 +6,7 @@
         {
             "label": "gtest",
             "type": "shell",
-            "command": "(git clone git://github.com/google/googletest.git ; cd googletest ; mkdir build ; cd build ; cmake .. ; make) && g++ -g testGtest.cxx -lgtest -lpthread -L./googletest/build/lib/ && ./a.out",
+            "command": "(git clone git@github.com:google/googletest.git ; cd googletest ; mkdir build ; cd build ; cmake .. ; make) && g++ -g testGtest.cxx -I./googletest/googletest/include/ -lgtest -lpthread -L./googletest/build/lib/ && ./a.out",
             "group": {
                 "kind": "build",
                 "isDefault": true

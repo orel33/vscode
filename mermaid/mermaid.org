@@ -1,0 +1,41 @@
+* Mermaid org-mode
+
+** Install
+
+See : https://emacstil.com/til/2021/09/19/org-mermaid/
+
+*** Install 'mermaid-cli' : https://github.com/mermaidjs/mermaid.cli
+
+**** Brew
+#+begin_src
+brew install mermaid-cli
+#+end_src
+
+**** NPM
+#+begin_src
+npm install -g mermaid.cli
+#+end_src
+
+*** Install ob-mermaid package in Emacs : https://github.com/arnm/ob-mermaid
+#+begin_src
+(setq ob-mermaid-cli-path "/opt/homebrew/bin/mmdc")
+#+end_src
+
+** Usage
+
+In any org file, you can use 'mermaid' source type :
+#+begin_src mermaid :file test.png
+sequenceDiagram
+ A-->B: Works!
+#+end_src
+
+*** Install mermaid-mode package in Emacs : https://github.com/abrochard/mermaid-mode
+
+#+begin_src
+C-c C-c - compile current file to an image
+C-c C-f - compile given file to an image
+C-c C-b - compile current buffer to an image
+C-c C-r - compile current region to an image
+C-c C-o - open in the live editor
+C-c C-d - open the official doc
+#+end_src
