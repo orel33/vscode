@@ -74,8 +74,7 @@ Online-IDE: [Visual Studio Online](https://visualstudio.microsoft.com/fr/service
 
 <center><img src="img/snap-overview.png" width=90%></center>
 
-Note:
-* <https://code.visualstudio.com/docs/getstarted/userinterface>
+See: <https://code.visualstudio.com/docs/getstarted/userinterface>
 
 ---
 
@@ -120,6 +119,8 @@ Note:
 
 <small>D: default shortcut on Linux; U: my user-defined shortcut.</small>
 
+<small>See all keyboard shortcuts (setting button at bottom of activity bar) and add your own shortcuts...</small>
+
 ---
 
 ## Keyboard Shortcuts
@@ -144,12 +145,9 @@ Note:
 | D   | Ctrl+T          | go to program symbol in workspace       |
 | D   | F3 / Shift+F3   | next / previous match (find)            |
 
-<small>See all keyboard shortcuts (setting button at bottom of activity bar) and add your own shortcuts...</small>
-
 Note:
-* Debug shortcuts:  start debugging (F5), add breakpoints (F9), next (F10), ...
-* CMake build (F7)
-* [refcard](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+* Debug shortcuts:  start debugging (F5), add breakpoints (F9), next (F10), build (F7), ...
+* Refcards [Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf), [refcard MacOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf), [refcard Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 ---
 
@@ -196,7 +194,7 @@ My recommandation:
 ## My Favorite Extensions
 
 * [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python), [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
-* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
+* [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) + [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) + [Makefile Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools)
 * [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
 * [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 * [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) + [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) + [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (view git log, file history, compare branches or commits)
@@ -209,17 +207,19 @@ My recommandation:
 * [NPM](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script) (JavaScript package manager) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) (JavaScript linting, code formatting and more)
 * [Bash Beautify](https://marketplace.visualstudio.com/items?itemName=shakram02.bash-beautify), [Path IntelliSense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense), [Bracket Pair Colorizer](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer), [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces), [Todo Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), [VSC icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) ...
 
+---
+
 ## Additional Extensions
 
 * [GitHub Copilot](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot)
 * [Binding Emacs](https://marketplace.visualstudio.com/items?itemName=hiro-sun.vscode-emacs), [Org-Mode](https://marketplace.visualstudio.com/items?itemName=vscode-org-mode.org-mode)
+* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow), [GitHub Workflow](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
 * [Mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
-* [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow), [GitHub Workflow](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
 * [Typst](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp) + [Typst Preview](https://marketplace.visualstudio.com/items?itemName=mgt19937.typst-preview)
 * [Live Share](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare) (collaborative editing)
 * [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) (Remote SSH, WSL, Docker)
 
-Note : see my [extensions.txt](extensions.text) list obtained using
+See my [extensions.txt](extensions.text) list obtained using :
 ```sh
 code --list-extensions > extensions.txt
 ```
@@ -263,7 +263,7 @@ For instance, my user settings:
 
 ## Demo
 
-All demo are available on <https://github.com/orel33/vscode>:
+Some demos are available in this repository:
 
 * [Code Runner](#code-runner) (directory `demo/hello/`)
 * [C/C++ Programming](#cc-programming)
@@ -329,7 +329,6 @@ int main(int argc, char const *argv[])
 
 Note:
 * <https://code.visualstudio.com/docs/languages/cpp>
-* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/>
 
 ---
 
@@ -358,8 +357,7 @@ Note:
 * And run, menu *Terminal > Run Task...* (or Ctrl+Shift+R) and select the *run* task
 
 Note:
-* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#building>
-* on demand, associate GCC as *problemMatcher* to scan output problem...
+* Set external console: ```"options": { "cwd": "${workspaceFolder}", "external": true }```
 
 ---
 
@@ -438,12 +436,6 @@ Note:
 
 <small>Shortcuts: start debugging (F5), start debugging (F5), add breakpoints (F9), next (F10), ... </small>
 
-Note:
-* <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-* <https://blogs.msdn.microsoft.com/vcblog/2016/03/31/cc-extension-for-visual-studio-code/#debugging>
-* configure debugging: <https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md>
-* [launch.json syntax](https://go.microsoft.com/fwlink/?linkid=830387)
-
 ---
 
 ## CMake Project
@@ -500,9 +492,6 @@ And just open VSC... Easy!
 
 <center><img src="img/snap-cmake-status-bar-2.png" width=80%></center>
 
-Note:
-* [Getting Started with CMake in VSC](https://vector-of-bool.github.io/docs/vscode-cmake-tools/getting_started.html)
-
 ---
 
 ## CMake Debug
@@ -546,10 +535,6 @@ To use the current CMake Debug/Launch Target (visible on status bar), you can ch
 "program": "${command:cmake.launchTargetPath}"
 ```
 
-
-Note:
-* https://vector-of-bool.github.io/docs/vscode-cmake-tools/debugging.html
-
 ---
 
 ## CMake Project (Advanced)
@@ -573,16 +558,12 @@ Note:
 
 ## Google Tests
 
+* GoogleTest C++ framework (not pure C): <https://github.com/abseil/googletest>
 * Extension [GoogleTest Adapter](https://marketplace.visualstudio.com/items?itemName=DavidSchuldenfrei.gtest-adapter)
   * run all tests, run & debug each test (just in one click), ...
   * [demo](demo/gtest): launch the build task (Ctrl+Shift+B) and click the **Test** button in activity bar...
 
 <center><img src="img/snap-gtest.png" width=80%></center>
-
-Note:
-* GoogleTest framework: <https://github.com/abseil/googletest>
-* Google Tests can also be integrated as CMake Tests...
-* Drawback: C++ framework (not pure C)
 
 ---
 
@@ -704,8 +685,7 @@ Note:
 <center><img src="img/snap-git.png" width=80%></center>
 
 Note:
-* extension [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=fatihacet.gitlab-workflow)
-* demo CI with Inria GitLab
+* extension [GitLab Workflow](https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow): demo CI with Inria GitLab
 
 ---
 
@@ -714,6 +694,8 @@ Note:
 * Command Palette (Ctrl+Shift+P): *Git View History* or *Git View File History*... and performs advanced Git command (cherry-pick, revert, merge, rebase...)
 
 <center><img src="img/snap-git-history.png" width=80%></center>
+
+Note: 2-ways vs [3-ways](https://code.visualstudio.com/docs/sourcecontrol/overview#_3way-merge-editor) merge editor
 
 ---
 
@@ -735,9 +717,9 @@ This [extension](https://marketplace.visualstudio.com/items?itemName=GitHub.vsco
 * syntax highlighting, outline, preview on-the-fly (Ctrl+K V), ...
 * formatting, list editing and more (extension *Markdown All in One*) + linting (extension *mardownlint*)
 * show Markdown as slides (extension [vscode-reveal](https://marketplace.visualstudio.com/items?itemName=evilz.vscode-reveal))
+* preview Mermaid diagrams (extension [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid))
 
 <center><img src="img/snap-markdown.png" width=80%></center>
-
 
 Note:
 * <https://ia.net/writer/support/general/markdown-guide>
@@ -758,7 +740,7 @@ Note:
 Tutorial: https://code.visualstudio.com/docs/cpp/config-wsl
 
 * Install VS Code on Windows
-* Install extension `Remote WSL` in VS Code
+* Install extension [Remote WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) in VS Code
 * Install Linux inside Windows using WSL (Windows Subsystem for Linux)
   * https://docs.microsoft.com/fr-fr/windows/wsl/install-win10
   * Install WSL (version 2 recommanded) on Windows 10 (64 bits)
@@ -770,9 +752,19 @@ Tutorial: https://code.visualstudio.com/docs/cpp/config-wsl
 * From Windows, you can access the Linux file system at `\\wsl$`, and
   reciprocally you can access the Windows file system from Linux at `/mnt/c`
 
-  <center><img src="img/wsl-status-bar.png" width=40%></center>
+  <center><img src="img/wsl-status-bar.png" width=20%></center>
 
-  My demo: https://www.youtube.com/watch?v=voJlmtoU7Lc
+---
+
+## Remote Development
+
+* Remote Docker
+  * demo using image [tthor/test](https://hub.docker.com/repository/docker/tthor/test/).
+  * Install VSCode server with remote extensions defined in `.devcontainer/devcontainer.json`
+
+* Remote SSH
+  * demo using [Plafrim](https://www.plafrim.fr/) access.
+  * Install VSCode server with 'some' remote extensions
 
 ---
 
