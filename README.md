@@ -11,12 +11,12 @@ slideNumber: true
 
 <br>
 <br>
-<center><url>https://github.com/ramet/vscode</url></center>
+<center><url>https://github.com/orel33/vscode</url></center>
 <center> ~ </center>
 <center><url>https://code.visualstudio.com</url></center>
 <center> ~ </center>
 <center>aurelien.esnard@u-bordeaux.fr</center>
-<center>pierre.ramet@u-bordeaux.fr (hack for MDB)</center>
+<center>pierre.ramet@u-bordeaux.fr</center>
 <br>
 <br>
 
@@ -778,5 +778,4 @@ This presentation and all demo are available on <https://github.com/orel33/vscod
 git clone https://github.com/orel33/vscode.git
 ```
 
-* ___Author___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr)
-* ___Acknowledgment___: Pierre Ramet (pierre.ramet@u-bordeaux.fr)
+* ___Author(s)___ : Aurélien Esnard (aurelien.esnard@u-bordeaux.fr) and Pierre Ramet (pierre.ramet@u-bordeaux.fr)
