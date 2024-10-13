@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (C) 2016 - N. Bonichon and A. Esnard.
+# Copyright (C) 2024 - N. Bonichon and A. Esnard.
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
