@@ -104,7 +104,7 @@ MKTEMPLATE() {
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Debug by mklaunch.sh",
+            "name": "(gdb) debug.sh",
             "type": "cppdbg",
             "request": "launch",
             "program": @EXECNAME@,
@@ -151,7 +151,9 @@ MKEXEC() {
     local EXECARGS=("${@:2}") # array
 
     # remove path EXECNAME
-    local EXECNAME="build/$(basename $EXECNAME)"
+    local EXECNAME="$(basename $EXECNAME)"
+    local EXECNAME="$PROJECTDIR/$BUILDDIR/$EXECNAME"
+    # local EXECNAME="\${workspaceFolder}/build/$EXECNAME"
 
     echo "* exec: $EXECNAME"
     echo "* args: ${EXECARGS[@]}"
