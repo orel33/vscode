@@ -91,7 +91,8 @@ fi
 
 # check cmake project
 if [ ! -f CMakeLists.txt ]; then
-    echo "⚠️ CMakeLists.txt not found in the current directory!"
+    echo "Error: CMakeLists.txt not found in the current directory!"
+    echo "Please run this script in the root directory of your CMake project."
     exit 1
 fi
 
