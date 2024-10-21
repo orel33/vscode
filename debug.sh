@@ -30,7 +30,7 @@ echo
 ### USAGE ###
 
 USAGE() {
-    echo "Usage: Make a debug configuration file for VS Code in a CMake project."
+    echo "👉 Usage: Make a debug configuration file for VS Code in a CMake project."
     echo
     echo "mklaunch.sh -i                      # Create a template configuration file to edit."
     echo "            -t <testname>           # Create a configuration for a CMake test."
@@ -91,8 +91,8 @@ fi
 
 # check cmake project
 if [ ! -f CMakeLists.txt ]; then
-    echo "Error: CMakeLists.txt not found in the current directory!"
-    echo "Please run this script in the root directory of your CMake project."
+    echo "❌ Error: CMakeLists.txt not found in the current directory!"
+    echo "👉 Please run this script in the root directory of your CMake project."
     exit 1
 fi
 
@@ -110,7 +110,7 @@ MKTEMPLATE() {
             "program": @EXECNAME@,
             "args": [ @EXECARGS@ ],
             "cwd": "\${workspaceFolder}",
-            "stopAtEntry": true,                         
+            "stopAtEntry": true,
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
@@ -132,12 +132,12 @@ EOM
 MKINIT() {
     if [ ! -d $VSCODEDIR ]; then
         mkdir -p $VSCODEDIR
-        echo "Created directory \"$VSCODEDIR\""
+        echo "👉 Created directory \"$VSCODEDIR\""
     fi
 
     if [ -f $DEBUGCONF ]; then
         cp -f $DEBUGCONF $DEBUGCONF.bak
-        echo "Backup \"$DEBUGCONF\" -> \"$DEBUGCONF.bak\""
+        echo "👉 Backup \"$DEBUGCONF\" -> \"$DEBUGCONF.bak\""
     fi
 
     MKTEMPLATE
@@ -160,8 +160,8 @@ MKEXEC() {
 
     # check executable
     if [ ! -f "$EXECNAME" ]; then
-        echo "Error: executable \"$EXECNAME\" not found in \"$PROJECTDIR/$BUILDDIR\"!"
-        echo "Please build the project first..."
+        echo "❌ Error: executable \"$EXECNAME\" not found in \"$PROJECTDIR/$BUILDDIR\"!"
+        echo "👉 Please build the project first..."
         exit 1
     fi
 
@@ -205,7 +205,7 @@ MKTEST() {
     # echo "NBTESTS: $NBTESTS"
 
     if [ $NBTESTS -ne 1 ]; then
-        echo "Error: $NBTESTS tests match name \"$TESTNAME\"."
+        echo "❌ Error: $NBTESTS tests match name \"$TESTNAME\"."
         echo "$FOUNDLINES" | head -n3
         exit 1
     fi
@@ -232,22 +232,22 @@ MKTEST() {
 
 case "$MODE" in
 INIT)
-    echo "=> Creating a config file to edit..."
+    echo "👉 => Creating a config file to edit..."
     MKINIT
     # echo "Edit \"$DEBUGCONF\" and:"
     echo "- replace @EXECNAME@ by \"build/your_executable\""
     echo "- replace @EXECARGS@ by \"arg1\", \"arg2\", ..."
     ;;
 EXEC)
-    echo "=> Creating a config file to debug exec: \"$EXECNAME\"."
+    echo "👉 => Creating a config file to debug exec: \"$EXECNAME\"."
     MKEXEC "$EXECNAME" "${EXECARGS[@]}"
     ;;
 TEST)
-    echo "=> Creating a config file to debug test: \"$TESTNAME\"."
+    echo "👉 => Creating a config file to debug test: \"$TESTNAME\"."
     MKTEST "$TESTNAME"
     ;;
 esac
 
-echo "Done."
+echo "✅ Done."
 
 # EOF
