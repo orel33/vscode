@@ -25,7 +25,9 @@ echo
 echo "* Project directory: \"$PROJECTDIR\""
 echo "* Build directory: \"$PROJECTDIR/$BUILDDIR\""
 echo "* Config file: \"$PROJECTDIR/$DEBUGCONF\""
-echo 
+echo
+
+
 
 ### USAGE ###
 
@@ -45,6 +47,7 @@ if [ "$#" -lt 1 ]; then
     USAGE
     exit 1
 fi
+
 
 MODE=""
 OPT="$1"
@@ -86,6 +89,46 @@ if [ "$MODE" == "EXEC" ] && [ "$#" -lt 2 ]; then
     USAGE
     exit 1
 fi
+
+
+
+### CHECK LOCAL CONFIGURATION ###
+
+
+#check if gdb is installed
+gdb --version > /dev/null
+GDB_INSTALLED=$?
+if [ $GDB_INSTALLED -eq 0 ]; then
+    echo "✅ GDB is installed."
+else
+    echo "❌ Error: GDB is not installed!"
+    echo "👉 Please install GDB before running this script."
+    exit 1
+fi
+
+
+#check if necessary extensions are installed
+EXTENSIONS=ms-vscode.cpptools
+for EXTENSION in $EXTENSIONS; do
+    code --list-extensions | grep -q $EXTENSION
+    EXTENSION_INSTALLED=$?
+
+    if [ $EXTENSION_INSTALLED -eq 0 ]; then
+        echo "✅ VS Code extension $EXTENSION is installed."
+    else
+        echo "👉 adding extension $EXTENSION :"
+        code --install-extension $EXTENSION
+        INSTALL_OK=$?
+        if [ $INSTALL_OK -eq 0 ]; then
+            echo "✅ VS Code extension $EXTENSION is installed."
+        else
+            echo "❌ Error: VS Code extension $EXTENSION could not be installed!"
+            exit 1
+        fi
+    fi
+done
+
+
 
 ### CHECK DIRECTORY ###
 
@@ -201,7 +244,7 @@ MKTEST() {
     local FOUNDLINES=$(grep -w "$TESTNAME" <<< "$TESTLINES") # match name as word 
     local NBTESTS=$(wc -l <<< "$FOUNDLINES")
     # FOUNDLINES contains an empty line, even if there is no match
-    [ -z "$FOUNDLINES" ] && NBTESTS=0       
+    [ -z "$FOUNDLINES" ] && NBTESTS=0
     # echo "NBTESTS: $NBTESTS"
 
     if [ $NBTESTS -ne 1 ]; then
@@ -247,6 +290,12 @@ TEST)
     MKTEST "$TESTNAME"
     ;;
 esac
+
+
+
+
+
+
 
 echo "✅ Done."
 
