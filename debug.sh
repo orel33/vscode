@@ -95,20 +95,27 @@ fi
 ### CHECK LOCAL CONFIGURATION ###
 
 
-#check if gdb is installed
-gdb --version > /dev/null
+#check if gdb or lldb are installed
+which gdb > /dev/null
 GDB_INSTALLED=$?
 if [ $GDB_INSTALLED -eq 0 ]; then
     echo "✅ GDB is installed."
+    EXTENSIONS=ms-vscode.cpptools
 else
-    echo "❌ Error: GDB is not installed!"
-    echo "👉 Please install GDB before running this script."
-    exit 1
+    which lldb > /dev/null
+    LLDB_INSTALLED=$?
+    if [ $LLDB_INSTALLED -eq 0 ]; then
+        echo "✅ LLDB is installed."
+        EXTENSIONS=vadimcn.vscode-lldb
+    else
+        echo "❌ Error: neither GDB nor LLDB are installed!"
+        echo "👉 Please install GDB (or LLDB if you are under MacOS) before running this script."
+        exit 1
+    fi
 fi
 
 
 #check if necessary extensions are installed
-EXTENSIONS=ms-vscode.cpptools
 for EXTENSION in $EXTENSIONS; do
     code --list-extensions | grep -q $EXTENSION
     EXTENSION_INSTALLED=$?
@@ -141,7 +148,8 @@ fi
 
 ### MKTEMPLATE ###
 
-MKTEMPLATE() {
+
+MKGDBTEMPLATE() {
     cat >$DEBUGCONF <<-EOM
 {
     "version": "0.2.0",
@@ -169,6 +177,34 @@ MKTEMPLATE() {
 }
 EOM
 }
+
+MKLLDBTEMPLATE() {
+    cat >$DEBUGCONF <<-EOM
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(lldb) debug.sh",
+            "type": "lldb",
+            "request": "launch",
+            "program": @EXECNAME@,
+            "args": [ @EXECARGS@ ],
+            "cwd": "\${workspaceFolder}"
+        }
+    ]
+}
+EOM
+}
+
+MKTEMPLATE() {
+    if [ $GDB_INSTALLED -eq 0 ]; then
+        MKGDBTEMPLATE
+    else
+        MKLLDBTEMPLATE
+    fi
+}
+
+
 
 ### MKINIT ###
 
