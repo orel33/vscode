@@ -244,6 +244,19 @@ MKEXEC() {
         exit 1
     fi
 
+    #check if the executable is compiled with debug symbols
+    which objdump > /dev/null
+    OBJDUMP_INSTALLED=$?
+    if [ $OBJDUMP_INSTALLED -eq 0 ]; then
+        objdump -h $EXECNAME | grep -q .debug_info
+        DEBUG_INFO=$?
+        if [ $DEBUG_INFO -ne 0 ]; then
+            echo "❌ Error: executable \"$EXECNAME\" is not compiled with debug symbols!"
+            echo "👉 Please recompile the project with the -g flag."
+            exit 1
+        fi
+    fi
+
     # create JSON variables
     local JSONNAME="\"$EXECNAME\""
     local JSONARGS=""
