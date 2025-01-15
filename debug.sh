@@ -15,7 +15,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+#if the current directory is build and the parent directory contains the file CMakelists.txt then go to parent directory
+if [ "$(basename "$PWD")" == "build" ] && [ -f "$PWD/../CMakeLists.txt" ]; then
+    cd ..
+fi
+
+
 PROJECTDIR="$(realpath .)" # The project must be in the current directory.
+
+
 BUILDDIR="build"
 VSCODEDIR=".vscode"
 DEBUGCONF=".vscode/launch.json"
@@ -53,25 +61,25 @@ MODE=""
 OPT="$1"
 
 case "$OPT" in
--i)
-    MODE="INIT"
+    -i)
+        MODE="INIT"
     ;;
--t)
-    MODE="TEST"
-    TESTNAME="$2"
+    -t)
+        MODE="TEST"
+        TESTNAME="$2"
     ;;
--e)
-    MODE="EXEC"
-    EXECNAME="$2"
-    EXECARGS=("${@:3}") # as array
+    -e)
+        MODE="EXEC"
+        EXECNAME="$2"
+        EXECARGS=("${@:3}") # as array
     ;;
--h)
-    USAGE
-    exit 0
+    -h)
+        USAGE
+        exit 0
     ;;
-*)
-    USAGE
-    exit 1
+    *)
+        USAGE
+        exit 1
     ;;
 esac
 
@@ -117,7 +125,7 @@ fi
 
 #check if necessary extensions are installed
 for EXTENSION in $EXTENSIONS; do
-    code --list-extensions | grep -q $EXTENSION
+    code --list-extensions | grep -q "$EXTENSION"
     EXTENSION_INSTALLED=$?
 
     if [ $EXTENSION_INSTALLED -eq 0 ]; then
@@ -209,34 +217,31 @@ MKTEMPLATE() {
 ### MKINIT ###
 
 MKINIT() {
-    if [ ! -d $VSCODEDIR ]; then
-        mkdir -p $VSCODEDIR
+    if [ ! -d "$VSCODEDIR" ]; then
+        mkdir -p "$VSCODEDIR"
         echo "👉 Created directory \"$VSCODEDIR\""
     fi
-
-    if [ -f $DEBUGCONF ]; then
-        cp -f $DEBUGCONF $DEBUGCONF.bak
+    
+    if [ -f "$DEBUGCONF" ]; then
+        cp -f "$DEBUGCONF" "$DEBUGCONF.bak"
         echo "👉 Backup \"$DEBUGCONF\" -> \"$DEBUGCONF.bak\""
     fi
-
+    
     MKTEMPLATE
-    # echo "Created template \"$DEBUGCONF\""
 }
 
 ### MKEXEC ###
 
 MKEXEC() {
     local EXECNAME="$1"
-    local EXECARGS=("${@:2}") # array
-
-    # remove path EXECNAME
-    local EXECNAME="$(basename $EXECNAME)"
-    local EXECNAME="$PROJECTDIR/$BUILDDIR/$EXECNAME"
-    # local EXECNAME="\${workspaceFolder}/build/$EXECNAME"
-
-    echo "* exec: $EXECNAME"
-    echo "* args: ${EXECARGS[@]}"
-
+    local EXECARGS=("${@:2}")
+    
+    EXECNAME="$(basename "$EXECNAME")"
+    EXECNAME="$PROJECTDIR/$BUILDDIR/$EXECNAME"
+    
+    echo "* exec: \"$EXECNAME\""
+    echo "* args: \"${EXECARGS[@]}\""
+    
     # check executable
     if [ ! -f "$EXECNAME" ]; then
         echo "❌ Error: executable \"$EXECNAME\" not found in \"$PROJECTDIR/$BUILDDIR\"!"
@@ -248,7 +253,7 @@ MKEXEC() {
     which objdump > /dev/null
     OBJDUMP_INSTALLED=$?
     if [ $OBJDUMP_INSTALLED -eq 0 ]; then
-        objdump -h $EXECNAME | grep -q .debug_info
+        objdump -h "$EXECNAME" | grep -q .debug_info
         DEBUG_INFO=$?
         if [ $DEBUG_INFO -ne 0 ]; then
             echo "❌ Error: executable \"$EXECNAME\" is not compiled with debug symbols!"
@@ -267,7 +272,7 @@ MKEXEC() {
     local JSONARGS="${JSONARGS%, }"
 
 
-
+    
     # make template
     MKINIT
 
