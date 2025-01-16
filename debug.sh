@@ -20,7 +20,7 @@ if [ "$(basename "$PWD")" == "build" ] && [ -f "$PWD/../CMakeLists.txt" ]; then
     cd ..
 fi
 
-
+PROG_NAME=$0
 PROJECTDIR="$(realpath .)" # The project must be in the current directory.
 
 
@@ -42,7 +42,7 @@ echo
 USAGE() {
     echo "👉 Usage: Make a debug configuration file for VS Code in a CMake project."
     echo
-    echo "mklaunch.sh -i                      # Create a template configuration file to edit."
+    echo "$PROG_NAME -i                      # Create a template configuration file to edit."
     echo "            -t <testname>           # Create a configuration for a CMake test."
     echo "            -e <exec> [<args> ...]  # Create a configuration for an executable."
     echo "            -h                      # Display this help message."
