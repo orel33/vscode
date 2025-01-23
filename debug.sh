@@ -313,6 +313,7 @@ MKTEST() {
     # echo "TESTLINE: $TESTLINE"
     local CMDLINE=$(echo $TESTLINE | sed 's/.*(\(.*\))/\1/')
     local CMDLINE=$(echo $CMDLINE | sed 's/"//g') # remove quotes
+    local CMDLINE=$(echo $CMDLINE | sed 's/\r//') # remove carriage return
     # echo "CMDLINE: $CMDLINE"
     local CMDARRAY=($CMDLINE)
 
